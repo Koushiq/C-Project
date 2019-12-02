@@ -1,0 +1,15 @@
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\RentalHouseManagementSys.exe.config
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\RentalHouseManagementSys.exe
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\RentalHouseManagementSys.pdb
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\MetroFramework.Design.dll
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\MetroFramework.dll
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.csprojAssemblyReference.cache
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Properties.Resources.resources
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.csproj.GenerateResource.cache
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.csproj.CopyComplete
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.exe
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.pdb
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Admin.resources
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Login.resources
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Registration.resources
