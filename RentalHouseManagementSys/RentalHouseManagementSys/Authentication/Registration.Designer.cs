@@ -35,7 +35,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.White;
             this.btnBack.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(417, 605);
+            this.btnBack.Location = new System.Drawing.Point(415, 661);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(116, 42);
             this.btnBack.TabIndex = 5;

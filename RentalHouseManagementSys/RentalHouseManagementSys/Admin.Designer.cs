@@ -31,10 +31,16 @@
             this.mtcNavigation = new MetroFramework.Controls.MetroTabControl();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
             this.pnlProfile = new System.Windows.Forms.Panel();
+            this.lblDateOfBirthProfileOutput = new System.Windows.Forms.Label();
+            this.lblPhoneNumberProfileOutput = new System.Windows.Forms.Label();
+            this.lblGenderProfileOutput = new System.Windows.Forms.Label();
+            this.lblUserIDProfileOutput = new System.Windows.Forms.Label();
+            this.lblNameProfileOutput = new System.Windows.Forms.Label();
             this.btnDeleteProfile = new System.Windows.Forms.Button();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
             this.btnChangePasswordProfile = new System.Windows.Forms.Button();
             this.btnUploadPictureProfile = new System.Windows.Forms.Button();
+            this.pbProfilePicture = new System.Windows.Forms.PictureBox();
             this.lblDateOfBirthProfile = new System.Windows.Forms.Label();
             this.lblPhoneNumberProfile = new System.Windows.Forms.Label();
             this.lblGenderProfile = new System.Windows.Forms.Label();
@@ -44,6 +50,7 @@
             this.flpFeed = new System.Windows.Forms.FlowLayoutPanel();
             this.mtpNotification = new MetroFramework.Controls.MetroTabPage();
             this.flpNotification = new System.Windows.Forms.FlowLayoutPanel();
+            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
             this.mtpAddAdmin = new MetroFramework.Controls.MetroTabPage();
             this.pnlAddAdmin = new System.Windows.Forms.Panel();
             this.mbtnAddAdmin = new MetroFramework.Controls.MetroButton();
@@ -61,32 +68,48 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.mtpSystemData = new MetroFramework.Controls.MetroTabPage();
-            this.pnlSystemData = new System.Windows.Forms.Panel();
-            this.dgvSystemData = new System.Windows.Forms.DataGridView();
+            this.mtcSystemDataTab = new MetroFramework.Controls.MetroTabControl();
+            this.mtpUsers = new MetroFramework.Controls.MetroTabPage();
+            this.pnlSystemDataUsers = new System.Windows.Forms.Panel();
+            this.btnSystemDataUsersRemove = new System.Windows.Forms.Button();
+            this.dgvSystemDataUsersSystemData = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateofbirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSelectUser = new System.Windows.Forms.Label();
-            this.lblSearchByID = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cmbUserTy = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblDateOfBirthProfileOutput = new System.Windows.Forms.Label();
-            this.lblPhoneNumberProfileOutput = new System.Windows.Forms.Label();
-            this.lblGenderProfileOutput = new System.Windows.Forms.Label();
-            this.lblUserIDProfileOutput = new System.Windows.Forms.Label();
-            this.lblNameProfileOutput = new System.Windows.Forms.Label();
+            this.lblSystemDataUsersSearchByID = new System.Windows.Forms.Label();
+            this.btnSystemDataUsersSearch = new System.Windows.Forms.Button();
+            this.cmbSystemDataUsersUserType = new System.Windows.Forms.ComboBox();
+            this.txtSystemDataUsersSearch = new System.Windows.Forms.TextBox();
+            this.mtpApartments = new MetroFramework.Controls.MetroTabPage();
+            this.pnlSystemDataApartments = new System.Windows.Forms.Panel();
+            this.dgvSystemDataApartments = new System.Windows.Forms.DataGridView();
+            this.btnSystemDataApartmentsRemove = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSystemDataApartmentsSearch = new System.Windows.Forms.Button();
+            this.lblSystemDataApartmentsSearchByID = new System.Windows.Forms.Label();
             this.pbLogout = new System.Windows.Forms.PictureBox();
-            this.pbProfilePicture = new System.Windows.Forms.PictureBox();
+            this.mtpPayment = new MetroFramework.Controls.MetroTabPage();
             this.mtcNavigation.SuspendLayout();
             this.mtpProfile.SuspendLayout();
             this.pnlProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.mtpFeed.SuspendLayout();
             this.mtpNotification.SuspendLayout();
             this.mtpAddAdmin.SuspendLayout();
             this.pnlAddAdmin.SuspendLayout();
             this.mtpSystemData.SuspendLayout();
-            this.pnlSystemData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSystemData)).BeginInit();
+            this.mtcSystemDataTab.SuspendLayout();
+            this.mtpUsers.SuspendLayout();
+            this.pnlSystemDataUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataUsersSystemData)).BeginInit();
+            this.mtpApartments.SuspendLayout();
+            this.pnlSystemDataApartments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataApartments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // mtcNavigation
@@ -96,9 +119,10 @@
             this.mtcNavigation.Controls.Add(this.mtpNotification);
             this.mtcNavigation.Controls.Add(this.mtpAddAdmin);
             this.mtcNavigation.Controls.Add(this.mtpSystemData);
+            this.mtcNavigation.Controls.Add(this.mtpAgreements);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 3;
+            this.mtcNavigation.SelectedIndex = 5;
             this.mtcNavigation.Size = new System.Drawing.Size(977, 639);
             this.mtcNavigation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mtcNavigation.TabIndex = 0;
@@ -142,6 +166,61 @@
             this.pnlProfile.Name = "pnlProfile";
             this.pnlProfile.Size = new System.Drawing.Size(969, 594);
             this.pnlProfile.TabIndex = 2;
+            // 
+            // lblDateOfBirthProfileOutput
+            // 
+            this.lblDateOfBirthProfileOutput.AutoSize = true;
+            this.lblDateOfBirthProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirthProfileOutput.ForeColor = System.Drawing.Color.White;
+            this.lblDateOfBirthProfileOutput.Location = new System.Drawing.Point(437, 458);
+            this.lblDateOfBirthProfileOutput.Name = "lblDateOfBirthProfileOutput";
+            this.lblDateOfBirthProfileOutput.Size = new System.Drawing.Size(92, 21);
+            this.lblDateOfBirthProfileOutput.TabIndex = 14;
+            this.lblDateOfBirthProfileOutput.Text = "10.22.2014";
+            // 
+            // lblPhoneNumberProfileOutput
+            // 
+            this.lblPhoneNumberProfileOutput.AutoSize = true;
+            this.lblPhoneNumberProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneNumberProfileOutput.ForeColor = System.Drawing.Color.White;
+            this.lblPhoneNumberProfileOutput.Location = new System.Drawing.Point(437, 392);
+            this.lblPhoneNumberProfileOutput.Name = "lblPhoneNumberProfileOutput";
+            this.lblPhoneNumberProfileOutput.Size = new System.Drawing.Size(109, 21);
+            this.lblPhoneNumberProfileOutput.TabIndex = 13;
+            this.lblPhoneNumberProfileOutput.Text = "01571798589";
+            // 
+            // lblGenderProfileOutput
+            // 
+            this.lblGenderProfileOutput.AutoSize = true;
+            this.lblGenderProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenderProfileOutput.ForeColor = System.Drawing.Color.White;
+            this.lblGenderProfileOutput.Location = new System.Drawing.Point(437, 331);
+            this.lblGenderProfileOutput.Name = "lblGenderProfileOutput";
+            this.lblGenderProfileOutput.Size = new System.Drawing.Size(45, 21);
+            this.lblGenderProfileOutput.TabIndex = 12;
+            this.lblGenderProfileOutput.Text = "Male";
+            // 
+            // lblUserIDProfileOutput
+            // 
+            this.lblUserIDProfileOutput.AutoSize = true;
+            this.lblUserIDProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserIDProfileOutput.ForeColor = System.Drawing.Color.White;
+            this.lblUserIDProfileOutput.Location = new System.Drawing.Point(437, 218);
+            this.lblUserIDProfileOutput.Name = "lblUserIDProfileOutput";
+            this.lblUserIDProfileOutput.Size = new System.Drawing.Size(54, 21);
+            this.lblUserIDProfileOutput.TabIndex = 11;
+            this.lblUserIDProfileOutput.Text = "A-100";
+            // 
+            // lblNameProfileOutput
+            // 
+            this.lblNameProfileOutput.AutoSize = true;
+            this.lblNameProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameProfileOutput.ForeColor = System.Drawing.Color.White;
+            this.lblNameProfileOutput.Location = new System.Drawing.Point(437, 271);
+            this.lblNameProfileOutput.Name = "lblNameProfileOutput";
+            this.lblNameProfileOutput.Size = new System.Drawing.Size(68, 21);
+            this.lblNameProfileOutput.TabIndex = 10;
+            this.lblNameProfileOutput.Text = "Koushiq";
             // 
             // btnDeleteProfile
             // 
@@ -194,6 +273,16 @@
             this.btnUploadPictureProfile.Text = "Upload Picture";
             this.btnUploadPictureProfile.UseVisualStyleBackColor = false;
             this.btnUploadPictureProfile.Click += new System.EventHandler(this.btnUploadPictureProfile_Click);
+            // 
+            // pbProfilePicture
+            // 
+            this.pbProfilePicture.Image = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbProfilePicture.Location = new System.Drawing.Point(425, 14);
+            this.pbProfilePicture.Name = "pbProfilePicture";
+            this.pbProfilePicture.Size = new System.Drawing.Size(135, 131);
+            this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfilePicture.TabIndex = 5;
+            this.pbProfilePicture.TabStop = false;
             // 
             // lblDateOfBirthProfile
             // 
@@ -298,6 +387,20 @@
             this.flpNotification.Size = new System.Drawing.Size(969, 594);
             this.flpNotification.TabIndex = 2;
             // 
+            // mtpAgreements
+            // 
+            this.mtpAgreements.HorizontalScrollbarBarColor = true;
+            this.mtpAgreements.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpAgreements.HorizontalScrollbarSize = 10;
+            this.mtpAgreements.Location = new System.Drawing.Point(4, 38);
+            this.mtpAgreements.Name = "mtpAgreements";
+            this.mtpAgreements.Size = new System.Drawing.Size(969, 597);
+            this.mtpAgreements.TabIndex = 5;
+            this.mtpAgreements.Text = "Agreements    ";
+            this.mtpAgreements.VerticalScrollbarBarColor = true;
+            this.mtpAgreements.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpAgreements.VerticalScrollbarSize = 10;
+            // 
             // mtpAddAdmin
             // 
             this.mtpAddAdmin.Controls.Add(this.pnlAddAdmin);
@@ -338,7 +441,7 @@
             // mbtnAddAdmin
             // 
             this.mbtnAddAdmin.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.mbtnAddAdmin.Location = new System.Drawing.Point(449, 492);
+            this.mbtnAddAdmin.Location = new System.Drawing.Point(446, 484);
             this.mbtnAddAdmin.Name = "mbtnAddAdmin";
             this.mbtnAddAdmin.Size = new System.Drawing.Size(127, 35);
             this.mbtnAddAdmin.TabIndex = 13;
@@ -348,8 +451,10 @@
             // 
             // mdtDateOfBirth
             // 
+            this.mdtDateOfBirth.CustomFormat = "yyyy-MM-dd";
+            this.mdtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.mdtDateOfBirth.Location = new System.Drawing.Point(379, 404);
-            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(0, 29);
+            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(4, 29);
             this.mdtDateOfBirth.Name = "mdtDateOfBirth";
             this.mdtDateOfBirth.Size = new System.Drawing.Size(338, 29);
             this.mdtDateOfBirth.TabIndex = 12;
@@ -387,7 +492,6 @@
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(338, 26);
             this.txtPhoneNumber.TabIndex = 9;
-            this.txtPhoneNumber.UseSystemPasswordChar = true;
             // 
             // txtRetypePassword
             // 
@@ -483,7 +587,7 @@
             // 
             // mtpSystemData
             // 
-            this.mtpSystemData.Controls.Add(this.pnlSystemData);
+            this.mtpSystemData.Controls.Add(this.mtcSystemDataTab);
             this.mtpSystemData.HorizontalScrollbarBarColor = true;
             this.mtpSystemData.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpSystemData.HorizontalScrollbarSize = 10;
@@ -496,30 +600,131 @@
             this.mtpSystemData.VerticalScrollbarHighlightOnWheel = false;
             this.mtpSystemData.VerticalScrollbarSize = 10;
             // 
-            // pnlSystemData
+            // mtcSystemDataTab
             // 
-            this.pnlSystemData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlSystemData.Controls.Add(this.dgvSystemData);
-            this.pnlSystemData.Controls.Add(this.lblSelectUser);
-            this.pnlSystemData.Controls.Add(this.lblSearchByID);
-            this.pnlSystemData.Controls.Add(this.btnSearch);
-            this.pnlSystemData.Controls.Add(this.cmbUserTy);
-            this.pnlSystemData.Controls.Add(this.txtSearch);
-            this.pnlSystemData.Location = new System.Drawing.Point(0, 3);
-            this.pnlSystemData.Name = "pnlSystemData";
-            this.pnlSystemData.Size = new System.Drawing.Size(969, 594);
-            this.pnlSystemData.TabIndex = 2;
+            this.mtcSystemDataTab.Controls.Add(this.mtpUsers);
+            this.mtcSystemDataTab.Controls.Add(this.mtpApartments);
+            this.mtcSystemDataTab.Controls.Add(this.mtpPayment);
+            this.mtcSystemDataTab.FontSize = MetroFramework.MetroTabControlSize.Small;
+            this.mtcSystemDataTab.Location = new System.Drawing.Point(-4, 4);
+            this.mtcSystemDataTab.Name = "mtcSystemDataTab";
+            this.mtcSystemDataTab.SelectedIndex = 2;
+            this.mtcSystemDataTab.Size = new System.Drawing.Size(977, 597);
+            this.mtcSystemDataTab.TabIndex = 2;
+            this.mtcSystemDataTab.UseSelectable = true;
             // 
-            // dgvSystemData
+            // mtpUsers
             // 
-            this.dgvSystemData.AllowUserToAddRows = false;
-            this.dgvSystemData.AllowUserToDeleteRows = false;
-            this.dgvSystemData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSystemData.Location = new System.Drawing.Point(3, 129);
-            this.dgvSystemData.Name = "dgvSystemData";
-            this.dgvSystemData.ReadOnly = true;
-            this.dgvSystemData.Size = new System.Drawing.Size(963, 462);
-            this.dgvSystemData.TabIndex = 5;
+            this.mtpUsers.Controls.Add(this.pnlSystemDataUsers);
+            this.mtpUsers.HorizontalScrollbarBarColor = true;
+            this.mtpUsers.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpUsers.HorizontalScrollbarSize = 10;
+            this.mtpUsers.Location = new System.Drawing.Point(4, 34);
+            this.mtpUsers.Name = "mtpUsers";
+            this.mtpUsers.Size = new System.Drawing.Size(969, 559);
+            this.mtpUsers.TabIndex = 0;
+            this.mtpUsers.Text = "Users";
+            this.mtpUsers.VerticalScrollbarBarColor = true;
+            this.mtpUsers.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpUsers.VerticalScrollbarSize = 10;
+            // 
+            // pnlSystemDataUsers
+            // 
+            this.pnlSystemDataUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlSystemDataUsers.Controls.Add(this.btnSystemDataUsersRemove);
+            this.pnlSystemDataUsers.Controls.Add(this.dgvSystemDataUsersSystemData);
+            this.pnlSystemDataUsers.Controls.Add(this.lblSelectUser);
+            this.pnlSystemDataUsers.Controls.Add(this.lblSystemDataUsersSearchByID);
+            this.pnlSystemDataUsers.Controls.Add(this.btnSystemDataUsersSearch);
+            this.pnlSystemDataUsers.Controls.Add(this.cmbSystemDataUsersUserType);
+            this.pnlSystemDataUsers.Controls.Add(this.txtSystemDataUsersSearch);
+            this.pnlSystemDataUsers.Location = new System.Drawing.Point(-3, 6);
+            this.pnlSystemDataUsers.Name = "pnlSystemDataUsers";
+            this.pnlSystemDataUsers.Size = new System.Drawing.Size(969, 553);
+            this.pnlSystemDataUsers.TabIndex = 2;
+            // 
+            // btnSystemDataUsersRemove
+            // 
+            this.btnSystemDataUsersRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSystemDataUsersRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSystemDataUsersRemove.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystemDataUsersRemove.ForeColor = System.Drawing.Color.White;
+            this.btnSystemDataUsersRemove.Location = new System.Drawing.Point(668, 77);
+            this.btnSystemDataUsersRemove.Name = "btnSystemDataUsersRemove";
+            this.btnSystemDataUsersRemove.Size = new System.Drawing.Size(87, 38);
+            this.btnSystemDataUsersRemove.TabIndex = 7;
+            this.btnSystemDataUsersRemove.Text = "Remove";
+            this.btnSystemDataUsersRemove.UseVisualStyleBackColor = false;
+            // 
+            // dgvSystemDataUsersSystemData
+            // 
+            this.dgvSystemDataUsersSystemData.AllowUserToAddRows = false;
+            this.dgvSystemDataUsersSystemData.AllowUserToDeleteRows = false;
+            this.dgvSystemDataUsersSystemData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSystemDataUsersSystemData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvSystemDataUsersSystemData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name,
+            this.password,
+            this.phonenumber,
+            this.gender,
+            this.dateofbirth});
+            this.dgvSystemDataUsersSystemData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.dgvSystemDataUsersSystemData.Location = new System.Drawing.Point(3, 129);
+            this.dgvSystemDataUsersSystemData.Name = "dgvSystemDataUsersSystemData";
+            this.dgvSystemDataUsersSystemData.ReadOnly = true;
+            this.dgvSystemDataUsersSystemData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvSystemDataUsersSystemData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvSystemDataUsersSystemData.Size = new System.Drawing.Size(963, 417);
+            this.dgvSystemDataUsersSystemData.TabIndex = 5;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "UserID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Username";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // password
+            // 
+            this.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "Password";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            // 
+            // phonenumber
+            // 
+            this.phonenumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.phonenumber.DataPropertyName = "phonenumber";
+            this.phonenumber.HeaderText = "Contact";
+            this.phonenumber.Name = "phonenumber";
+            this.phonenumber.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // dateofbirth
+            // 
+            this.dateofbirth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateofbirth.DataPropertyName = "dateofbirth";
+            this.dateofbirth.HeaderText = "Date Of Birth";
+            this.dateofbirth.Name = "dateofbirth";
+            this.dateofbirth.ReadOnly = true;
             // 
             // lblSelectUser
             // 
@@ -528,115 +733,142 @@
             this.lblSelectUser.ForeColor = System.Drawing.Color.White;
             this.lblSelectUser.Location = new System.Drawing.Point(767, 8);
             this.lblSelectUser.Name = "lblSelectUser";
-            this.lblSelectUser.Size = new System.Drawing.Size(94, 18);
+            this.lblSelectUser.Size = new System.Drawing.Size(134, 18);
             this.lblSelectUser.TabIndex = 4;
-            this.lblSelectUser.Text = "Select User";
+            this.lblSelectUser.Text = "Select User Type";
             // 
-            // lblSearchByID
+            // lblSystemDataUsersSearchByID
             // 
-            this.lblSearchByID.AutoSize = true;
-            this.lblSearchByID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchByID.ForeColor = System.Drawing.Color.White;
-            this.lblSearchByID.Location = new System.Drawing.Point(545, 8);
-            this.lblSearchByID.Name = "lblSearchByID";
-            this.lblSearchByID.Size = new System.Drawing.Size(103, 18);
-            this.lblSearchByID.TabIndex = 3;
-            this.lblSearchByID.Text = "Search By Id";
+            this.lblSystemDataUsersSearchByID.AutoSize = true;
+            this.lblSystemDataUsersSearchByID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemDataUsersSearchByID.ForeColor = System.Drawing.Color.White;
+            this.lblSystemDataUsersSearchByID.Location = new System.Drawing.Point(545, 8);
+            this.lblSystemDataUsersSearchByID.Name = "lblSystemDataUsersSearchByID";
+            this.lblSystemDataUsersSearchByID.Size = new System.Drawing.Size(103, 18);
+            this.lblSystemDataUsersSearchByID.TabIndex = 3;
+            this.lblSystemDataUsersSearchByID.Text = "Search By Id";
             // 
-            // btnSearch
+            // btnSystemDataUsersSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.Purple;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(825, 77);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(131, 38);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSystemDataUsersSearch.BackColor = System.Drawing.Color.Purple;
+            this.btnSystemDataUsersSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSystemDataUsersSearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystemDataUsersSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSystemDataUsersSearch.Location = new System.Drawing.Point(825, 77);
+            this.btnSystemDataUsersSearch.Name = "btnSystemDataUsersSearch";
+            this.btnSystemDataUsersSearch.Size = new System.Drawing.Size(131, 38);
+            this.btnSystemDataUsersSearch.TabIndex = 2;
+            this.btnSystemDataUsersSearch.Text = "Search";
+            this.btnSystemDataUsersSearch.UseVisualStyleBackColor = false;
+            this.btnSystemDataUsersSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // cmbUserTy
+            // cmbSystemDataUsersUserType
             // 
-            this.cmbUserTy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUserTy.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUserTy.FormattingEnabled = true;
-            this.cmbUserTy.Items.AddRange(new object[] {
-            "All",
+            this.cmbSystemDataUsersUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSystemDataUsersUserType.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSystemDataUsersUserType.FormattingEnabled = true;
+            this.cmbSystemDataUsersUserType.Items.AddRange(new object[] {
             "Admin",
             "Landlord",
             "Tenant"});
-            this.cmbUserTy.Location = new System.Drawing.Point(770, 38);
-            this.cmbUserTy.Name = "cmbUserTy";
-            this.cmbUserTy.Size = new System.Drawing.Size(186, 26);
-            this.cmbUserTy.TabIndex = 1;
+            this.cmbSystemDataUsersUserType.Location = new System.Drawing.Point(770, 38);
+            this.cmbSystemDataUsersUserType.Name = "cmbSystemDataUsersUserType";
+            this.cmbSystemDataUsersUserType.Size = new System.Drawing.Size(186, 26);
+            this.cmbSystemDataUsersUserType.TabIndex = 1;
             // 
-            // txtSearch
+            // txtSystemDataUsersSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(548, 38);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(207, 26);
-            this.txtSearch.TabIndex = 0;
+            this.txtSystemDataUsersSearch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSystemDataUsersSearch.Location = new System.Drawing.Point(548, 38);
+            this.txtSystemDataUsersSearch.Name = "txtSystemDataUsersSearch";
+            this.txtSystemDataUsersSearch.Size = new System.Drawing.Size(207, 26);
+            this.txtSystemDataUsersSearch.TabIndex = 0;
+            this.txtSystemDataUsersSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // lblDateOfBirthProfileOutput
+            // mtpApartments
             // 
-            this.lblDateOfBirthProfileOutput.AutoSize = true;
-            this.lblDateOfBirthProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirthProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblDateOfBirthProfileOutput.Location = new System.Drawing.Point(437, 458);
-            this.lblDateOfBirthProfileOutput.Name = "lblDateOfBirthProfileOutput";
-            this.lblDateOfBirthProfileOutput.Size = new System.Drawing.Size(92, 21);
-            this.lblDateOfBirthProfileOutput.TabIndex = 14;
-            this.lblDateOfBirthProfileOutput.Text = "10.22.2014";
+            this.mtpApartments.Controls.Add(this.pnlSystemDataApartments);
+            this.mtpApartments.HorizontalScrollbarBarColor = true;
+            this.mtpApartments.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpApartments.HorizontalScrollbarSize = 10;
+            this.mtpApartments.Location = new System.Drawing.Point(4, 34);
+            this.mtpApartments.Name = "mtpApartments";
+            this.mtpApartments.Size = new System.Drawing.Size(969, 559);
+            this.mtpApartments.TabIndex = 1;
+            this.mtpApartments.Text = "Apartments";
+            this.mtpApartments.VerticalScrollbarBarColor = true;
+            this.mtpApartments.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpApartments.VerticalScrollbarSize = 10;
             // 
-            // lblPhoneNumberProfileOutput
+            // pnlSystemDataApartments
             // 
-            this.lblPhoneNumberProfileOutput.AutoSize = true;
-            this.lblPhoneNumberProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumberProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumberProfileOutput.Location = new System.Drawing.Point(437, 392);
-            this.lblPhoneNumberProfileOutput.Name = "lblPhoneNumberProfileOutput";
-            this.lblPhoneNumberProfileOutput.Size = new System.Drawing.Size(109, 21);
-            this.lblPhoneNumberProfileOutput.TabIndex = 13;
-            this.lblPhoneNumberProfileOutput.Text = "01571798589";
+            this.pnlSystemDataApartments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlSystemDataApartments.Controls.Add(this.dgvSystemDataApartments);
+            this.pnlSystemDataApartments.Controls.Add(this.btnSystemDataApartmentsRemove);
+            this.pnlSystemDataApartments.Controls.Add(this.textBox1);
+            this.pnlSystemDataApartments.Controls.Add(this.btnSystemDataApartmentsSearch);
+            this.pnlSystemDataApartments.Controls.Add(this.lblSystemDataApartmentsSearchByID);
+            this.pnlSystemDataApartments.Location = new System.Drawing.Point(-5, 0);
+            this.pnlSystemDataApartments.Name = "pnlSystemDataApartments";
+            this.pnlSystemDataApartments.Size = new System.Drawing.Size(973, 559);
+            this.pnlSystemDataApartments.TabIndex = 2;
             // 
-            // lblGenderProfileOutput
+            // dgvSystemDataApartments
             // 
-            this.lblGenderProfileOutput.AutoSize = true;
-            this.lblGenderProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenderProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblGenderProfileOutput.Location = new System.Drawing.Point(437, 331);
-            this.lblGenderProfileOutput.Name = "lblGenderProfileOutput";
-            this.lblGenderProfileOutput.Size = new System.Drawing.Size(45, 21);
-            this.lblGenderProfileOutput.TabIndex = 12;
-            this.lblGenderProfileOutput.Text = "Male";
+            this.dgvSystemDataApartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSystemDataApartments.Location = new System.Drawing.Point(7, 137);
+            this.dgvSystemDataApartments.Name = "dgvSystemDataApartments";
+            this.dgvSystemDataApartments.Size = new System.Drawing.Size(963, 415);
+            this.dgvSystemDataApartments.TabIndex = 14;
             // 
-            // lblUserIDProfileOutput
+            // btnSystemDataApartmentsRemove
             // 
-            this.lblUserIDProfileOutput.AutoSize = true;
-            this.lblUserIDProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserIDProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblUserIDProfileOutput.Location = new System.Drawing.Point(437, 218);
-            this.lblUserIDProfileOutput.Name = "lblUserIDProfileOutput";
-            this.lblUserIDProfileOutput.Size = new System.Drawing.Size(54, 21);
-            this.lblUserIDProfileOutput.TabIndex = 11;
-            this.lblUserIDProfileOutput.Text = "A-100";
+            this.btnSystemDataApartmentsRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSystemDataApartmentsRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSystemDataApartmentsRemove.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystemDataApartmentsRemove.ForeColor = System.Drawing.Color.White;
+            this.btnSystemDataApartmentsRemove.Location = new System.Drawing.Point(733, 76);
+            this.btnSystemDataApartmentsRemove.Name = "btnSystemDataApartmentsRemove";
+            this.btnSystemDataApartmentsRemove.Size = new System.Drawing.Size(87, 38);
+            this.btnSystemDataApartmentsRemove.TabIndex = 13;
+            this.btnSystemDataApartmentsRemove.Text = "Remove";
+            this.btnSystemDataApartmentsRemove.UseVisualStyleBackColor = false;
             // 
-            // lblNameProfileOutput
+            // textBox1
             // 
-            this.lblNameProfileOutput.AutoSize = true;
-            this.lblNameProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblNameProfileOutput.Location = new System.Drawing.Point(437, 271);
-            this.lblNameProfileOutput.Name = "lblNameProfileOutput";
-            this.lblNameProfileOutput.Size = new System.Drawing.Size(68, 21);
-            this.lblNameProfileOutput.TabIndex = 10;
-            this.lblNameProfileOutput.Text = "Koushiq";
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(733, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(224, 26);
+            this.textBox1.TabIndex = 8;
+            // 
+            // btnSystemDataApartmentsSearch
+            // 
+            this.btnSystemDataApartmentsSearch.BackColor = System.Drawing.Color.Purple;
+            this.btnSystemDataApartmentsSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSystemDataApartmentsSearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystemDataApartmentsSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSystemDataApartmentsSearch.Location = new System.Drawing.Point(827, 76);
+            this.btnSystemDataApartmentsSearch.Name = "btnSystemDataApartmentsSearch";
+            this.btnSystemDataApartmentsSearch.Size = new System.Drawing.Size(131, 38);
+            this.btnSystemDataApartmentsSearch.TabIndex = 10;
+            this.btnSystemDataApartmentsSearch.Text = "Search";
+            this.btnSystemDataApartmentsSearch.UseVisualStyleBackColor = false;
+            // 
+            // lblSystemDataApartmentsSearchByID
+            // 
+            this.lblSystemDataApartmentsSearchByID.AutoSize = true;
+            this.lblSystemDataApartmentsSearchByID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemDataApartmentsSearchByID.ForeColor = System.Drawing.Color.White;
+            this.lblSystemDataApartmentsSearchByID.Location = new System.Drawing.Point(730, 5);
+            this.lblSystemDataApartmentsSearchByID.Name = "lblSystemDataApartmentsSearchByID";
+            this.lblSystemDataApartmentsSearchByID.Size = new System.Drawing.Size(103, 18);
+            this.lblSystemDataApartmentsSearchByID.TabIndex = 11;
+            this.lblSystemDataApartmentsSearchByID.Text = "Search By Id";
             // 
             // pbLogout
             // 
+            this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
             this.pbLogout.Location = new System.Drawing.Point(910, 35);
             this.pbLogout.Name = "pbLogout";
@@ -646,21 +878,25 @@
             this.pbLogout.TabStop = false;
             this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
             // 
-            // pbProfilePicture
+            // mtpPayment
             // 
-            this.pbProfilePicture.Image = global::RentalHouseManagementSys.Properties.Resources.NoImage;
-            this.pbProfilePicture.Location = new System.Drawing.Point(425, 14);
-            this.pbProfilePicture.Name = "pbProfilePicture";
-            this.pbProfilePicture.Size = new System.Drawing.Size(135, 131);
-            this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfilePicture.TabIndex = 5;
-            this.pbProfilePicture.TabStop = false;
+            this.mtpPayment.HorizontalScrollbarBarColor = true;
+            this.mtpPayment.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpPayment.HorizontalScrollbarSize = 10;
+            this.mtpPayment.Location = new System.Drawing.Point(4, 34);
+            this.mtpPayment.Name = "mtpPayment";
+            this.mtpPayment.Size = new System.Drawing.Size(969, 559);
+            this.mtpPayment.TabIndex = 2;
+            this.mtpPayment.Text = "Payment    ";
+            this.mtpPayment.VerticalScrollbarBarColor = true;
+            this.mtpPayment.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpPayment.VerticalScrollbarSize = 10;
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 702);
+            this.ClientSize = new System.Drawing.Size(978, 702);
             this.Controls.Add(this.pbLogout);
             this.Controls.Add(this.mtcNavigation);
             this.MaximizeBox = false;
@@ -673,17 +909,23 @@
             this.mtpProfile.ResumeLayout(false);
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.mtpFeed.ResumeLayout(false);
             this.mtpNotification.ResumeLayout(false);
             this.mtpAddAdmin.ResumeLayout(false);
             this.pnlAddAdmin.ResumeLayout(false);
             this.pnlAddAdmin.PerformLayout();
             this.mtpSystemData.ResumeLayout(false);
-            this.pnlSystemData.ResumeLayout(false);
-            this.pnlSystemData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSystemData)).EndInit();
+            this.mtcSystemDataTab.ResumeLayout(false);
+            this.mtpUsers.ResumeLayout(false);
+            this.pnlSystemDataUsers.ResumeLayout(false);
+            this.pnlSystemDataUsers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataUsersSystemData)).EndInit();
+            this.mtpApartments.ResumeLayout(false);
+            this.pnlSystemDataApartments.ResumeLayout(false);
+            this.pnlSystemDataApartments.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataApartments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -714,13 +956,13 @@
         private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.Label lblPassword;
         private MetroFramework.Controls.MetroButton mbtnAddAdmin;
-        private System.Windows.Forms.Panel pnlSystemData;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cmbUserTy;
+        private System.Windows.Forms.Panel pnlSystemDataUsers;
+        private System.Windows.Forms.TextBox txtSystemDataUsersSearch;
+        private System.Windows.Forms.Button btnSystemDataUsersSearch;
+        private System.Windows.Forms.ComboBox cmbSystemDataUsersUserType;
         private System.Windows.Forms.Label lblSelectUser;
-        private System.Windows.Forms.Label lblSearchByID;
-        private System.Windows.Forms.DataGridView dgvSystemData;
+        private System.Windows.Forms.Label lblSystemDataUsersSearchByID;
+        private System.Windows.Forms.DataGridView dgvSystemDataUsersSystemData;
         private System.Windows.Forms.Button btnUploadPictureProfile;
         private System.Windows.Forms.PictureBox pbProfilePicture;
         private System.Windows.Forms.Label lblDateOfBirthProfile;
@@ -737,6 +979,24 @@
         private System.Windows.Forms.Label lblUserIDProfileOutput;
         private System.Windows.Forms.Label lblNameProfileOutput;
         private System.Windows.Forms.PictureBox pbLogout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateofbirth;
+        private System.Windows.Forms.Button btnSystemDataUsersRemove;
+        private MetroFramework.Controls.MetroTabPage mtpAgreements;
+        private MetroFramework.Controls.MetroTabControl mtcSystemDataTab;
+        private MetroFramework.Controls.MetroTabPage mtpUsers;
+        private MetroFramework.Controls.MetroTabPage mtpApartments;
+        private System.Windows.Forms.Panel pnlSystemDataApartments;
+        private System.Windows.Forms.Button btnSystemDataApartmentsRemove;
+        private System.Windows.Forms.Label lblSystemDataApartmentsSearchByID;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSystemDataApartmentsSearch;
+        private System.Windows.Forms.DataGridView dgvSystemDataApartments;
+        private MetroFramework.Controls.MetroTabPage mtpPayment;
     }
 }
 
