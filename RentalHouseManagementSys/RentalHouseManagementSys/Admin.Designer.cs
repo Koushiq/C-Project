@@ -50,7 +50,6 @@
             this.flpFeed = new System.Windows.Forms.FlowLayoutPanel();
             this.mtpNotification = new MetroFramework.Controls.MetroTabPage();
             this.flpNotification = new System.Windows.Forms.FlowLayoutPanel();
-            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
             this.mtpAddAdmin = new MetroFramework.Controls.MetroTabPage();
             this.pnlAddAdmin = new System.Windows.Forms.Panel();
             this.mbtnAddAdmin = new MetroFramework.Controls.MetroButton();
@@ -91,8 +90,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSystemDataApartmentsSearch = new System.Windows.Forms.Button();
             this.lblSystemDataApartmentsSearchByID = new System.Windows.Forms.Label();
-            this.pbLogout = new System.Windows.Forms.PictureBox();
             this.mtpPayment = new MetroFramework.Controls.MetroTabPage();
+            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
+            this.pbLogout = new System.Windows.Forms.PictureBox();
+            this.btnRemovePicture = new System.Windows.Forms.Button();
             this.mtcNavigation.SuspendLayout();
             this.mtpProfile.SuspendLayout();
             this.pnlProfile.SuspendLayout();
@@ -122,7 +123,7 @@
             this.mtcNavigation.Controls.Add(this.mtpAgreements);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 5;
+            this.mtcNavigation.SelectedIndex = 0;
             this.mtcNavigation.Size = new System.Drawing.Size(977, 639);
             this.mtcNavigation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mtcNavigation.TabIndex = 0;
@@ -147,6 +148,7 @@
             // pnlProfile
             // 
             this.pnlProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlProfile.Controls.Add(this.btnRemovePicture);
             this.pnlProfile.Controls.Add(this.lblDateOfBirthProfileOutput);
             this.pnlProfile.Controls.Add(this.lblPhoneNumberProfileOutput);
             this.pnlProfile.Controls.Add(this.lblGenderProfileOutput);
@@ -172,7 +174,7 @@
             this.lblDateOfBirthProfileOutput.AutoSize = true;
             this.lblDateOfBirthProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirthProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblDateOfBirthProfileOutput.Location = new System.Drawing.Point(437, 458);
+            this.lblDateOfBirthProfileOutput.Location = new System.Drawing.Point(437, 460);
             this.lblDateOfBirthProfileOutput.Name = "lblDateOfBirthProfileOutput";
             this.lblDateOfBirthProfileOutput.Size = new System.Drawing.Size(92, 21);
             this.lblDateOfBirthProfileOutput.TabIndex = 14;
@@ -183,7 +185,7 @@
             this.lblPhoneNumberProfileOutput.AutoSize = true;
             this.lblPhoneNumberProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumberProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumberProfileOutput.Location = new System.Drawing.Point(437, 392);
+            this.lblPhoneNumberProfileOutput.Location = new System.Drawing.Point(437, 394);
             this.lblPhoneNumberProfileOutput.Name = "lblPhoneNumberProfileOutput";
             this.lblPhoneNumberProfileOutput.Size = new System.Drawing.Size(109, 21);
             this.lblPhoneNumberProfileOutput.TabIndex = 13;
@@ -194,7 +196,7 @@
             this.lblGenderProfileOutput.AutoSize = true;
             this.lblGenderProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenderProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblGenderProfileOutput.Location = new System.Drawing.Point(437, 331);
+            this.lblGenderProfileOutput.Location = new System.Drawing.Point(437, 333);
             this.lblGenderProfileOutput.Name = "lblGenderProfileOutput";
             this.lblGenderProfileOutput.Size = new System.Drawing.Size(45, 21);
             this.lblGenderProfileOutput.TabIndex = 12;
@@ -205,7 +207,7 @@
             this.lblUserIDProfileOutput.AutoSize = true;
             this.lblUserIDProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserIDProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblUserIDProfileOutput.Location = new System.Drawing.Point(437, 218);
+            this.lblUserIDProfileOutput.Location = new System.Drawing.Point(437, 220);
             this.lblUserIDProfileOutput.Name = "lblUserIDProfileOutput";
             this.lblUserIDProfileOutput.Size = new System.Drawing.Size(54, 21);
             this.lblUserIDProfileOutput.TabIndex = 11;
@@ -216,7 +218,7 @@
             this.lblNameProfileOutput.AutoSize = true;
             this.lblNameProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblNameProfileOutput.Location = new System.Drawing.Point(437, 271);
+            this.lblNameProfileOutput.Location = new System.Drawing.Point(437, 273);
             this.lblNameProfileOutput.Name = "lblNameProfileOutput";
             this.lblNameProfileOutput.Size = new System.Drawing.Size(68, 21);
             this.lblNameProfileOutput.TabIndex = 10;
@@ -227,7 +229,7 @@
             this.btnDeleteProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDeleteProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteProfile.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteProfile.Location = new System.Drawing.Point(591, 515);
+            this.btnDeleteProfile.Location = new System.Drawing.Point(591, 517);
             this.btnDeleteProfile.Name = "btnDeleteProfile";
             this.btnDeleteProfile.Size = new System.Drawing.Size(140, 47);
             this.btnDeleteProfile.TabIndex = 9;
@@ -240,7 +242,7 @@
             this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdateProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateProfile.Location = new System.Drawing.Point(421, 515);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(421, 517);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(140, 47);
             this.btnUpdateProfile.TabIndex = 8;
@@ -253,7 +255,7 @@
             this.btnChangePasswordProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnChangePasswordProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePasswordProfile.ForeColor = System.Drawing.Color.White;
-            this.btnChangePasswordProfile.Location = new System.Drawing.Point(252, 515);
+            this.btnChangePasswordProfile.Location = new System.Drawing.Point(252, 517);
             this.btnChangePasswordProfile.Name = "btnChangePasswordProfile";
             this.btnChangePasswordProfile.Size = new System.Drawing.Size(140, 47);
             this.btnChangePasswordProfile.TabIndex = 7;
@@ -266,9 +268,9 @@
             this.btnUploadPictureProfile.BackColor = System.Drawing.Color.Black;
             this.btnUploadPictureProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadPictureProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadPictureProfile.Location = new System.Drawing.Point(439, 157);
+            this.btnUploadPictureProfile.Location = new System.Drawing.Point(406, 160);
             this.btnUploadPictureProfile.Name = "btnUploadPictureProfile";
-            this.btnUploadPictureProfile.Size = new System.Drawing.Size(105, 35);
+            this.btnUploadPictureProfile.Size = new System.Drawing.Size(80, 41);
             this.btnUploadPictureProfile.TabIndex = 6;
             this.btnUploadPictureProfile.Text = "Upload Picture";
             this.btnUploadPictureProfile.UseVisualStyleBackColor = false;
@@ -277,7 +279,7 @@
             // pbProfilePicture
             // 
             this.pbProfilePicture.Image = global::RentalHouseManagementSys.Properties.Resources.NoImage;
-            this.pbProfilePicture.Location = new System.Drawing.Point(425, 14);
+            this.pbProfilePicture.Location = new System.Drawing.Point(421, 14);
             this.pbProfilePicture.Name = "pbProfilePicture";
             this.pbProfilePicture.Size = new System.Drawing.Size(135, 131);
             this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -289,7 +291,7 @@
             this.lblDateOfBirthProfile.AutoSize = true;
             this.lblDateOfBirthProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirthProfile.ForeColor = System.Drawing.Color.White;
-            this.lblDateOfBirthProfile.Location = new System.Drawing.Point(244, 458);
+            this.lblDateOfBirthProfile.Location = new System.Drawing.Point(277, 460);
             this.lblDateOfBirthProfile.Name = "lblDateOfBirthProfile";
             this.lblDateOfBirthProfile.Size = new System.Drawing.Size(124, 21);
             this.lblDateOfBirthProfile.TabIndex = 4;
@@ -300,7 +302,7 @@
             this.lblPhoneNumberProfile.AutoSize = true;
             this.lblPhoneNumberProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumberProfile.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumberProfile.Location = new System.Drawing.Point(234, 392);
+            this.lblPhoneNumberProfile.Location = new System.Drawing.Point(267, 394);
             this.lblPhoneNumberProfile.Name = "lblPhoneNumberProfile";
             this.lblPhoneNumberProfile.Size = new System.Drawing.Size(134, 21);
             this.lblPhoneNumberProfile.TabIndex = 3;
@@ -311,7 +313,7 @@
             this.lblGenderProfile.AutoSize = true;
             this.lblGenderProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenderProfile.ForeColor = System.Drawing.Color.White;
-            this.lblGenderProfile.Location = new System.Drawing.Point(289, 331);
+            this.lblGenderProfile.Location = new System.Drawing.Point(322, 333);
             this.lblGenderProfile.Name = "lblGenderProfile";
             this.lblGenderProfile.Size = new System.Drawing.Size(79, 21);
             this.lblGenderProfile.TabIndex = 2;
@@ -322,7 +324,7 @@
             this.lblUserIDProfile.AutoSize = true;
             this.lblUserIDProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserIDProfile.ForeColor = System.Drawing.Color.White;
-            this.lblUserIDProfile.Location = new System.Drawing.Point(290, 218);
+            this.lblUserIDProfile.Location = new System.Drawing.Point(323, 220);
             this.lblUserIDProfile.Name = "lblUserIDProfile";
             this.lblUserIDProfile.Size = new System.Drawing.Size(78, 21);
             this.lblUserIDProfile.TabIndex = 1;
@@ -333,7 +335,7 @@
             this.lblNameProfile.AutoSize = true;
             this.lblNameProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameProfile.ForeColor = System.Drawing.Color.White;
-            this.lblNameProfile.Location = new System.Drawing.Point(299, 271);
+            this.lblNameProfile.Location = new System.Drawing.Point(332, 273);
             this.lblNameProfile.Name = "lblNameProfile";
             this.lblNameProfile.Size = new System.Drawing.Size(69, 21);
             this.lblNameProfile.TabIndex = 0;
@@ -386,20 +388,6 @@
             this.flpNotification.Name = "flpNotification";
             this.flpNotification.Size = new System.Drawing.Size(969, 594);
             this.flpNotification.TabIndex = 2;
-            // 
-            // mtpAgreements
-            // 
-            this.mtpAgreements.HorizontalScrollbarBarColor = true;
-            this.mtpAgreements.HorizontalScrollbarHighlightOnWheel = false;
-            this.mtpAgreements.HorizontalScrollbarSize = 10;
-            this.mtpAgreements.Location = new System.Drawing.Point(4, 38);
-            this.mtpAgreements.Name = "mtpAgreements";
-            this.mtpAgreements.Size = new System.Drawing.Size(969, 597);
-            this.mtpAgreements.TabIndex = 5;
-            this.mtpAgreements.Text = "Agreements    ";
-            this.mtpAgreements.VerticalScrollbarBarColor = true;
-            this.mtpAgreements.VerticalScrollbarHighlightOnWheel = false;
-            this.mtpAgreements.VerticalScrollbarSize = 10;
             // 
             // mtpAddAdmin
             // 
@@ -866,18 +854,6 @@
             this.lblSystemDataApartmentsSearchByID.TabIndex = 11;
             this.lblSystemDataApartmentsSearchByID.Text = "Search By Id";
             // 
-            // pbLogout
-            // 
-            this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
-            this.pbLogout.Location = new System.Drawing.Point(910, 35);
-            this.pbLogout.Name = "pbLogout";
-            this.pbLogout.Size = new System.Drawing.Size(47, 47);
-            this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogout.TabIndex = 1;
-            this.pbLogout.TabStop = false;
-            this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
-            // 
             // mtpPayment
             // 
             this.mtpPayment.HorizontalScrollbarBarColor = true;
@@ -891,6 +867,44 @@
             this.mtpPayment.VerticalScrollbarBarColor = true;
             this.mtpPayment.VerticalScrollbarHighlightOnWheel = false;
             this.mtpPayment.VerticalScrollbarSize = 10;
+            // 
+            // mtpAgreements
+            // 
+            this.mtpAgreements.HorizontalScrollbarBarColor = true;
+            this.mtpAgreements.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpAgreements.HorizontalScrollbarSize = 10;
+            this.mtpAgreements.Location = new System.Drawing.Point(4, 38);
+            this.mtpAgreements.Name = "mtpAgreements";
+            this.mtpAgreements.Size = new System.Drawing.Size(969, 597);
+            this.mtpAgreements.TabIndex = 5;
+            this.mtpAgreements.Text = "Agreements    ";
+            this.mtpAgreements.VerticalScrollbarBarColor = true;
+            this.mtpAgreements.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpAgreements.VerticalScrollbarSize = 10;
+            // 
+            // pbLogout
+            // 
+            this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
+            this.pbLogout.Location = new System.Drawing.Point(910, 35);
+            this.pbLogout.Name = "pbLogout";
+            this.pbLogout.Size = new System.Drawing.Size(47, 47);
+            this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogout.TabIndex = 1;
+            this.pbLogout.TabStop = false;
+            this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
+            // 
+            // btnRemovePicture
+            // 
+            this.btnRemovePicture.BackColor = System.Drawing.Color.Black;
+            this.btnRemovePicture.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemovePicture.ForeColor = System.Drawing.Color.White;
+            this.btnRemovePicture.Location = new System.Drawing.Point(492, 160);
+            this.btnRemovePicture.Name = "btnRemovePicture";
+            this.btnRemovePicture.Size = new System.Drawing.Size(80, 41);
+            this.btnRemovePicture.TabIndex = 31;
+            this.btnRemovePicture.Text = "Remove Picture";
+            this.btnRemovePicture.UseVisualStyleBackColor = false;
             // 
             // Admin
             // 
@@ -997,6 +1011,7 @@
         private System.Windows.Forms.Button btnSystemDataApartmentsSearch;
         private System.Windows.Forms.DataGridView dgvSystemDataApartments;
         private MetroFramework.Controls.MetroTabPage mtpPayment;
+        private System.Windows.Forms.Button btnRemovePicture;
     }
 }
 
