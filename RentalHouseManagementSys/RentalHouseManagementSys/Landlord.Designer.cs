@@ -1,6 +1,6 @@
 ﻿namespace RentalHouseManagementSys
 {
-    partial class Tenant
+    partial class Landlord
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,10 @@
             this.mtcNavigation = new MetroFramework.Controls.MetroTabControl();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
             this.pnlProfile = new System.Windows.Forms.Panel();
+            this.lblFlatsRegisteredOutput = new System.Windows.Forms.Label();
+            this.lblFlatsRegistered = new System.Windows.Forms.Label();
             this.lblBankAccountOutput = new System.Windows.Forms.Label();
             this.lblBankAccountNo = new System.Windows.Forms.Label();
-            this.lblRentedStatusOutput = new System.Windows.Forms.Label();
-            this.lblRentedStatus = new System.Windows.Forms.Label();
             this.lblUsertypeOutput = new System.Windows.Forms.Label();
             this.lblUsertype = new System.Windows.Forms.Label();
             this.btnRemovePicture = new System.Windows.Forms.Button();
@@ -74,24 +74,43 @@
             this.pnlAgreements = new System.Windows.Forms.Panel();
             this.mtpPayment = new MetroFramework.Controls.MetroTabPage();
             this.pnlPayment = new System.Windows.Forms.Panel();
-            this.txtSearchById = new System.Windows.Forms.TextBox();
-            this.lblSearchById = new System.Windows.Forms.Label();
+            this.txtEnter = new System.Windows.Forms.TextBox();
+            this.cmbChooseSearchType = new System.Windows.Forms.ComboBox();
+            this.lblEnter = new System.Windows.Forms.Label();
+            this.lblSearchType = new System.Windows.Forms.Label();
             this.btnSearchById = new System.Windows.Forms.Button();
             this.dgvPayment = new System.Windows.Forms.DataGridView();
-            this.btnPayment = new System.Windows.Forms.Button();
-            this.txtPaymentAmount = new System.Windows.Forms.TextBox();
-            this.lblPaymentAmount = new System.Windows.Forms.Label();
-            this.txtAccountNo = new System.Windows.Forms.TextBox();
-            this.lblBankAccount = new System.Windows.Forms.Label();
-            this.mtpRecharge = new MetroFramework.Controls.MetroTabPage();
-            this.pnlRecharge = new System.Windows.Forms.Panel();
-            this.lblNotice = new System.Windows.Forms.Label();
-            this.txtRechargeAmount = new System.Windows.Forms.TextBox();
-            this.lblRechargeAmount = new System.Windows.Forms.Label();
-            this.btnRequestRecharge = new System.Windows.Forms.Button();
-            this.txtBalance = new System.Windows.Forms.TextBox();
-            this.lblCurrentBalance = new System.Windows.Forms.Label();
-            this.pbLogout = new System.Windows.Forms.PictureBox();
+            this.mtcAddFlats = new MetroFramework.Controls.MetroTabPage();
+            this.pnlAddApartments = new System.Windows.Forms.Panel();
+            this.txtApartmentNo = new System.Windows.Forms.TextBox();
+            this.lblApartmentNo = new System.Windows.Forms.Label();
+            this.btnPostAd = new System.Windows.Forms.Button();
+            this.btnUpload4 = new System.Windows.Forms.Button();
+            this.pbFlatPicture4 = new System.Windows.Forms.PictureBox();
+            this.btnUpload3 = new System.Windows.Forms.Button();
+            this.pbFlatPicture3 = new System.Windows.Forms.PictureBox();
+            this.lblAddPictures = new System.Windows.Forms.Label();
+            this.btnUpload2 = new System.Windows.Forms.Button();
+            this.pbFlatPicture2 = new System.Windows.Forms.PictureBox();
+            this.lblInformations = new System.Windows.Forms.Label();
+            this.btnUpload1 = new System.Windows.Forms.Button();
+            this.pbFlatPicture1 = new System.Windows.Forms.PictureBox();
+            this.txtSquareFeet = new System.Windows.Forms.TextBox();
+            this.lblSquareFeet = new System.Windows.Forms.Label();
+            this.txtBlockAndRoadNo = new System.Windows.Forms.TextBox();
+            this.lblBlockAndRoadNo = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.cmbLocation = new System.Windows.Forms.ComboBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.txtRent = new System.Windows.Forms.TextBox();
+            this.lblRent = new System.Windows.Forms.Label();
+            this.txtAdTitle = new System.Windows.Forms.TextBox();
+            this.lblAdTitle = new System.Windows.Forms.Label();
+            this.txtFloor = new System.Windows.Forms.TextBox();
+            this.lblFloor = new System.Windows.Forms.Label();
+            this.txtFacilities = new System.Windows.Forms.TextBox();
+            this.lblFacilities = new System.Windows.Forms.Label();
             this.mtcNavigation.SuspendLayout();
             this.mtpProfile.SuspendLayout();
             this.pnlProfile.SuspendLayout();
@@ -104,9 +123,12 @@
             this.mtpPayment.SuspendLayout();
             this.pnlPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).BeginInit();
-            this.mtpRecharge.SuspendLayout();
-            this.pnlRecharge.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
+            this.mtcAddFlats.SuspendLayout();
+            this.pnlAddApartments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture1)).BeginInit();
             this.SuspendLayout();
             // 
             // mtcNavigation
@@ -116,12 +138,12 @@
             this.mtcNavigation.Controls.Add(this.mtpNotification);
             this.mtcNavigation.Controls.Add(this.mtpAgreements);
             this.mtcNavigation.Controls.Add(this.mtpPayment);
-            this.mtcNavigation.Controls.Add(this.mtpRecharge);
+            this.mtcNavigation.Controls.Add(this.mtcAddFlats);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 1;
+            this.mtcNavigation.SelectedIndex = 4;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
-            this.mtcNavigation.TabIndex = 0;
+            this.mtcNavigation.TabIndex = 1;
             this.mtcNavigation.UseSelectable = true;
             // 
             // mtpProfile
@@ -142,10 +164,10 @@
             // pnlProfile
             // 
             this.pnlProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlProfile.Controls.Add(this.lblFlatsRegisteredOutput);
+            this.pnlProfile.Controls.Add(this.lblFlatsRegistered);
             this.pnlProfile.Controls.Add(this.lblBankAccountOutput);
             this.pnlProfile.Controls.Add(this.lblBankAccountNo);
-            this.pnlProfile.Controls.Add(this.lblRentedStatusOutput);
-            this.pnlProfile.Controls.Add(this.lblRentedStatus);
             this.pnlProfile.Controls.Add(this.lblUsertypeOutput);
             this.pnlProfile.Controls.Add(this.lblUsertype);
             this.pnlProfile.Controls.Add(this.btnRemovePicture);
@@ -169,6 +191,28 @@
             this.pnlProfile.Size = new System.Drawing.Size(966, 594);
             this.pnlProfile.TabIndex = 2;
             // 
+            // lblFlatsRegisteredOutput
+            // 
+            this.lblFlatsRegisteredOutput.AutoSize = true;
+            this.lblFlatsRegisteredOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlatsRegisteredOutput.ForeColor = System.Drawing.Color.White;
+            this.lblFlatsRegisteredOutput.Location = new System.Drawing.Point(448, 425);
+            this.lblFlatsRegisteredOutput.Name = "lblFlatsRegisteredOutput";
+            this.lblFlatsRegisteredOutput.Size = new System.Drawing.Size(19, 21);
+            this.lblFlatsRegisteredOutput.TabIndex = 38;
+            this.lblFlatsRegisteredOutput.Text = "2";
+            // 
+            // lblFlatsRegistered
+            // 
+            this.lblFlatsRegistered.AutoSize = true;
+            this.lblFlatsRegistered.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlatsRegistered.ForeColor = System.Drawing.Color.White;
+            this.lblFlatsRegistered.Location = new System.Drawing.Point(254, 425);
+            this.lblFlatsRegistered.Name = "lblFlatsRegistered";
+            this.lblFlatsRegistered.Size = new System.Drawing.Size(142, 21);
+            this.lblFlatsRegistered.TabIndex = 37;
+            this.lblFlatsRegistered.Text = "Flats Registered :";
+            // 
             // lblBankAccountOutput
             // 
             this.lblBankAccountOutput.AutoSize = true;
@@ -190,28 +234,6 @@
             this.lblBankAccountNo.Size = new System.Drawing.Size(147, 21);
             this.lblBankAccountNo.TabIndex = 35;
             this.lblBankAccountNo.Text = "Bank Account No :";
-            // 
-            // lblRentedStatusOutput
-            // 
-            this.lblRentedStatusOutput.AutoSize = true;
-            this.lblRentedStatusOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRentedStatusOutput.ForeColor = System.Drawing.Color.White;
-            this.lblRentedStatusOutput.Location = new System.Drawing.Point(448, 425);
-            this.lblRentedStatusOutput.Name = "lblRentedStatusOutput";
-            this.lblRentedStatusOutput.Size = new System.Drawing.Size(94, 21);
-            this.lblRentedStatusOutput.TabIndex = 34;
-            this.lblRentedStatusOutput.Text = "Not Rented";
-            // 
-            // lblRentedStatus
-            // 
-            this.lblRentedStatus.AutoSize = true;
-            this.lblRentedStatus.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRentedStatus.ForeColor = System.Drawing.Color.White;
-            this.lblRentedStatus.Location = new System.Drawing.Point(269, 425);
-            this.lblRentedStatus.Name = "lblRentedStatus";
-            this.lblRentedStatus.Size = new System.Drawing.Size(126, 21);
-            this.lblRentedStatus.TabIndex = 33;
-            this.lblRentedStatus.Text = "Rented Status :";
             // 
             // lblUsertypeOutput
             // 
@@ -309,9 +331,9 @@
             this.lblUserIDProfileOutput.ForeColor = System.Drawing.Color.White;
             this.lblUserIDProfileOutput.Location = new System.Drawing.Point(448, 220);
             this.lblUserIDProfileOutput.Name = "lblUserIDProfileOutput";
-            this.lblUserIDProfileOutput.Size = new System.Drawing.Size(53, 21);
+            this.lblUserIDProfileOutput.Size = new System.Drawing.Size(51, 21);
             this.lblUserIDProfileOutput.TabIndex = 24;
-            this.lblUserIDProfileOutput.Text = "T-100";
+            this.lblUserIDProfileOutput.Text = "L-100";
             // 
             // lblNameProfileOutput
             // 
@@ -468,7 +490,6 @@
             this.btnSearch.TabIndex = 52;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblFlatType
             // 
@@ -666,46 +687,68 @@
             // pnlPayment
             // 
             this.pnlPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlPayment.Controls.Add(this.txtSearchById);
-            this.pnlPayment.Controls.Add(this.lblSearchById);
+            this.pnlPayment.Controls.Add(this.txtEnter);
+            this.pnlPayment.Controls.Add(this.cmbChooseSearchType);
+            this.pnlPayment.Controls.Add(this.lblEnter);
+            this.pnlPayment.Controls.Add(this.lblSearchType);
             this.pnlPayment.Controls.Add(this.btnSearchById);
             this.pnlPayment.Controls.Add(this.dgvPayment);
-            this.pnlPayment.Controls.Add(this.btnPayment);
-            this.pnlPayment.Controls.Add(this.txtPaymentAmount);
-            this.pnlPayment.Controls.Add(this.lblPaymentAmount);
-            this.pnlPayment.Controls.Add(this.txtAccountNo);
-            this.pnlPayment.Controls.Add(this.lblBankAccount);
             this.pnlPayment.Location = new System.Drawing.Point(0, 3);
             this.pnlPayment.Name = "pnlPayment";
             this.pnlPayment.Size = new System.Drawing.Size(966, 594);
             this.pnlPayment.TabIndex = 2;
-            this.pnlPayment.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPayment_Paint);
             // 
-            // txtSearchById
+            // txtEnter
             // 
-            this.txtSearchById.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchById.Location = new System.Drawing.Point(707, 17);
-            this.txtSearchById.Name = "txtSearchById";
-            this.txtSearchById.Size = new System.Drawing.Size(246, 26);
-            this.txtSearchById.TabIndex = 40;
+            this.txtEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnter.Location = new System.Drawing.Point(826, 54);
+            this.txtEnter.Name = "txtEnter";
+            this.txtEnter.Size = new System.Drawing.Size(121, 24);
+            this.txtEnter.TabIndex = 43;
             // 
-            // lblSearchById
+            // cmbChooseSearchType
             // 
-            this.lblSearchById.AutoSize = true;
-            this.lblSearchById.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchById.ForeColor = System.Drawing.Color.White;
-            this.lblSearchById.Location = new System.Drawing.Point(595, 18);
-            this.lblSearchById.Name = "lblSearchById";
-            this.lblSearchById.Size = new System.Drawing.Size(106, 21);
-            this.lblSearchById.TabIndex = 39;
-            this.lblSearchById.Text = "Search By ID";
+            this.cmbChooseSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChooseSearchType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbChooseSearchType.FormattingEnabled = true;
+            this.cmbChooseSearchType.Items.AddRange(new object[] {
+            "Show All",
+            "Payment ID",
+            "Apartment ID",
+            "Tenant Name"});
+            this.cmbChooseSearchType.Location = new System.Drawing.Point(826, 14);
+            this.cmbChooseSearchType.Name = "cmbChooseSearchType";
+            this.cmbChooseSearchType.Size = new System.Drawing.Size(121, 26);
+            this.cmbChooseSearchType.TabIndex = 42;
+            // 
+            // lblEnter
+            // 
+            this.lblEnter.AutoSize = true;
+            this.lblEnter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnter.ForeColor = System.Drawing.Color.White;
+            this.lblEnter.Location = new System.Drawing.Point(751, 56);
+            this.lblEnter.Name = "lblEnter";
+            this.lblEnter.Size = new System.Drawing.Size(46, 19);
+            this.lblEnter.TabIndex = 41;
+            this.lblEnter.Text = "Enter";
+            // 
+            // lblSearchType
+            // 
+            this.lblSearchType.AutoSize = true;
+            this.lblSearchType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchType.ForeColor = System.Drawing.Color.White;
+            this.lblSearchType.Location = new System.Drawing.Point(631, 16);
+            this.lblSearchType.Name = "lblSearchType";
+            this.lblSearchType.Size = new System.Drawing.Size(166, 19);
+            this.lblSearchType.TabIndex = 39;
+            this.lblSearchType.Text = "Search By Payment ID";
             // 
             // btnSearchById
             // 
             this.btnSearchById.BackColor = System.Drawing.Color.Firebrick;
             this.btnSearchById.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchById.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchById.Location = new System.Drawing.Point(837, 50);
+            this.btnSearchById.Location = new System.Drawing.Point(831, 90);
             this.btnSearchById.Name = "btnSearchById";
             this.btnSearchById.Size = new System.Drawing.Size(116, 33);
             this.btnSearchById.TabIndex = 38;
@@ -715,173 +758,381 @@
             // dgvPayment
             // 
             this.dgvPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPayment.Location = new System.Drawing.Point(3, 151);
+            this.dgvPayment.Location = new System.Drawing.Point(3, 135);
             this.dgvPayment.Name = "dgvPayment";
-            this.dgvPayment.Size = new System.Drawing.Size(960, 440);
+            this.dgvPayment.Size = new System.Drawing.Size(960, 456);
             this.dgvPayment.TabIndex = 35;
             // 
-            // btnPayment
+            // mtcAddFlats
             // 
-            this.btnPayment.BackColor = System.Drawing.Color.BlueViolet;
-            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(116, 100);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(116, 33);
-            this.btnPayment.TabIndex = 34;
-            this.btnPayment.Text = "Make Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
+            this.mtcAddFlats.Controls.Add(this.pnlAddApartments);
+            this.mtcAddFlats.HorizontalScrollbarBarColor = true;
+            this.mtcAddFlats.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtcAddFlats.HorizontalScrollbarSize = 10;
+            this.mtcAddFlats.Location = new System.Drawing.Point(4, 38);
+            this.mtcAddFlats.Name = "mtcAddFlats";
+            this.mtcAddFlats.Size = new System.Drawing.Size(967, 597);
+            this.mtcAddFlats.TabIndex = 5;
+            this.mtcAddFlats.Text = "Add Flats    ";
+            this.mtcAddFlats.VerticalScrollbarBarColor = true;
+            this.mtcAddFlats.VerticalScrollbarHighlightOnWheel = false;
+            this.mtcAddFlats.VerticalScrollbarSize = 10;
             // 
-            // txtPaymentAmount
+            // pnlAddApartments
             // 
-            this.txtPaymentAmount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaymentAmount.Location = new System.Drawing.Point(115, 59);
-            this.txtPaymentAmount.Name = "txtPaymentAmount";
-            this.txtPaymentAmount.Size = new System.Drawing.Size(246, 26);
-            this.txtPaymentAmount.TabIndex = 33;
+            this.pnlAddApartments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlAddApartments.Controls.Add(this.txtFacilities);
+            this.pnlAddApartments.Controls.Add(this.lblFacilities);
+            this.pnlAddApartments.Controls.Add(this.txtFloor);
+            this.pnlAddApartments.Controls.Add(this.lblFloor);
+            this.pnlAddApartments.Controls.Add(this.txtApartmentNo);
+            this.pnlAddApartments.Controls.Add(this.lblApartmentNo);
+            this.pnlAddApartments.Controls.Add(this.btnPostAd);
+            this.pnlAddApartments.Controls.Add(this.btnUpload4);
+            this.pnlAddApartments.Controls.Add(this.pbFlatPicture4);
+            this.pnlAddApartments.Controls.Add(this.btnUpload3);
+            this.pnlAddApartments.Controls.Add(this.pbFlatPicture3);
+            this.pnlAddApartments.Controls.Add(this.lblAddPictures);
+            this.pnlAddApartments.Controls.Add(this.btnUpload2);
+            this.pnlAddApartments.Controls.Add(this.pbFlatPicture2);
+            this.pnlAddApartments.Controls.Add(this.lblInformations);
+            this.pnlAddApartments.Controls.Add(this.btnUpload1);
+            this.pnlAddApartments.Controls.Add(this.pbFlatPicture1);
+            this.pnlAddApartments.Controls.Add(this.txtSquareFeet);
+            this.pnlAddApartments.Controls.Add(this.lblSquareFeet);
+            this.pnlAddApartments.Controls.Add(this.txtBlockAndRoadNo);
+            this.pnlAddApartments.Controls.Add(this.lblBlockAndRoadNo);
+            this.pnlAddApartments.Controls.Add(this.lblLocation);
+            this.pnlAddApartments.Controls.Add(this.cmbLocation);
+            this.pnlAddApartments.Controls.Add(this.txtContact);
+            this.pnlAddApartments.Controls.Add(this.lblContact);
+            this.pnlAddApartments.Controls.Add(this.txtRent);
+            this.pnlAddApartments.Controls.Add(this.lblRent);
+            this.pnlAddApartments.Controls.Add(this.txtAdTitle);
+            this.pnlAddApartments.Controls.Add(this.lblAdTitle);
+            this.pnlAddApartments.Location = new System.Drawing.Point(0, 3);
+            this.pnlAddApartments.Name = "pnlAddApartments";
+            this.pnlAddApartments.Size = new System.Drawing.Size(964, 594);
+            this.pnlAddApartments.TabIndex = 2;
             // 
-            // lblPaymentAmount
+            // txtApartmentNo
             // 
-            this.lblPaymentAmount.AutoSize = true;
-            this.lblPaymentAmount.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentAmount.ForeColor = System.Drawing.Color.White;
-            this.lblPaymentAmount.Location = new System.Drawing.Point(14, 60);
-            this.lblPaymentAmount.Name = "lblPaymentAmount";
-            this.lblPaymentAmount.Size = new System.Drawing.Size(68, 21);
-            this.lblPaymentAmount.TabIndex = 32;
-            this.lblPaymentAmount.Text = "Amount";
+            this.txtApartmentNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApartmentNo.Location = new System.Drawing.Point(136, 251);
+            this.txtApartmentNo.Name = "txtApartmentNo";
+            this.txtApartmentNo.Size = new System.Drawing.Size(211, 24);
+            this.txtApartmentNo.TabIndex = 69;
             // 
-            // txtAccountNo
+            // lblApartmentNo
             // 
-            this.txtAccountNo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountNo.Location = new System.Drawing.Point(115, 18);
-            this.txtAccountNo.Name = "txtAccountNo";
-            this.txtAccountNo.Size = new System.Drawing.Size(246, 26);
-            this.txtAccountNo.TabIndex = 31;
+            this.lblApartmentNo.AutoSize = true;
+            this.lblApartmentNo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApartmentNo.ForeColor = System.Drawing.Color.White;
+            this.lblApartmentNo.Location = new System.Drawing.Point(11, 256);
+            this.lblApartmentNo.Name = "lblApartmentNo";
+            this.lblApartmentNo.Size = new System.Drawing.Size(109, 19);
+            this.lblApartmentNo.TabIndex = 70;
+            this.lblApartmentNo.Text = "Apartment No";
             // 
-            // lblBankAccount
+            // btnPostAd
             // 
-            this.lblBankAccount.AutoSize = true;
-            this.lblBankAccount.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBankAccount.ForeColor = System.Drawing.Color.White;
-            this.lblBankAccount.Location = new System.Drawing.Point(14, 19);
-            this.lblBankAccount.Name = "lblBankAccount";
-            this.lblBankAccount.Size = new System.Drawing.Size(95, 21);
-            this.lblBankAccount.TabIndex = 30;
-            this.lblBankAccount.Text = "Account No";
+            this.btnPostAd.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPostAd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPostAd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPostAd.Location = new System.Drawing.Point(407, 524);
+            this.btnPostAd.Name = "btnPostAd";
+            this.btnPostAd.Size = new System.Drawing.Size(158, 44);
+            this.btnPostAd.TabIndex = 68;
+            this.btnPostAd.Text = "Post Ad";
+            this.btnPostAd.UseVisualStyleBackColor = false;
+            this.btnPostAd.Click += new System.EventHandler(this.btnPostAd_Click);
             // 
-            // mtpRecharge
+            // btnUpload4
             // 
-            this.mtpRecharge.Controls.Add(this.pnlRecharge);
-            this.mtpRecharge.HorizontalScrollbarBarColor = true;
-            this.mtpRecharge.HorizontalScrollbarHighlightOnWheel = false;
-            this.mtpRecharge.HorizontalScrollbarSize = 10;
-            this.mtpRecharge.Location = new System.Drawing.Point(4, 38);
-            this.mtpRecharge.Name = "mtpRecharge";
-            this.mtpRecharge.Size = new System.Drawing.Size(967, 597);
-            this.mtpRecharge.TabIndex = 5;
-            this.mtpRecharge.Text = "Recharge    ";
-            this.mtpRecharge.VerticalScrollbarBarColor = true;
-            this.mtpRecharge.VerticalScrollbarHighlightOnWheel = false;
-            this.mtpRecharge.VerticalScrollbarSize = 10;
+            this.btnUpload4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnUpload4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpload4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload4.Location = new System.Drawing.Point(806, 459);
+            this.btnUpload4.Name = "btnUpload4";
+            this.btnUpload4.Size = new System.Drawing.Size(96, 33);
+            this.btnUpload4.TabIndex = 66;
+            this.btnUpload4.Text = "Upload";
+            this.btnUpload4.UseVisualStyleBackColor = false;
             // 
-            // pnlRecharge
+            // pbFlatPicture4
             // 
-            this.pnlRecharge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlRecharge.Controls.Add(this.lblNotice);
-            this.pnlRecharge.Controls.Add(this.txtRechargeAmount);
-            this.pnlRecharge.Controls.Add(this.lblRechargeAmount);
-            this.pnlRecharge.Controls.Add(this.btnRequestRecharge);
-            this.pnlRecharge.Controls.Add(this.txtBalance);
-            this.pnlRecharge.Controls.Add(this.lblCurrentBalance);
-            this.pnlRecharge.Location = new System.Drawing.Point(0, 3);
-            this.pnlRecharge.Name = "pnlRecharge";
-            this.pnlRecharge.Size = new System.Drawing.Size(967, 594);
-            this.pnlRecharge.TabIndex = 2;
+            this.pbFlatPicture4.Image = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture4.InitialImage = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture4.Location = new System.Drawing.Point(741, 281);
+            this.pbFlatPicture4.Name = "pbFlatPicture4";
+            this.pbFlatPicture4.Size = new System.Drawing.Size(161, 163);
+            this.pbFlatPicture4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFlatPicture4.TabIndex = 67;
+            this.pbFlatPicture4.TabStop = false;
             // 
-            // lblNotice
+            // btnUpload3
             // 
-            this.lblNotice.AutoSize = true;
-            this.lblNotice.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotice.ForeColor = System.Drawing.Color.White;
-            this.lblNotice.Location = new System.Drawing.Point(53, 307);
-            this.lblNotice.Name = "lblNotice";
-            this.lblNotice.Size = new System.Drawing.Size(853, 23);
-            this.lblNotice.TabIndex = 44;
-            this.lblNotice.Text = "Notice : Admin must approve your recharge request , upon approval your account wi" +
-    "ll be recharged";
+            this.btnUpload3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnUpload3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpload3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload3.Location = new System.Drawing.Point(613, 459);
+            this.btnUpload3.Name = "btnUpload3";
+            this.btnUpload3.Size = new System.Drawing.Size(97, 33);
+            this.btnUpload3.TabIndex = 64;
+            this.btnUpload3.Text = "Upload";
+            this.btnUpload3.UseVisualStyleBackColor = false;
             // 
-            // txtRechargeAmount
+            // pbFlatPicture3
             // 
-            this.txtRechargeAmount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRechargeAmount.Location = new System.Drawing.Point(171, 67);
-            this.txtRechargeAmount.Name = "txtRechargeAmount";
-            this.txtRechargeAmount.Size = new System.Drawing.Size(166, 26);
-            this.txtRechargeAmount.TabIndex = 42;
+            this.pbFlatPicture3.Image = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture3.InitialImage = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture3.Location = new System.Drawing.Point(549, 281);
+            this.pbFlatPicture3.Name = "pbFlatPicture3";
+            this.pbFlatPicture3.Size = new System.Drawing.Size(161, 163);
+            this.pbFlatPicture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFlatPicture3.TabIndex = 65;
+            this.pbFlatPicture3.TabStop = false;
             // 
-            // lblRechargeAmount
+            // lblAddPictures
             // 
-            this.lblRechargeAmount.AutoSize = true;
-            this.lblRechargeAmount.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRechargeAmount.ForeColor = System.Drawing.Color.White;
-            this.lblRechargeAmount.Location = new System.Drawing.Point(19, 68);
-            this.lblRechargeAmount.Name = "lblRechargeAmount";
-            this.lblRechargeAmount.Size = new System.Drawing.Size(68, 21);
-            this.lblRechargeAmount.TabIndex = 43;
-            this.lblRechargeAmount.Text = "Amount";
+            this.lblAddPictures.AutoSize = true;
+            this.lblAddPictures.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddPictures.ForeColor = System.Drawing.Color.White;
+            this.lblAddPictures.Location = new System.Drawing.Point(489, 12);
+            this.lblAddPictures.Name = "lblAddPictures";
+            this.lblAddPictures.Size = new System.Drawing.Size(179, 29);
+            this.lblAddPictures.TabIndex = 63;
+            this.lblAddPictures.Text = "Add Pictures :";
             // 
-            // btnRequestRecharge
+            // btnUpload2
             // 
-            this.btnRequestRecharge.BackColor = System.Drawing.Color.Firebrick;
-            this.btnRequestRecharge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRequestRecharge.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRequestRecharge.Location = new System.Drawing.Point(182, 108);
-            this.btnRequestRecharge.Name = "btnRequestRecharge";
-            this.btnRequestRecharge.Size = new System.Drawing.Size(116, 51);
-            this.btnRequestRecharge.TabIndex = 41;
-            this.btnRequestRecharge.Text = "Request Recharge";
-            this.btnRequestRecharge.UseVisualStyleBackColor = false;
+            this.btnUpload2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnUpload2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpload2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload2.Location = new System.Drawing.Point(806, 227);
+            this.btnUpload2.Name = "btnUpload2";
+            this.btnUpload2.Size = new System.Drawing.Size(96, 33);
+            this.btnUpload2.TabIndex = 61;
+            this.btnUpload2.Text = "Upload";
+            this.btnUpload2.UseVisualStyleBackColor = false;
             // 
-            // txtBalance
+            // pbFlatPicture2
             // 
-            this.txtBalance.Enabled = false;
-            this.txtBalance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalance.Location = new System.Drawing.Point(171, 17);
-            this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(246, 26);
-            this.txtBalance.TabIndex = 36;
+            this.pbFlatPicture2.Image = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture2.InitialImage = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture2.Location = new System.Drawing.Point(741, 49);
+            this.pbFlatPicture2.Name = "pbFlatPicture2";
+            this.pbFlatPicture2.Size = new System.Drawing.Size(161, 163);
+            this.pbFlatPicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFlatPicture2.TabIndex = 62;
+            this.pbFlatPicture2.TabStop = false;
             // 
-            // lblCurrentBalance
+            // lblInformations
             // 
-            this.lblCurrentBalance.AutoSize = true;
-            this.lblCurrentBalance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentBalance.ForeColor = System.Drawing.Color.White;
-            this.lblCurrentBalance.Location = new System.Drawing.Point(15, 18);
-            this.lblCurrentBalance.Name = "lblCurrentBalance";
-            this.lblCurrentBalance.Size = new System.Drawing.Size(128, 21);
-            this.lblCurrentBalance.TabIndex = 37;
-            this.lblCurrentBalance.Text = "Current Balance";
+            this.lblInformations.AutoSize = true;
+            this.lblInformations.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformations.ForeColor = System.Drawing.Color.White;
+            this.lblInformations.Location = new System.Drawing.Point(9, 12);
+            this.lblInformations.Name = "lblInformations";
+            this.lblInformations.Size = new System.Drawing.Size(193, 29);
+            this.lblInformations.TabIndex = 60;
+            this.lblInformations.Text = "Informations : ";
             // 
-            // pbLogout
+            // btnUpload1
             // 
-            this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
-            this.pbLogout.Location = new System.Drawing.Point(910, 35);
-            this.pbLogout.Name = "pbLogout";
-            this.pbLogout.Size = new System.Drawing.Size(47, 47);
-            this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogout.TabIndex = 2;
-            this.pbLogout.TabStop = false;
+            this.btnUpload1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnUpload1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpload1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload1.Location = new System.Drawing.Point(613, 227);
+            this.btnUpload1.Name = "btnUpload1";
+            this.btnUpload1.Size = new System.Drawing.Size(97, 33);
+            this.btnUpload1.TabIndex = 44;
+            this.btnUpload1.Text = "Upload";
+            this.btnUpload1.UseVisualStyleBackColor = false;
             // 
-            // Tenant
+            // pbFlatPicture1
+            // 
+            this.pbFlatPicture1.Image = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture1.InitialImage = global::RentalHouseManagementSys.Properties.Resources.NoImage;
+            this.pbFlatPicture1.Location = new System.Drawing.Point(549, 49);
+            this.pbFlatPicture1.Name = "pbFlatPicture1";
+            this.pbFlatPicture1.Size = new System.Drawing.Size(161, 163);
+            this.pbFlatPicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFlatPicture1.TabIndex = 59;
+            this.pbFlatPicture1.TabStop = false;
+            // 
+            // txtSquareFeet
+            // 
+            this.txtSquareFeet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSquareFeet.Location = new System.Drawing.Point(136, 349);
+            this.txtSquareFeet.Name = "txtSquareFeet";
+            this.txtSquareFeet.Size = new System.Drawing.Size(211, 24);
+            this.txtSquareFeet.TabIndex = 57;
+            // 
+            // lblSquareFeet
+            // 
+            this.lblSquareFeet.AutoSize = true;
+            this.lblSquareFeet.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSquareFeet.ForeColor = System.Drawing.Color.White;
+            this.lblSquareFeet.Location = new System.Drawing.Point(28, 351);
+            this.lblSquareFeet.Name = "lblSquareFeet";
+            this.lblSquareFeet.Size = new System.Drawing.Size(92, 19);
+            this.lblSquareFeet.TabIndex = 58;
+            this.lblSquareFeet.Text = "Square Feet";
+            // 
+            // txtBlockAndRoadNo
+            // 
+            this.txtBlockAndRoadNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBlockAndRoadNo.Location = new System.Drawing.Point(136, 202);
+            this.txtBlockAndRoadNo.Name = "txtBlockAndRoadNo";
+            this.txtBlockAndRoadNo.Size = new System.Drawing.Size(211, 24);
+            this.txtBlockAndRoadNo.TabIndex = 55;
+            // 
+            // lblBlockAndRoadNo
+            // 
+            this.lblBlockAndRoadNo.AutoSize = true;
+            this.lblBlockAndRoadNo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBlockAndRoadNo.ForeColor = System.Drawing.Color.White;
+            this.lblBlockAndRoadNo.Location = new System.Drawing.Point(7, 204);
+            this.lblBlockAndRoadNo.Name = "lblBlockAndRoadNo";
+            this.lblBlockAndRoadNo.Size = new System.Drawing.Size(113, 19);
+            this.lblBlockAndRoadNo.TabIndex = 56;
+            this.lblBlockAndRoadNo.Text = "Block/Road No";
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation.ForeColor = System.Drawing.Color.White;
+            this.lblLocation.Location = new System.Drawing.Point(55, 154);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(68, 19);
+            this.lblLocation.TabIndex = 54;
+            this.lblLocation.Text = "Location";
+            // 
+            // cmbLocation
+            // 
+            this.cmbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocation.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLocation.FormattingEnabled = true;
+            this.cmbLocation.Items.AddRange(new object[] {
+            "Banani",
+            "Baily Road",
+            "Bosundhora",
+            "Dhanmondi",
+            "Farmgate",
+            "Mirpur",
+            "Gulshan",
+            "Old-Dhaka"});
+            this.cmbLocation.Location = new System.Drawing.Point(136, 152);
+            this.cmbLocation.Name = "cmbLocation";
+            this.cmbLocation.Size = new System.Drawing.Size(211, 26);
+            this.cmbLocation.TabIndex = 53;
+            // 
+            // txtContact
+            // 
+            this.txtContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContact.Location = new System.Drawing.Point(136, 300);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(211, 24);
+            this.txtContact.TabIndex = 49;
+            // 
+            // lblContact
+            // 
+            this.lblContact.AutoSize = true;
+            this.lblContact.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.Color.White;
+            this.lblContact.Location = new System.Drawing.Point(58, 300);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(62, 19);
+            this.lblContact.TabIndex = 50;
+            this.lblContact.Text = "Contact";
+            // 
+            // txtRent
+            // 
+            this.txtRent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRent.Location = new System.Drawing.Point(136, 105);
+            this.txtRent.Name = "txtRent";
+            this.txtRent.Size = new System.Drawing.Size(211, 24);
+            this.txtRent.TabIndex = 45;
+            // 
+            // lblRent
+            // 
+            this.lblRent.AutoSize = true;
+            this.lblRent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRent.ForeColor = System.Drawing.Color.White;
+            this.lblRent.Location = new System.Drawing.Point(82, 107);
+            this.lblRent.Name = "lblRent";
+            this.lblRent.Size = new System.Drawing.Size(41, 19);
+            this.lblRent.TabIndex = 46;
+            this.lblRent.Text = "Rent";
+            // 
+            // txtAdTitle
+            // 
+            this.txtAdTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdTitle.Location = new System.Drawing.Point(136, 61);
+            this.txtAdTitle.Name = "txtAdTitle";
+            this.txtAdTitle.Size = new System.Drawing.Size(211, 24);
+            this.txtAdTitle.TabIndex = 44;
+            // 
+            // lblAdTitle
+            // 
+            this.lblAdTitle.AutoSize = true;
+            this.lblAdTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdTitle.ForeColor = System.Drawing.Color.White;
+            this.lblAdTitle.Location = new System.Drawing.Point(55, 63);
+            this.lblAdTitle.Name = "lblAdTitle";
+            this.lblAdTitle.Size = new System.Drawing.Size(65, 19);
+            this.lblAdTitle.TabIndex = 44;
+            this.lblAdTitle.Text = "Ad Title";
+            // 
+            // txtFloor
+            // 
+            this.txtFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFloor.Location = new System.Drawing.Point(136, 400);
+            this.txtFloor.Name = "txtFloor";
+            this.txtFloor.Size = new System.Drawing.Size(211, 24);
+            this.txtFloor.TabIndex = 71;
+            // 
+            // lblFloor
+            // 
+            this.lblFloor.AutoSize = true;
+            this.lblFloor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFloor.ForeColor = System.Drawing.Color.White;
+            this.lblFloor.Location = new System.Drawing.Point(75, 402);
+            this.lblFloor.Name = "lblFloor";
+            this.lblFloor.Size = new System.Drawing.Size(45, 19);
+            this.lblFloor.TabIndex = 72;
+            this.lblFloor.Text = "Floor";
+            // 
+            // txtFacilities
+            // 
+            this.txtFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFacilities.Location = new System.Drawing.Point(136, 448);
+            this.txtFacilities.Name = "txtFacilities";
+            this.txtFacilities.Size = new System.Drawing.Size(211, 24);
+            this.txtFacilities.TabIndex = 73;
+            // 
+            // lblFacilities
+            // 
+            this.lblFacilities.AutoSize = true;
+            this.lblFacilities.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFacilities.ForeColor = System.Drawing.Color.White;
+            this.lblFacilities.Location = new System.Drawing.Point(55, 450);
+            this.lblFacilities.Name = "lblFacilities";
+            this.lblFacilities.Size = new System.Drawing.Size(68, 19);
+            this.lblFacilities.TabIndex = 74;
+            this.lblFacilities.Text = "Facilities";
+            // 
+            // Landlord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 702);
-            this.Controls.Add(this.pbLogout);
             this.Controls.Add(this.mtcNavigation);
-            this.Name = "Tenant";
-            this.Text = "Welcome : ";
+            this.Name = "Landlord";
+            this.Text = "Landlord";
+            this.Load += new System.EventHandler(this.Landlord_Load);
             this.mtcNavigation.ResumeLayout(false);
             this.mtpProfile.ResumeLayout(false);
             this.pnlProfile.ResumeLayout(false);
@@ -897,10 +1148,13 @@
             this.pnlPayment.ResumeLayout(false);
             this.pnlPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).EndInit();
-            this.mtpRecharge.ResumeLayout(false);
-            this.pnlRecharge.ResumeLayout(false);
-            this.pnlRecharge.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).EndInit();
+            this.mtcAddFlats.ResumeLayout(false);
+            this.pnlAddApartments.ResumeLayout(false);
+            this.pnlAddApartments.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -908,12 +1162,15 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabControl mtcNavigation;
-        private MetroFramework.Controls.MetroTabPage mtpFeed;
-        private MetroFramework.Controls.MetroTabPage mtpNotification;
         private MetroFramework.Controls.MetroTabPage mtpProfile;
-        private MetroFramework.Controls.MetroTabPage mtpAgreements;
-        private MetroFramework.Controls.MetroTabPage mtpPayment;
         private System.Windows.Forms.Panel pnlProfile;
+        private System.Windows.Forms.Label lblBankAccountOutput;
+        private System.Windows.Forms.Label lblBankAccountNo;
+        private System.Windows.Forms.Label lblUsertypeOutput;
+        private System.Windows.Forms.Label lblUsertype;
+        private System.Windows.Forms.Button btnRemovePicture;
+        private System.Windows.Forms.Button btnUploadPictureProfile;
+        private System.Windows.Forms.PictureBox pbProfilePicture;
         private System.Windows.Forms.Label lblDateOfBirthProfileOutput;
         private System.Windows.Forms.Label lblPhoneNumberProfileOutput;
         private System.Windows.Forms.Label lblGenderProfileOutput;
@@ -927,49 +1184,65 @@
         private System.Windows.Forms.Label lblGenderProfile;
         private System.Windows.Forms.Label lblUserIDProfile;
         private System.Windows.Forms.Label lblNameProfile;
+        private MetroFramework.Controls.MetroTabPage mtpFeed;
         private System.Windows.Forms.FlowLayoutPanel flpFeed;
-        private System.Windows.Forms.FlowLayoutPanel flpNotification;
-        private System.Windows.Forms.Panel pnlAgreements;
-        private System.Windows.Forms.PictureBox pbLogout;
-        private System.Windows.Forms.Button btnUploadPictureProfile;
-        private System.Windows.Forms.PictureBox pbProfilePicture;
-        private System.Windows.Forms.Panel pnlPayment;
-        private System.Windows.Forms.Label lblBankAccount;
-        private System.Windows.Forms.TextBox txtPaymentAmount;
-        private System.Windows.Forms.Label lblPaymentAmount;
-        private System.Windows.Forms.TextBox txtAccountNo;
-        private System.Windows.Forms.Button btnPayment;
-        private System.Windows.Forms.DataGridView dgvPayment;
-        private System.Windows.Forms.Label lblCurrentBalance;
-        private System.Windows.Forms.TextBox txtBalance;
-        private System.Windows.Forms.TextBox txtSearchById;
-        private System.Windows.Forms.Label lblSearchById;
-        private System.Windows.Forms.Button btnSearchById;
-        private MetroFramework.Controls.MetroTabPage mtpRecharge;
-        private System.Windows.Forms.Panel pnlRecharge;
-        private System.Windows.Forms.TextBox txtRechargeAmount;
-        private System.Windows.Forms.Label lblRechargeAmount;
-        private System.Windows.Forms.Button btnRequestRecharge;
-        private System.Windows.Forms.Label lblNotice;
-        private System.Windows.Forms.Button btnRemovePicture;
-        private System.Windows.Forms.Label lblUsertypeOutput;
-        private System.Windows.Forms.Label lblUsertype;
-        private System.Windows.Forms.Label lblBankAccountOutput;
-        private System.Windows.Forms.Label lblBankAccountNo;
-        private System.Windows.Forms.Label lblRentedStatusOutput;
-        private System.Windows.Forms.Label lblRentedStatus;
         private System.Windows.Forms.Panel pnlSearch;
-        private System.Windows.Forms.Label lblSearchByArea;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblFlatType;
+        private System.Windows.Forms.ComboBox cmbFlatType;
+        private System.Windows.Forms.TextBox txtSquareFeetUpperLimit;
+        private System.Windows.Forms.TextBox txtSquareFeetLowerLimit;
+        private System.Windows.Forms.Label lblSqareFeet;
         private System.Windows.Forms.ComboBox cmbSearchByArea;
         private System.Windows.Forms.TextBox txtRentUpperLimit;
         private System.Windows.Forms.TextBox txtRentLowerLimit;
         private System.Windows.Forms.Label lblRentRange;
         private System.Windows.Forms.CheckBox cbEnableFilter;
-        private System.Windows.Forms.TextBox txtSquareFeetUpperLimit;
-        private System.Windows.Forms.TextBox txtSquareFeetLowerLimit;
-        private System.Windows.Forms.Label lblSqareFeet;
-        private System.Windows.Forms.Label lblFlatType;
-        private System.Windows.Forms.ComboBox cmbFlatType;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblSearchByArea;
+        private MetroFramework.Controls.MetroTabPage mtpNotification;
+        private System.Windows.Forms.FlowLayoutPanel flpNotification;
+        private MetroFramework.Controls.MetroTabPage mtpAgreements;
+        private System.Windows.Forms.Panel pnlAgreements;
+        private MetroFramework.Controls.MetroTabPage mtpPayment;
+        private System.Windows.Forms.Panel pnlPayment;
+        private System.Windows.Forms.Button btnSearchById;
+        private System.Windows.Forms.DataGridView dgvPayment;
+        private MetroFramework.Controls.MetroTabPage mtcAddFlats;
+        private System.Windows.Forms.Label lblEnter;
+        private System.Windows.Forms.Label lblSearchType;
+        private System.Windows.Forms.ComboBox cmbChooseSearchType;
+        private System.Windows.Forms.TextBox txtEnter;
+        private System.Windows.Forms.Label lblFlatsRegisteredOutput;
+        private System.Windows.Forms.Label lblFlatsRegistered;
+        private System.Windows.Forms.Panel pnlAddApartments;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.Label lblContact;
+        private System.Windows.Forms.TextBox txtRent;
+        private System.Windows.Forms.Label lblRent;
+        private System.Windows.Forms.TextBox txtAdTitle;
+        private System.Windows.Forms.Label lblAdTitle;
+        private System.Windows.Forms.Button btnPostAd;
+        private System.Windows.Forms.Button btnUpload4;
+        private System.Windows.Forms.PictureBox pbFlatPicture4;
+        private System.Windows.Forms.Button btnUpload3;
+        private System.Windows.Forms.PictureBox pbFlatPicture3;
+        private System.Windows.Forms.Label lblAddPictures;
+        private System.Windows.Forms.Button btnUpload2;
+        private System.Windows.Forms.PictureBox pbFlatPicture2;
+        private System.Windows.Forms.Label lblInformations;
+        private System.Windows.Forms.Button btnUpload1;
+        private System.Windows.Forms.PictureBox pbFlatPicture1;
+        private System.Windows.Forms.TextBox txtSquareFeet;
+        private System.Windows.Forms.Label lblSquareFeet;
+        private System.Windows.Forms.TextBox txtBlockAndRoadNo;
+        private System.Windows.Forms.Label lblBlockAndRoadNo;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.ComboBox cmbLocation;
+        private System.Windows.Forms.TextBox txtApartmentNo;
+        private System.Windows.Forms.Label lblApartmentNo;
+        private System.Windows.Forms.TextBox txtFacilities;
+        private System.Windows.Forms.Label lblFacilities;
+        private System.Windows.Forms.TextBox txtFloor;
+        private System.Windows.Forms.Label lblFloor;
     }
 }

@@ -11,21 +11,21 @@ using System.Windows.Forms;
 
 namespace RentalHouseManagementSys
 {
-    public partial class Tenant : MetroFramework.Forms.MetroForm
+    public partial class Landlord : MetroFramework.Forms.MetroForm
     {
-        public Tenant()
+        public Landlord()
         {
             InitializeComponent();
         }
 
-        private void pnlPayment_Paint(object sender, PaintEventArgs e)
+        private void Landlord_Load(object sender, EventArgs e)
         {
 
         }
 
         private void cbEnableFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if(!cbEnableFilter.Checked)
+            if (!cbEnableFilter.Checked)
             {
                 this.lblSearchByArea.Visible = false;
                 this.lblRentRange.Visible = false;
@@ -43,7 +43,7 @@ namespace RentalHouseManagementSys
                 {
 
                 }
-                catch(SqlException ex)
+                catch (SqlException ex)
                 {
 
                 }
@@ -66,16 +66,11 @@ namespace RentalHouseManagementSys
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnPostAd_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-            }
-            catch (SqlException ex)
-            {
-
-            }
+            MessageBox.Show("Your add will be added to feed after admin approval!");
         }
+
+        
     }
 }

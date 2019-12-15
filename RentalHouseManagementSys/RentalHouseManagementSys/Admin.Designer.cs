@@ -31,6 +31,7 @@
             this.mtcNavigation = new MetroFramework.Controls.MetroTabControl();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
             this.pnlProfile = new System.Windows.Forms.Panel();
+            this.btnRemovePicture = new System.Windows.Forms.Button();
             this.lblDateOfBirthProfileOutput = new System.Windows.Forms.Label();
             this.lblPhoneNumberProfileOutput = new System.Windows.Forms.Label();
             this.lblGenderProfileOutput = new System.Windows.Forms.Label();
@@ -48,6 +49,19 @@
             this.lblNameProfile = new System.Windows.Forms.Label();
             this.mtpFeed = new MetroFramework.Controls.MetroTabPage();
             this.flpFeed = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblFlatType = new System.Windows.Forms.Label();
+            this.cmbFlatType = new System.Windows.Forms.ComboBox();
+            this.txtSquareFeetUpperLimit = new System.Windows.Forms.TextBox();
+            this.txtSquareFeetLowerLimit = new System.Windows.Forms.TextBox();
+            this.lblSqareFeet = new System.Windows.Forms.Label();
+            this.cmbSearchByArea = new System.Windows.Forms.ComboBox();
+            this.txtRentUpperLimit = new System.Windows.Forms.TextBox();
+            this.txtRentLowerLimit = new System.Windows.Forms.TextBox();
+            this.lblRentRange = new System.Windows.Forms.Label();
+            this.cbEnableFilter = new System.Windows.Forms.CheckBox();
+            this.lblSearchByArea = new System.Windows.Forms.Label();
             this.mtpNotification = new MetroFramework.Controls.MetroTabPage();
             this.flpNotification = new System.Windows.Forms.FlowLayoutPanel();
             this.mtpAddAdmin = new MetroFramework.Controls.MetroTabPage();
@@ -83,7 +97,7 @@
             this.btnSystemDataUsersSearch = new System.Windows.Forms.Button();
             this.cmbSystemDataUsersUserType = new System.Windows.Forms.ComboBox();
             this.txtSystemDataUsersSearch = new System.Windows.Forms.TextBox();
-            this.mtpApartments = new MetroFramework.Controls.MetroTabPage();
+            this.mtpFlats = new MetroFramework.Controls.MetroTabPage();
             this.pnlSystemDataApartments = new System.Windows.Forms.Panel();
             this.dgvSystemDataApartments = new System.Windows.Forms.DataGridView();
             this.btnSystemDataApartmentsRemove = new System.Windows.Forms.Button();
@@ -91,14 +105,15 @@
             this.btnSystemDataApartmentsSearch = new System.Windows.Forms.Button();
             this.lblSystemDataApartmentsSearchByID = new System.Windows.Forms.Label();
             this.mtpPayment = new MetroFramework.Controls.MetroTabPage();
-            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
             this.pbLogout = new System.Windows.Forms.PictureBox();
-            this.btnRemovePicture = new System.Windows.Forms.Button();
+            this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
             this.mtcNavigation.SuspendLayout();
             this.mtpProfile.SuspendLayout();
             this.pnlProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.mtpFeed.SuspendLayout();
+            this.flpFeed.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             this.mtpNotification.SuspendLayout();
             this.mtpAddAdmin.SuspendLayout();
             this.pnlAddAdmin.SuspendLayout();
@@ -107,7 +122,7 @@
             this.mtpUsers.SuspendLayout();
             this.pnlSystemDataUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataUsersSystemData)).BeginInit();
-            this.mtpApartments.SuspendLayout();
+            this.mtpFlats.SuspendLayout();
             this.pnlSystemDataApartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataApartments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
@@ -120,10 +135,9 @@
             this.mtcNavigation.Controls.Add(this.mtpNotification);
             this.mtcNavigation.Controls.Add(this.mtpAddAdmin);
             this.mtcNavigation.Controls.Add(this.mtpSystemData);
-            this.mtcNavigation.Controls.Add(this.mtpAgreements);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 0;
+            this.mtcNavigation.SelectedIndex = 2;
             this.mtcNavigation.Size = new System.Drawing.Size(977, 639);
             this.mtcNavigation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mtcNavigation.TabIndex = 0;
@@ -168,6 +182,18 @@
             this.pnlProfile.Name = "pnlProfile";
             this.pnlProfile.Size = new System.Drawing.Size(969, 594);
             this.pnlProfile.TabIndex = 2;
+            // 
+            // btnRemovePicture
+            // 
+            this.btnRemovePicture.BackColor = System.Drawing.Color.Black;
+            this.btnRemovePicture.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemovePicture.ForeColor = System.Drawing.Color.White;
+            this.btnRemovePicture.Location = new System.Drawing.Point(492, 160);
+            this.btnRemovePicture.Name = "btnRemovePicture";
+            this.btnRemovePicture.Size = new System.Drawing.Size(80, 41);
+            this.btnRemovePicture.TabIndex = 31;
+            this.btnRemovePicture.Text = "Remove Picture";
+            this.btnRemovePicture.UseVisualStyleBackColor = false;
             // 
             // lblDateOfBirthProfileOutput
             // 
@@ -358,12 +384,174 @@
             // 
             // flpFeed
             // 
-            this.flpFeed.AutoScroll = true;
             this.flpFeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.flpFeed.Location = new System.Drawing.Point(0, 3);
+            this.flpFeed.Controls.Add(this.pnlSearch);
+            this.flpFeed.Location = new System.Drawing.Point(0, 1);
             this.flpFeed.Name = "flpFeed";
-            this.flpFeed.Size = new System.Drawing.Size(969, 592);
+            this.flpFeed.Size = new System.Drawing.Size(969, 594);
             this.flpFeed.TabIndex = 3;
+            // 
+            // pnlSearch
+            // 
+            this.pnlSearch.Controls.Add(this.btnSearch);
+            this.pnlSearch.Controls.Add(this.lblFlatType);
+            this.pnlSearch.Controls.Add(this.cmbFlatType);
+            this.pnlSearch.Controls.Add(this.txtSquareFeetUpperLimit);
+            this.pnlSearch.Controls.Add(this.txtSquareFeetLowerLimit);
+            this.pnlSearch.Controls.Add(this.lblSqareFeet);
+            this.pnlSearch.Controls.Add(this.cmbSearchByArea);
+            this.pnlSearch.Controls.Add(this.txtRentUpperLimit);
+            this.pnlSearch.Controls.Add(this.txtRentLowerLimit);
+            this.pnlSearch.Controls.Add(this.lblRentRange);
+            this.pnlSearch.Controls.Add(this.cbEnableFilter);
+            this.pnlSearch.Controls.Add(this.lblSearchByArea);
+            this.pnlSearch.Location = new System.Drawing.Point(3, 3);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(961, 28);
+            this.pnlSearch.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Location = new System.Drawing.Point(153, 104);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 33);
+            this.btnSearch.TabIndex = 52;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // lblFlatType
+            // 
+            this.lblFlatType.AutoSize = true;
+            this.lblFlatType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlatType.ForeColor = System.Drawing.Color.White;
+            this.lblFlatType.Location = new System.Drawing.Point(377, 68);
+            this.lblFlatType.Name = "lblFlatType";
+            this.lblFlatType.Size = new System.Drawing.Size(124, 19);
+            this.lblFlatType.TabIndex = 51;
+            this.lblFlatType.Text = "Apartment Type";
+            this.lblFlatType.Visible = false;
+            // 
+            // cmbFlatType
+            // 
+            this.cmbFlatType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFlatType.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFlatType.FormattingEnabled = true;
+            this.cmbFlatType.Items.AddRange(new object[] {
+            "All",
+            "Family",
+            "Bachelor"});
+            this.cmbFlatType.Location = new System.Drawing.Point(514, 68);
+            this.cmbFlatType.Name = "cmbFlatType";
+            this.cmbFlatType.Size = new System.Drawing.Size(95, 26);
+            this.cmbFlatType.TabIndex = 50;
+            this.cmbFlatType.Visible = false;
+            // 
+            // txtSquareFeetUpperLimit
+            // 
+            this.txtSquareFeetUpperLimit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSquareFeetUpperLimit.Location = new System.Drawing.Point(624, 31);
+            this.txtSquareFeetUpperLimit.Name = "txtSquareFeetUpperLimit";
+            this.txtSquareFeetUpperLimit.Size = new System.Drawing.Size(92, 26);
+            this.txtSquareFeetUpperLimit.TabIndex = 49;
+            this.txtSquareFeetUpperLimit.Visible = false;
+            // 
+            // txtSquareFeetLowerLimit
+            // 
+            this.txtSquareFeetLowerLimit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSquareFeetLowerLimit.Location = new System.Drawing.Point(514, 31);
+            this.txtSquareFeetLowerLimit.Name = "txtSquareFeetLowerLimit";
+            this.txtSquareFeetLowerLimit.Size = new System.Drawing.Size(92, 26);
+            this.txtSquareFeetLowerLimit.TabIndex = 48;
+            this.txtSquareFeetLowerLimit.Visible = false;
+            // 
+            // lblSqareFeet
+            // 
+            this.lblSqareFeet.AutoSize = true;
+            this.lblSqareFeet.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSqareFeet.ForeColor = System.Drawing.Color.White;
+            this.lblSqareFeet.Location = new System.Drawing.Point(377, 31);
+            this.lblSqareFeet.Name = "lblSqareFeet";
+            this.lblSqareFeet.Size = new System.Drawing.Size(92, 19);
+            this.lblSqareFeet.TabIndex = 47;
+            this.lblSqareFeet.Text = "Square Feet";
+            this.lblSqareFeet.Visible = false;
+            // 
+            // cmbSearchByArea
+            // 
+            this.cmbSearchByArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearchByArea.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSearchByArea.FormattingEnabled = true;
+            this.cmbSearchByArea.Items.AddRange(new object[] {
+            "All",
+            "Banani",
+            "Baily Road",
+            "Bosundhora",
+            "Dhanmondi",
+            "Farmgate",
+            "Mirpur",
+            "Gulshan",
+            "Old-Dhaka"});
+            this.cmbSearchByArea.Location = new System.Drawing.Point(153, 30);
+            this.cmbSearchByArea.Name = "cmbSearchByArea";
+            this.cmbSearchByArea.Size = new System.Drawing.Size(202, 26);
+            this.cmbSearchByArea.TabIndex = 46;
+            this.cmbSearchByArea.Visible = false;
+            // 
+            // txtRentUpperLimit
+            // 
+            this.txtRentUpperLimit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRentUpperLimit.Location = new System.Drawing.Point(263, 67);
+            this.txtRentUpperLimit.Name = "txtRentUpperLimit";
+            this.txtRentUpperLimit.Size = new System.Drawing.Size(92, 26);
+            this.txtRentUpperLimit.TabIndex = 45;
+            this.txtRentUpperLimit.Visible = false;
+            // 
+            // txtRentLowerLimit
+            // 
+            this.txtRentLowerLimit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRentLowerLimit.Location = new System.Drawing.Point(153, 67);
+            this.txtRentLowerLimit.Name = "txtRentLowerLimit";
+            this.txtRentLowerLimit.Size = new System.Drawing.Size(92, 26);
+            this.txtRentLowerLimit.TabIndex = 44;
+            this.txtRentLowerLimit.Visible = false;
+            // 
+            // lblRentRange
+            // 
+            this.lblRentRange.AutoSize = true;
+            this.lblRentRange.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRentRange.ForeColor = System.Drawing.Color.White;
+            this.lblRentRange.Location = new System.Drawing.Point(16, 68);
+            this.lblRentRange.Name = "lblRentRange";
+            this.lblRentRange.Size = new System.Drawing.Size(41, 19);
+            this.lblRentRange.TabIndex = 43;
+            this.lblRentRange.Text = "Rent";
+            // 
+            // cbEnableFilter
+            // 
+            this.cbEnableFilter.AutoSize = true;
+            this.cbEnableFilter.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEnableFilter.ForeColor = System.Drawing.Color.White;
+            this.cbEnableFilter.Location = new System.Drawing.Point(16, 7);
+            this.cbEnableFilter.Name = "cbEnableFilter";
+            this.cbEnableFilter.Size = new System.Drawing.Size(100, 18);
+            this.cbEnableFilter.TabIndex = 42;
+            this.cbEnableFilter.Text = "Enable Filter";
+            this.cbEnableFilter.UseVisualStyleBackColor = true;
+            this.cbEnableFilter.CheckedChanged += new System.EventHandler(this.cbEnableFilter_CheckedChanged);
+            // 
+            // lblSearchByArea
+            // 
+            this.lblSearchByArea.AutoSize = true;
+            this.lblSearchByArea.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchByArea.ForeColor = System.Drawing.Color.White;
+            this.lblSearchByArea.Location = new System.Drawing.Point(14, 31);
+            this.lblSearchByArea.Name = "lblSearchByArea";
+            this.lblSearchByArea.Size = new System.Drawing.Size(116, 19);
+            this.lblSearchByArea.TabIndex = 37;
+            this.lblSearchByArea.Text = "Search By Area";
+            this.lblSearchByArea.Visible = false;
             // 
             // mtpNotification
             // 
@@ -442,7 +630,7 @@
             this.mdtDateOfBirth.CustomFormat = "yyyy-MM-dd";
             this.mdtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.mdtDateOfBirth.Location = new System.Drawing.Point(379, 404);
-            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(4, 29);
+            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.mdtDateOfBirth.Name = "mdtDateOfBirth";
             this.mdtDateOfBirth.Size = new System.Drawing.Size(338, 29);
             this.mdtDateOfBirth.TabIndex = 12;
@@ -591,12 +779,13 @@
             // mtcSystemDataTab
             // 
             this.mtcSystemDataTab.Controls.Add(this.mtpUsers);
-            this.mtcSystemDataTab.Controls.Add(this.mtpApartments);
+            this.mtcSystemDataTab.Controls.Add(this.mtpFlats);
             this.mtcSystemDataTab.Controls.Add(this.mtpPayment);
+            this.mtcSystemDataTab.Controls.Add(this.mtpAgreements);
             this.mtcSystemDataTab.FontSize = MetroFramework.MetroTabControlSize.Small;
             this.mtcSystemDataTab.Location = new System.Drawing.Point(-4, 4);
             this.mtcSystemDataTab.Name = "mtcSystemDataTab";
-            this.mtcSystemDataTab.SelectedIndex = 2;
+            this.mtcSystemDataTab.SelectedIndex = 0;
             this.mtcSystemDataTab.Size = new System.Drawing.Size(977, 597);
             this.mtcSystemDataTab.TabIndex = 2;
             this.mtcSystemDataTab.UseSelectable = true;
@@ -773,20 +962,20 @@
             this.txtSystemDataUsersSearch.TabIndex = 0;
             this.txtSystemDataUsersSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // mtpApartments
+            // mtpFlats
             // 
-            this.mtpApartments.Controls.Add(this.pnlSystemDataApartments);
-            this.mtpApartments.HorizontalScrollbarBarColor = true;
-            this.mtpApartments.HorizontalScrollbarHighlightOnWheel = false;
-            this.mtpApartments.HorizontalScrollbarSize = 10;
-            this.mtpApartments.Location = new System.Drawing.Point(4, 34);
-            this.mtpApartments.Name = "mtpApartments";
-            this.mtpApartments.Size = new System.Drawing.Size(969, 559);
-            this.mtpApartments.TabIndex = 1;
-            this.mtpApartments.Text = "Apartments";
-            this.mtpApartments.VerticalScrollbarBarColor = true;
-            this.mtpApartments.VerticalScrollbarHighlightOnWheel = false;
-            this.mtpApartments.VerticalScrollbarSize = 10;
+            this.mtpFlats.Controls.Add(this.pnlSystemDataApartments);
+            this.mtpFlats.HorizontalScrollbarBarColor = true;
+            this.mtpFlats.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpFlats.HorizontalScrollbarSize = 10;
+            this.mtpFlats.Location = new System.Drawing.Point(4, 34);
+            this.mtpFlats.Name = "mtpFlats";
+            this.mtpFlats.Size = new System.Drawing.Size(969, 559);
+            this.mtpFlats.TabIndex = 1;
+            this.mtpFlats.Text = "Flats    ";
+            this.mtpFlats.VerticalScrollbarBarColor = true;
+            this.mtpFlats.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpFlats.VerticalScrollbarSize = 10;
             // 
             // pnlSystemDataApartments
             // 
@@ -868,20 +1057,6 @@
             this.mtpPayment.VerticalScrollbarHighlightOnWheel = false;
             this.mtpPayment.VerticalScrollbarSize = 10;
             // 
-            // mtpAgreements
-            // 
-            this.mtpAgreements.HorizontalScrollbarBarColor = true;
-            this.mtpAgreements.HorizontalScrollbarHighlightOnWheel = false;
-            this.mtpAgreements.HorizontalScrollbarSize = 10;
-            this.mtpAgreements.Location = new System.Drawing.Point(4, 38);
-            this.mtpAgreements.Name = "mtpAgreements";
-            this.mtpAgreements.Size = new System.Drawing.Size(969, 597);
-            this.mtpAgreements.TabIndex = 5;
-            this.mtpAgreements.Text = "Agreements    ";
-            this.mtpAgreements.VerticalScrollbarBarColor = true;
-            this.mtpAgreements.VerticalScrollbarHighlightOnWheel = false;
-            this.mtpAgreements.VerticalScrollbarSize = 10;
-            // 
             // pbLogout
             // 
             this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -894,17 +1069,19 @@
             this.pbLogout.TabStop = false;
             this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
             // 
-            // btnRemovePicture
+            // mtpAgreements
             // 
-            this.btnRemovePicture.BackColor = System.Drawing.Color.Black;
-            this.btnRemovePicture.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemovePicture.ForeColor = System.Drawing.Color.White;
-            this.btnRemovePicture.Location = new System.Drawing.Point(492, 160);
-            this.btnRemovePicture.Name = "btnRemovePicture";
-            this.btnRemovePicture.Size = new System.Drawing.Size(80, 41);
-            this.btnRemovePicture.TabIndex = 31;
-            this.btnRemovePicture.Text = "Remove Picture";
-            this.btnRemovePicture.UseVisualStyleBackColor = false;
+            this.mtpAgreements.HorizontalScrollbarBarColor = true;
+            this.mtpAgreements.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpAgreements.HorizontalScrollbarSize = 10;
+            this.mtpAgreements.Location = new System.Drawing.Point(4, 34);
+            this.mtpAgreements.Name = "mtpAgreements";
+            this.mtpAgreements.Size = new System.Drawing.Size(969, 559);
+            this.mtpAgreements.TabIndex = 3;
+            this.mtpAgreements.Text = "Agreements    ";
+            this.mtpAgreements.VerticalScrollbarBarColor = true;
+            this.mtpAgreements.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpAgreements.VerticalScrollbarSize = 10;
             // 
             // Admin
             // 
@@ -925,6 +1102,9 @@
             this.pnlProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.mtpFeed.ResumeLayout(false);
+            this.flpFeed.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
             this.mtpNotification.ResumeLayout(false);
             this.mtpAddAdmin.ResumeLayout(false);
             this.pnlAddAdmin.ResumeLayout(false);
@@ -935,7 +1115,7 @@
             this.pnlSystemDataUsers.ResumeLayout(false);
             this.pnlSystemDataUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataUsersSystemData)).EndInit();
-            this.mtpApartments.ResumeLayout(false);
+            this.mtpFlats.ResumeLayout(false);
             this.pnlSystemDataApartments.ResumeLayout(false);
             this.pnlSystemDataApartments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataApartments)).EndInit();
@@ -953,7 +1133,6 @@
         private MetroFramework.Controls.MetroTabPage mtpAddAdmin;
         private MetroFramework.Controls.MetroTabPage mtpSystemData;
         private System.Windows.Forms.Panel pnlProfile;
-        private System.Windows.Forms.FlowLayoutPanel flpFeed;
         private System.Windows.Forms.FlowLayoutPanel flpNotification;
         private System.Windows.Forms.Panel pnlAddAdmin;
         private System.Windows.Forms.Label lblName;
@@ -1000,10 +1179,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateofbirth;
         private System.Windows.Forms.Button btnSystemDataUsersRemove;
-        private MetroFramework.Controls.MetroTabPage mtpAgreements;
         private MetroFramework.Controls.MetroTabControl mtcSystemDataTab;
         private MetroFramework.Controls.MetroTabPage mtpUsers;
-        private MetroFramework.Controls.MetroTabPage mtpApartments;
+        private MetroFramework.Controls.MetroTabPage mtpFlats;
         private System.Windows.Forms.Panel pnlSystemDataApartments;
         private System.Windows.Forms.Button btnSystemDataApartmentsRemove;
         private System.Windows.Forms.Label lblSystemDataApartmentsSearchByID;
@@ -1012,6 +1190,21 @@
         private System.Windows.Forms.DataGridView dgvSystemDataApartments;
         private MetroFramework.Controls.MetroTabPage mtpPayment;
         private System.Windows.Forms.Button btnRemovePicture;
+        private System.Windows.Forms.FlowLayoutPanel flpFeed;
+        private System.Windows.Forms.Panel pnlSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblFlatType;
+        private System.Windows.Forms.ComboBox cmbFlatType;
+        private System.Windows.Forms.TextBox txtSquareFeetUpperLimit;
+        private System.Windows.Forms.TextBox txtSquareFeetLowerLimit;
+        private System.Windows.Forms.Label lblSqareFeet;
+        private System.Windows.Forms.ComboBox cmbSearchByArea;
+        private System.Windows.Forms.TextBox txtRentUpperLimit;
+        private System.Windows.Forms.TextBox txtRentLowerLimit;
+        private System.Windows.Forms.Label lblRentRange;
+        private System.Windows.Forms.CheckBox cbEnableFilter;
+        private System.Windows.Forms.Label lblSearchByArea;
+        private MetroFramework.Controls.MetroTabPage mtpAgreements;
     }
 }
 
