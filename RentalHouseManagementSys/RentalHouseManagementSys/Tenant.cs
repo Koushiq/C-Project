@@ -77,5 +77,18 @@ namespace RentalHouseManagementSys
 
             }
         }
+
+        private void btnRequestRecharge_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
+       
+
+        private void btnChangePasswordProfile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

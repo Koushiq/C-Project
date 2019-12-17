@@ -31,6 +31,8 @@
             this.mtcNavigation = new MetroFramework.Controls.MetroTabControl();
             this.mtpProfile = new MetroFramework.Controls.MetroTabPage();
             this.pnlProfile = new System.Windows.Forms.Panel();
+            this.lblBalanceOutput = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
             this.lblBankAccountOutput = new System.Windows.Forms.Label();
             this.lblBankAccountNo = new System.Windows.Forms.Label();
             this.lblRentedStatusOutput = new System.Windows.Forms.Label();
@@ -119,7 +121,7 @@
             this.mtcNavigation.Controls.Add(this.mtpRecharge);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 1;
+            this.mtcNavigation.SelectedIndex = 0;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
             this.mtcNavigation.TabIndex = 0;
             this.mtcNavigation.UseSelectable = true;
@@ -142,6 +144,8 @@
             // pnlProfile
             // 
             this.pnlProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlProfile.Controls.Add(this.lblBalanceOutput);
+            this.pnlProfile.Controls.Add(this.lblBalance);
             this.pnlProfile.Controls.Add(this.lblBankAccountOutput);
             this.pnlProfile.Controls.Add(this.lblBankAccountNo);
             this.pnlProfile.Controls.Add(this.lblRentedStatusOutput);
@@ -169,12 +173,34 @@
             this.pnlProfile.Size = new System.Drawing.Size(966, 594);
             this.pnlProfile.TabIndex = 2;
             // 
+            // lblBalanceOutput
+            // 
+            this.lblBalanceOutput.AutoSize = true;
+            this.lblBalanceOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalanceOutput.ForeColor = System.Drawing.Color.White;
+            this.lblBalanceOutput.Location = new System.Drawing.Point(448, 487);
+            this.lblBalanceOutput.Name = "lblBalanceOutput";
+            this.lblBalanceOutput.Size = new System.Drawing.Size(64, 21);
+            this.lblBalanceOutput.TabIndex = 42;
+            this.lblBalanceOutput.Text = "100000";
+            // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.ForeColor = System.Drawing.Color.White;
+            this.lblBalance.Location = new System.Drawing.Point(316, 487);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(79, 21);
+            this.lblBalance.TabIndex = 41;
+            this.lblBalance.Text = "Balance :";
+            // 
             // lblBankAccountOutput
             // 
             this.lblBankAccountOutput.AutoSize = true;
             this.lblBankAccountOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBankAccountOutput.ForeColor = System.Drawing.Color.White;
-            this.lblBankAccountOutput.Location = new System.Drawing.Point(448, 460);
+            this.lblBankAccountOutput.Location = new System.Drawing.Point(448, 458);
             this.lblBankAccountOutput.Name = "lblBankAccountOutput";
             this.lblBankAccountOutput.Size = new System.Drawing.Size(100, 21);
             this.lblBankAccountOutput.TabIndex = 36;
@@ -185,7 +211,7 @@
             this.lblBankAccountNo.AutoSize = true;
             this.lblBankAccountNo.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBankAccountNo.ForeColor = System.Drawing.Color.White;
-            this.lblBankAccountNo.Location = new System.Drawing.Point(249, 460);
+            this.lblBankAccountNo.Location = new System.Drawing.Point(249, 458);
             this.lblBankAccountNo.Name = "lblBankAccountNo";
             this.lblBankAccountNo.Size = new System.Drawing.Size(147, 21);
             this.lblBankAccountNo.TabIndex = 35;
@@ -196,7 +222,7 @@
             this.lblRentedStatusOutput.AutoSize = true;
             this.lblRentedStatusOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRentedStatusOutput.ForeColor = System.Drawing.Color.White;
-            this.lblRentedStatusOutput.Location = new System.Drawing.Point(448, 425);
+            this.lblRentedStatusOutput.Location = new System.Drawing.Point(448, 423);
             this.lblRentedStatusOutput.Name = "lblRentedStatusOutput";
             this.lblRentedStatusOutput.Size = new System.Drawing.Size(94, 21);
             this.lblRentedStatusOutput.TabIndex = 34;
@@ -207,7 +233,7 @@
             this.lblRentedStatus.AutoSize = true;
             this.lblRentedStatus.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRentedStatus.ForeColor = System.Drawing.Color.White;
-            this.lblRentedStatus.Location = new System.Drawing.Point(269, 425);
+            this.lblRentedStatus.Location = new System.Drawing.Point(269, 423);
             this.lblRentedStatus.Name = "lblRentedStatus";
             this.lblRentedStatus.Size = new System.Drawing.Size(126, 21);
             this.lblRentedStatus.TabIndex = 33;
@@ -218,7 +244,7 @@
             this.lblUsertypeOutput.AutoSize = true;
             this.lblUsertypeOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsertypeOutput.ForeColor = System.Drawing.Color.White;
-            this.lblUsertypeOutput.Location = new System.Drawing.Point(448, 251);
+            this.lblUsertypeOutput.Location = new System.Drawing.Point(448, 249);
             this.lblUsertypeOutput.Name = "lblUsertypeOutput";
             this.lblUsertypeOutput.Size = new System.Drawing.Size(62, 21);
             this.lblUsertypeOutput.TabIndex = 32;
@@ -229,7 +255,7 @@
             this.lblUsertype.AutoSize = true;
             this.lblUsertype.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsertype.ForeColor = System.Drawing.Color.White;
-            this.lblUsertype.Location = new System.Drawing.Point(308, 251);
+            this.lblUsertype.Location = new System.Drawing.Point(308, 249);
             this.lblUsertype.Name = "lblUsertype";
             this.lblUsertype.Size = new System.Drawing.Size(87, 21);
             this.lblUsertype.TabIndex = 31;
@@ -274,7 +300,7 @@
             this.lblDateOfBirthProfileOutput.AutoSize = true;
             this.lblDateOfBirthProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirthProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblDateOfBirthProfileOutput.Location = new System.Drawing.Point(448, 389);
+            this.lblDateOfBirthProfileOutput.Location = new System.Drawing.Point(448, 387);
             this.lblDateOfBirthProfileOutput.Name = "lblDateOfBirthProfileOutput";
             this.lblDateOfBirthProfileOutput.Size = new System.Drawing.Size(92, 21);
             this.lblDateOfBirthProfileOutput.TabIndex = 27;
@@ -285,7 +311,7 @@
             this.lblPhoneNumberProfileOutput.AutoSize = true;
             this.lblPhoneNumberProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumberProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumberProfileOutput.Location = new System.Drawing.Point(448, 353);
+            this.lblPhoneNumberProfileOutput.Location = new System.Drawing.Point(448, 351);
             this.lblPhoneNumberProfileOutput.Name = "lblPhoneNumberProfileOutput";
             this.lblPhoneNumberProfileOutput.Size = new System.Drawing.Size(109, 21);
             this.lblPhoneNumberProfileOutput.TabIndex = 26;
@@ -296,7 +322,7 @@
             this.lblGenderProfileOutput.AutoSize = true;
             this.lblGenderProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenderProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblGenderProfileOutput.Location = new System.Drawing.Point(448, 319);
+            this.lblGenderProfileOutput.Location = new System.Drawing.Point(448, 317);
             this.lblGenderProfileOutput.Name = "lblGenderProfileOutput";
             this.lblGenderProfileOutput.Size = new System.Drawing.Size(45, 21);
             this.lblGenderProfileOutput.TabIndex = 25;
@@ -307,7 +333,7 @@
             this.lblUserIDProfileOutput.AutoSize = true;
             this.lblUserIDProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserIDProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblUserIDProfileOutput.Location = new System.Drawing.Point(448, 220);
+            this.lblUserIDProfileOutput.Location = new System.Drawing.Point(448, 218);
             this.lblUserIDProfileOutput.Name = "lblUserIDProfileOutput";
             this.lblUserIDProfileOutput.Size = new System.Drawing.Size(53, 21);
             this.lblUserIDProfileOutput.TabIndex = 24;
@@ -318,7 +344,7 @@
             this.lblNameProfileOutput.AutoSize = true;
             this.lblNameProfileOutput.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameProfileOutput.ForeColor = System.Drawing.Color.White;
-            this.lblNameProfileOutput.Location = new System.Drawing.Point(448, 285);
+            this.lblNameProfileOutput.Location = new System.Drawing.Point(448, 283);
             this.lblNameProfileOutput.Name = "lblNameProfileOutput";
             this.lblNameProfileOutput.Size = new System.Drawing.Size(68, 21);
             this.lblNameProfileOutput.TabIndex = 23;
@@ -329,7 +355,7 @@
             this.btnDeleteProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDeleteProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteProfile.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteProfile.Location = new System.Drawing.Point(591, 517);
+            this.btnDeleteProfile.Location = new System.Drawing.Point(591, 519);
             this.btnDeleteProfile.Name = "btnDeleteProfile";
             this.btnDeleteProfile.Size = new System.Drawing.Size(140, 47);
             this.btnDeleteProfile.TabIndex = 22;
@@ -341,7 +367,7 @@
             this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdateProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateProfile.Location = new System.Drawing.Point(421, 517);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(421, 519);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(140, 47);
             this.btnUpdateProfile.TabIndex = 21;
@@ -353,19 +379,20 @@
             this.btnChangePasswordProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnChangePasswordProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePasswordProfile.ForeColor = System.Drawing.Color.White;
-            this.btnChangePasswordProfile.Location = new System.Drawing.Point(252, 517);
+            this.btnChangePasswordProfile.Location = new System.Drawing.Point(252, 519);
             this.btnChangePasswordProfile.Name = "btnChangePasswordProfile";
             this.btnChangePasswordProfile.Size = new System.Drawing.Size(140, 47);
             this.btnChangePasswordProfile.TabIndex = 20;
             this.btnChangePasswordProfile.Text = "Change Password";
             this.btnChangePasswordProfile.UseVisualStyleBackColor = false;
+            this.btnChangePasswordProfile.Click += new System.EventHandler(this.btnChangePasswordProfile_Click);
             // 
             // lblDateOfBirthProfile
             // 
             this.lblDateOfBirthProfile.AutoSize = true;
             this.lblDateOfBirthProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirthProfile.ForeColor = System.Drawing.Color.White;
-            this.lblDateOfBirthProfile.Location = new System.Drawing.Point(271, 389);
+            this.lblDateOfBirthProfile.Location = new System.Drawing.Point(271, 387);
             this.lblDateOfBirthProfile.Name = "lblDateOfBirthProfile";
             this.lblDateOfBirthProfile.Size = new System.Drawing.Size(124, 21);
             this.lblDateOfBirthProfile.TabIndex = 19;
@@ -376,7 +403,7 @@
             this.lblPhoneNumberProfile.AutoSize = true;
             this.lblPhoneNumberProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumberProfile.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumberProfile.Location = new System.Drawing.Point(261, 353);
+            this.lblPhoneNumberProfile.Location = new System.Drawing.Point(261, 351);
             this.lblPhoneNumberProfile.Name = "lblPhoneNumberProfile";
             this.lblPhoneNumberProfile.Size = new System.Drawing.Size(134, 21);
             this.lblPhoneNumberProfile.TabIndex = 18;
@@ -387,7 +414,7 @@
             this.lblGenderProfile.AutoSize = true;
             this.lblGenderProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenderProfile.ForeColor = System.Drawing.Color.White;
-            this.lblGenderProfile.Location = new System.Drawing.Point(317, 319);
+            this.lblGenderProfile.Location = new System.Drawing.Point(317, 317);
             this.lblGenderProfile.Name = "lblGenderProfile";
             this.lblGenderProfile.Size = new System.Drawing.Size(79, 21);
             this.lblGenderProfile.TabIndex = 17;
@@ -398,7 +425,7 @@
             this.lblUserIDProfile.AutoSize = true;
             this.lblUserIDProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserIDProfile.ForeColor = System.Drawing.Color.White;
-            this.lblUserIDProfile.Location = new System.Drawing.Point(318, 220);
+            this.lblUserIDProfile.Location = new System.Drawing.Point(318, 218);
             this.lblUserIDProfile.Name = "lblUserIDProfile";
             this.lblUserIDProfile.Size = new System.Drawing.Size(78, 21);
             this.lblUserIDProfile.TabIndex = 16;
@@ -409,7 +436,7 @@
             this.lblNameProfile.AutoSize = true;
             this.lblNameProfile.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameProfile.ForeColor = System.Drawing.Color.White;
-            this.lblNameProfile.Location = new System.Drawing.Point(326, 285);
+            this.lblNameProfile.Location = new System.Drawing.Point(326, 283);
             this.lblNameProfile.Name = "lblNameProfile";
             this.lblNameProfile.Size = new System.Drawing.Size(69, 21);
             this.lblNameProfile.TabIndex = 15;
@@ -835,12 +862,13 @@
             this.btnRequestRecharge.BackColor = System.Drawing.Color.Firebrick;
             this.btnRequestRecharge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRequestRecharge.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRequestRecharge.Location = new System.Drawing.Point(182, 108);
+            this.btnRequestRecharge.Location = new System.Drawing.Point(171, 109);
             this.btnRequestRecharge.Name = "btnRequestRecharge";
             this.btnRequestRecharge.Size = new System.Drawing.Size(116, 51);
             this.btnRequestRecharge.TabIndex = 41;
             this.btnRequestRecharge.Text = "Request Recharge";
             this.btnRequestRecharge.UseVisualStyleBackColor = false;
+            this.btnRequestRecharge.Click += new System.EventHandler(this.btnRequestRecharge_Click);
             // 
             // txtBalance
             // 
@@ -971,5 +999,7 @@
         private System.Windows.Forms.Label lblFlatType;
         private System.Windows.Forms.ComboBox cmbFlatType;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblBalanceOutput;
+        private System.Windows.Forms.Label lblBalance;
     }
 }

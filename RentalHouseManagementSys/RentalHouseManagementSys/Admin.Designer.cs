@@ -83,7 +83,9 @@
             this.mtpSystemData = new MetroFramework.Controls.MetroTabPage();
             this.mtcSystemDataTab = new MetroFramework.Controls.MetroTabControl();
             this.mtpUsers = new MetroFramework.Controls.MetroTabPage();
-            this.pnlSystemDataUsers = new System.Windows.Forms.Panel();
+            this.mtcSystemDataUsertypes = new MetroFramework.Controls.MetroTabControl();
+            this.mtpAdmin = new MetroFramework.Controls.MetroTabPage();
+            this.pnlSystemDataUsersAdmin = new System.Windows.Forms.Panel();
             this.btnSystemDataUsersRemove = new System.Windows.Forms.Button();
             this.dgvSystemDataUsersSystemData = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +99,36 @@
             this.btnSystemDataUsersSearch = new System.Windows.Forms.Button();
             this.cmbSystemDataUsersUserType = new System.Windows.Forms.ComboBox();
             this.txtSystemDataUsersSearch = new System.Windows.Forms.TextBox();
+            this.mtpLandlord = new MetroFramework.Controls.MetroTabPage();
+            this.pnlSystemDataUsersLandlord = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.mtpTenant = new MetroFramework.Controls.MetroTabPage();
+            this.pnlSystemDataUsersTenant = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.mtpFlats = new MetroFramework.Controls.MetroTabPage();
             this.pnlSystemDataApartments = new System.Windows.Forms.Panel();
             this.dgvSystemDataApartments = new System.Windows.Forms.DataGridView();
@@ -105,8 +137,8 @@
             this.btnSystemDataApartmentsSearch = new System.Windows.Forms.Button();
             this.lblSystemDataApartmentsSearchByID = new System.Windows.Forms.Label();
             this.mtpPayment = new MetroFramework.Controls.MetroTabPage();
-            this.pbLogout = new System.Windows.Forms.PictureBox();
             this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
+            this.pbLogout = new System.Windows.Forms.PictureBox();
             this.mtcNavigation.SuspendLayout();
             this.mtpProfile.SuspendLayout();
             this.pnlProfile.SuspendLayout();
@@ -120,8 +152,16 @@
             this.mtpSystemData.SuspendLayout();
             this.mtcSystemDataTab.SuspendLayout();
             this.mtpUsers.SuspendLayout();
-            this.pnlSystemDataUsers.SuspendLayout();
+            this.mtcSystemDataUsertypes.SuspendLayout();
+            this.mtpAdmin.SuspendLayout();
+            this.pnlSystemDataUsersAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataUsersSystemData)).BeginInit();
+            this.mtpLandlord.SuspendLayout();
+            this.pnlSystemDataUsersLandlord.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.mtpTenant.SuspendLayout();
+            this.pnlSystemDataUsersTenant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.mtpFlats.SuspendLayout();
             this.pnlSystemDataApartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataApartments)).BeginInit();
@@ -137,7 +177,7 @@
             this.mtcNavigation.Controls.Add(this.mtpSystemData);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 2;
+            this.mtcNavigation.SelectedIndex = 1;
             this.mtcNavigation.Size = new System.Drawing.Size(977, 639);
             this.mtcNavigation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mtcNavigation.TabIndex = 0;
@@ -384,6 +424,7 @@
             // 
             // flpFeed
             // 
+            this.flpFeed.AutoScroll = true;
             this.flpFeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.flpFeed.Controls.Add(this.pnlSearch);
             this.flpFeed.Location = new System.Drawing.Point(0, 1);
@@ -630,7 +671,7 @@
             this.mdtDateOfBirth.CustomFormat = "yyyy-MM-dd";
             this.mdtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.mdtDateOfBirth.Location = new System.Drawing.Point(379, 404);
-            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(0, 29);
+            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(4, 29);
             this.mdtDateOfBirth.Name = "mdtDateOfBirth";
             this.mdtDateOfBirth.Size = new System.Drawing.Size(338, 29);
             this.mdtDateOfBirth.TabIndex = 12;
@@ -792,7 +833,7 @@
             // 
             // mtpUsers
             // 
-            this.mtpUsers.Controls.Add(this.pnlSystemDataUsers);
+            this.mtpUsers.Controls.Add(this.mtcSystemDataUsertypes);
             this.mtpUsers.HorizontalScrollbarBarColor = true;
             this.mtpUsers.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpUsers.HorizontalScrollbarSize = 10;
@@ -805,20 +846,47 @@
             this.mtpUsers.VerticalScrollbarHighlightOnWheel = false;
             this.mtpUsers.VerticalScrollbarSize = 10;
             // 
-            // pnlSystemDataUsers
+            // mtcSystemDataUsertypes
             // 
-            this.pnlSystemDataUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlSystemDataUsers.Controls.Add(this.btnSystemDataUsersRemove);
-            this.pnlSystemDataUsers.Controls.Add(this.dgvSystemDataUsersSystemData);
-            this.pnlSystemDataUsers.Controls.Add(this.lblSelectUser);
-            this.pnlSystemDataUsers.Controls.Add(this.lblSystemDataUsersSearchByID);
-            this.pnlSystemDataUsers.Controls.Add(this.btnSystemDataUsersSearch);
-            this.pnlSystemDataUsers.Controls.Add(this.cmbSystemDataUsersUserType);
-            this.pnlSystemDataUsers.Controls.Add(this.txtSystemDataUsersSearch);
-            this.pnlSystemDataUsers.Location = new System.Drawing.Point(-3, 6);
-            this.pnlSystemDataUsers.Name = "pnlSystemDataUsers";
-            this.pnlSystemDataUsers.Size = new System.Drawing.Size(969, 553);
-            this.pnlSystemDataUsers.TabIndex = 2;
+            this.mtcSystemDataUsertypes.Controls.Add(this.mtpAdmin);
+            this.mtcSystemDataUsertypes.Controls.Add(this.mtpLandlord);
+            this.mtcSystemDataUsertypes.Controls.Add(this.mtpTenant);
+            this.mtcSystemDataUsertypes.Location = new System.Drawing.Point(-4, 3);
+            this.mtcSystemDataUsertypes.Name = "mtcSystemDataUsertypes";
+            this.mtcSystemDataUsertypes.SelectedIndex = 2;
+            this.mtcSystemDataUsertypes.Size = new System.Drawing.Size(977, 560);
+            this.mtcSystemDataUsertypes.TabIndex = 2;
+            this.mtcSystemDataUsertypes.UseSelectable = true;
+            // 
+            // mtpAdmin
+            // 
+            this.mtpAdmin.Controls.Add(this.pnlSystemDataUsersAdmin);
+            this.mtpAdmin.HorizontalScrollbarBarColor = true;
+            this.mtpAdmin.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpAdmin.HorizontalScrollbarSize = 10;
+            this.mtpAdmin.Location = new System.Drawing.Point(4, 38);
+            this.mtpAdmin.Name = "mtpAdmin";
+            this.mtpAdmin.Size = new System.Drawing.Size(969, 518);
+            this.mtpAdmin.TabIndex = 0;
+            this.mtpAdmin.Text = "Admin    ";
+            this.mtpAdmin.VerticalScrollbarBarColor = true;
+            this.mtpAdmin.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpAdmin.VerticalScrollbarSize = 10;
+            // 
+            // pnlSystemDataUsersAdmin
+            // 
+            this.pnlSystemDataUsersAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlSystemDataUsersAdmin.Controls.Add(this.btnSystemDataUsersRemove);
+            this.pnlSystemDataUsersAdmin.Controls.Add(this.dgvSystemDataUsersSystemData);
+            this.pnlSystemDataUsersAdmin.Controls.Add(this.lblSelectUser);
+            this.pnlSystemDataUsersAdmin.Controls.Add(this.lblSystemDataUsersSearchByID);
+            this.pnlSystemDataUsersAdmin.Controls.Add(this.btnSystemDataUsersSearch);
+            this.pnlSystemDataUsersAdmin.Controls.Add(this.cmbSystemDataUsersUserType);
+            this.pnlSystemDataUsersAdmin.Controls.Add(this.txtSystemDataUsersSearch);
+            this.pnlSystemDataUsersAdmin.Location = new System.Drawing.Point(-2, 3);
+            this.pnlSystemDataUsersAdmin.Name = "pnlSystemDataUsersAdmin";
+            this.pnlSystemDataUsersAdmin.Size = new System.Drawing.Size(969, 515);
+            this.pnlSystemDataUsersAdmin.TabIndex = 3;
             // 
             // btnSystemDataUsersRemove
             // 
@@ -826,9 +894,9 @@
             this.btnSystemDataUsersRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemDataUsersRemove.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemDataUsersRemove.ForeColor = System.Drawing.Color.White;
-            this.btnSystemDataUsersRemove.Location = new System.Drawing.Point(668, 77);
+            this.btnSystemDataUsersRemove.Location = new System.Drawing.Point(668, 67);
             this.btnSystemDataUsersRemove.Name = "btnSystemDataUsersRemove";
-            this.btnSystemDataUsersRemove.Size = new System.Drawing.Size(87, 38);
+            this.btnSystemDataUsersRemove.Size = new System.Drawing.Size(86, 38);
             this.btnSystemDataUsersRemove.TabIndex = 7;
             this.btnSystemDataUsersRemove.Text = "Remove";
             this.btnSystemDataUsersRemove.UseVisualStyleBackColor = false;
@@ -847,12 +915,12 @@
             this.gender,
             this.dateofbirth});
             this.dgvSystemDataUsersSystemData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.dgvSystemDataUsersSystemData.Location = new System.Drawing.Point(3, 129);
+            this.dgvSystemDataUsersSystemData.Location = new System.Drawing.Point(3, 126);
             this.dgvSystemDataUsersSystemData.Name = "dgvSystemDataUsersSystemData";
             this.dgvSystemDataUsersSystemData.ReadOnly = true;
             this.dgvSystemDataUsersSystemData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvSystemDataUsersSystemData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvSystemDataUsersSystemData.Size = new System.Drawing.Size(963, 417);
+            this.dgvSystemDataUsersSystemData.Size = new System.Drawing.Size(963, 386);
             this.dgvSystemDataUsersSystemData.TabIndex = 5;
             // 
             // id
@@ -906,22 +974,22 @@
             // lblSelectUser
             // 
             this.lblSelectUser.AutoSize = true;
-            this.lblSelectUser.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectUser.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectUser.ForeColor = System.Drawing.Color.White;
-            this.lblSelectUser.Location = new System.Drawing.Point(767, 8);
+            this.lblSelectUser.Location = new System.Drawing.Point(764, 8);
             this.lblSelectUser.Name = "lblSelectUser";
-            this.lblSelectUser.Size = new System.Drawing.Size(134, 18);
+            this.lblSelectUser.Size = new System.Drawing.Size(116, 16);
             this.lblSelectUser.TabIndex = 4;
             this.lblSelectUser.Text = "Select User Type";
             // 
             // lblSystemDataUsersSearchByID
             // 
             this.lblSystemDataUsersSearchByID.AutoSize = true;
-            this.lblSystemDataUsersSearchByID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemDataUsersSearchByID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSystemDataUsersSearchByID.ForeColor = System.Drawing.Color.White;
             this.lblSystemDataUsersSearchByID.Location = new System.Drawing.Point(545, 8);
             this.lblSystemDataUsersSearchByID.Name = "lblSystemDataUsersSearchByID";
-            this.lblSystemDataUsersSearchByID.Size = new System.Drawing.Size(103, 18);
+            this.lblSystemDataUsersSearchByID.Size = new System.Drawing.Size(90, 16);
             this.lblSystemDataUsersSearchByID.TabIndex = 3;
             this.lblSystemDataUsersSearchByID.Text = "Search By Id";
             // 
@@ -931,36 +999,374 @@
             this.btnSystemDataUsersSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemDataUsersSearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemDataUsersSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSystemDataUsersSearch.Location = new System.Drawing.Point(825, 77);
+            this.btnSystemDataUsersSearch.Location = new System.Drawing.Point(838, 68);
             this.btnSystemDataUsersSearch.Name = "btnSystemDataUsersSearch";
-            this.btnSystemDataUsersSearch.Size = new System.Drawing.Size(131, 38);
+            this.btnSystemDataUsersSearch.Size = new System.Drawing.Size(115, 37);
             this.btnSystemDataUsersSearch.TabIndex = 2;
             this.btnSystemDataUsersSearch.Text = "Search";
             this.btnSystemDataUsersSearch.UseVisualStyleBackColor = false;
-            this.btnSystemDataUsersSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cmbSystemDataUsersUserType
             // 
             this.cmbSystemDataUsersUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSystemDataUsersUserType.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSystemDataUsersUserType.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSystemDataUsersUserType.FormattingEnabled = true;
             this.cmbSystemDataUsersUserType.Items.AddRange(new object[] {
             "Admin",
             "Landlord",
             "Tenant"});
-            this.cmbSystemDataUsersUserType.Location = new System.Drawing.Point(770, 38);
+            this.cmbSystemDataUsersUserType.Location = new System.Drawing.Point(767, 29);
             this.cmbSystemDataUsersUserType.Name = "cmbSystemDataUsersUserType";
-            this.cmbSystemDataUsersUserType.Size = new System.Drawing.Size(186, 26);
+            this.cmbSystemDataUsersUserType.Size = new System.Drawing.Size(186, 24);
             this.cmbSystemDataUsersUserType.TabIndex = 1;
             // 
             // txtSystemDataUsersSearch
             // 
             this.txtSystemDataUsersSearch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSystemDataUsersSearch.Location = new System.Drawing.Point(548, 38);
+            this.txtSystemDataUsersSearch.Location = new System.Drawing.Point(547, 28);
             this.txtSystemDataUsersSearch.Name = "txtSystemDataUsersSearch";
             this.txtSystemDataUsersSearch.Size = new System.Drawing.Size(207, 26);
             this.txtSystemDataUsersSearch.TabIndex = 0;
-            this.txtSystemDataUsersSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // mtpLandlord
+            // 
+            this.mtpLandlord.Controls.Add(this.pnlSystemDataUsersLandlord);
+            this.mtpLandlord.HorizontalScrollbarBarColor = true;
+            this.mtpLandlord.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpLandlord.HorizontalScrollbarSize = 10;
+            this.mtpLandlord.Location = new System.Drawing.Point(4, 38);
+            this.mtpLandlord.Name = "mtpLandlord";
+            this.mtpLandlord.Size = new System.Drawing.Size(969, 518);
+            this.mtpLandlord.TabIndex = 1;
+            this.mtpLandlord.Text = "Landlord    ";
+            this.mtpLandlord.VerticalScrollbarBarColor = true;
+            this.mtpLandlord.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpLandlord.VerticalScrollbarSize = 10;
+            // 
+            // pnlSystemDataUsersLandlord
+            // 
+            this.pnlSystemDataUsersLandlord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlSystemDataUsersLandlord.Controls.Add(this.button3);
+            this.pnlSystemDataUsersLandlord.Controls.Add(this.dataGridView2);
+            this.pnlSystemDataUsersLandlord.Controls.Add(this.label3);
+            this.pnlSystemDataUsersLandlord.Controls.Add(this.label4);
+            this.pnlSystemDataUsersLandlord.Controls.Add(this.button4);
+            this.pnlSystemDataUsersLandlord.Controls.Add(this.comboBox2);
+            this.pnlSystemDataUsersLandlord.Controls.Add(this.textBox3);
+            this.pnlSystemDataUsersLandlord.Location = new System.Drawing.Point(-2, 3);
+            this.pnlSystemDataUsersLandlord.Name = "pnlSystemDataUsersLandlord";
+            this.pnlSystemDataUsersLandlord.Size = new System.Drawing.Size(969, 515);
+            this.pnlSystemDataUsersLandlord.TabIndex = 9;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(668, 67);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(86, 38);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Remove";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.dataGridView2.Location = new System.Drawing.Point(3, 126);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView2.Size = new System.Drawing.Size(963, 386);
+            this.dataGridView2.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "UserID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Username";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "password";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "phonenumber";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Contact";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "gender";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Gender";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "dateofbirth";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Date Of Birth";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(764, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Select User Type";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(545, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Search By Id";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Purple;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(838, 68);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 37);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Admin",
+            "Landlord",
+            "Tenant"});
+            this.comboBox2.Location = new System.Drawing.Point(767, 29);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(186, 24);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(547, 28);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(207, 26);
+            this.textBox3.TabIndex = 0;
+            // 
+            // mtpTenant
+            // 
+            this.mtpTenant.Controls.Add(this.pnlSystemDataUsersTenant);
+            this.mtpTenant.HorizontalScrollbarBarColor = true;
+            this.mtpTenant.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpTenant.HorizontalScrollbarSize = 10;
+            this.mtpTenant.Location = new System.Drawing.Point(4, 38);
+            this.mtpTenant.Name = "mtpTenant";
+            this.mtpTenant.Size = new System.Drawing.Size(969, 518);
+            this.mtpTenant.TabIndex = 2;
+            this.mtpTenant.Text = "Tenant    ";
+            this.mtpTenant.VerticalScrollbarBarColor = true;
+            this.mtpTenant.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpTenant.VerticalScrollbarSize = 10;
+            // 
+            // pnlSystemDataUsersTenant
+            // 
+            this.pnlSystemDataUsersTenant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlSystemDataUsersTenant.Controls.Add(this.button1);
+            this.pnlSystemDataUsersTenant.Controls.Add(this.dataGridView1);
+            this.pnlSystemDataUsersTenant.Controls.Add(this.label1);
+            this.pnlSystemDataUsersTenant.Controls.Add(this.label2);
+            this.pnlSystemDataUsersTenant.Controls.Add(this.button2);
+            this.pnlSystemDataUsersTenant.Controls.Add(this.comboBox1);
+            this.pnlSystemDataUsersTenant.Controls.Add(this.textBox2);
+            this.pnlSystemDataUsersTenant.Location = new System.Drawing.Point(-1, 3);
+            this.pnlSystemDataUsersTenant.Name = "pnlSystemDataUsersTenant";
+            this.pnlSystemDataUsersTenant.Size = new System.Drawing.Size(969, 515);
+            this.pnlSystemDataUsersTenant.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(667, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 38);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Remove";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.dataGridView1.Location = new System.Drawing.Point(2, 126);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(963, 386);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "UserID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Username";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "password";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "phonenumber";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Contact";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "gender";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Gender";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "dateofbirth";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Date Of Birth";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(763, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Select User Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(544, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Search By Id";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Purple;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(837, 68);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 37);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "Landlord",
+            "Tenant"});
+            this.comboBox1.Location = new System.Drawing.Point(766, 29);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(186, 24);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(546, 28);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(207, 26);
+            this.textBox2.TabIndex = 0;
             // 
             // mtpFlats
             // 
@@ -1057,18 +1463,6 @@
             this.mtpPayment.VerticalScrollbarHighlightOnWheel = false;
             this.mtpPayment.VerticalScrollbarSize = 10;
             // 
-            // pbLogout
-            // 
-            this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
-            this.pbLogout.Location = new System.Drawing.Point(910, 35);
-            this.pbLogout.Name = "pbLogout";
-            this.pbLogout.Size = new System.Drawing.Size(47, 47);
-            this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogout.TabIndex = 1;
-            this.pbLogout.TabStop = false;
-            this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
-            // 
             // mtpAgreements
             // 
             this.mtpAgreements.HorizontalScrollbarBarColor = true;
@@ -1083,11 +1477,23 @@
             this.mtpAgreements.VerticalScrollbarHighlightOnWheel = false;
             this.mtpAgreements.VerticalScrollbarSize = 10;
             // 
+            // pbLogout
+            // 
+            this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
+            this.pbLogout.Location = new System.Drawing.Point(910, 35);
+            this.pbLogout.Name = "pbLogout";
+            this.pbLogout.Size = new System.Drawing.Size(47, 47);
+            this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogout.TabIndex = 1;
+            this.pbLogout.TabStop = false;
+            this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 702);
+            this.ClientSize = new System.Drawing.Size(975, 702);
             this.Controls.Add(this.pbLogout);
             this.Controls.Add(this.mtcNavigation);
             this.MaximizeBox = false;
@@ -1112,9 +1518,19 @@
             this.mtpSystemData.ResumeLayout(false);
             this.mtcSystemDataTab.ResumeLayout(false);
             this.mtpUsers.ResumeLayout(false);
-            this.pnlSystemDataUsers.ResumeLayout(false);
-            this.pnlSystemDataUsers.PerformLayout();
+            this.mtcSystemDataUsertypes.ResumeLayout(false);
+            this.mtpAdmin.ResumeLayout(false);
+            this.pnlSystemDataUsersAdmin.ResumeLayout(false);
+            this.pnlSystemDataUsersAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSystemDataUsersSystemData)).EndInit();
+            this.mtpLandlord.ResumeLayout(false);
+            this.pnlSystemDataUsersLandlord.ResumeLayout(false);
+            this.pnlSystemDataUsersLandlord.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.mtpTenant.ResumeLayout(false);
+            this.pnlSystemDataUsersTenant.ResumeLayout(false);
+            this.pnlSystemDataUsersTenant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.mtpFlats.ResumeLayout(false);
             this.pnlSystemDataApartments.ResumeLayout(false);
             this.pnlSystemDataApartments.PerformLayout();
@@ -1149,13 +1565,6 @@
         private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.Label lblPassword;
         private MetroFramework.Controls.MetroButton mbtnAddAdmin;
-        private System.Windows.Forms.Panel pnlSystemDataUsers;
-        private System.Windows.Forms.TextBox txtSystemDataUsersSearch;
-        private System.Windows.Forms.Button btnSystemDataUsersSearch;
-        private System.Windows.Forms.ComboBox cmbSystemDataUsersUserType;
-        private System.Windows.Forms.Label lblSelectUser;
-        private System.Windows.Forms.Label lblSystemDataUsersSearchByID;
-        private System.Windows.Forms.DataGridView dgvSystemDataUsersSystemData;
         private System.Windows.Forms.Button btnUploadPictureProfile;
         private System.Windows.Forms.PictureBox pbProfilePicture;
         private System.Windows.Forms.Label lblDateOfBirthProfile;
@@ -1172,13 +1581,6 @@
         private System.Windows.Forms.Label lblUserIDProfileOutput;
         private System.Windows.Forms.Label lblNameProfileOutput;
         private System.Windows.Forms.PictureBox pbLogout;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateofbirth;
-        private System.Windows.Forms.Button btnSystemDataUsersRemove;
         private MetroFramework.Controls.MetroTabControl mtcSystemDataTab;
         private MetroFramework.Controls.MetroTabPage mtpUsers;
         private MetroFramework.Controls.MetroTabPage mtpFlats;
@@ -1205,6 +1607,52 @@
         private System.Windows.Forms.CheckBox cbEnableFilter;
         private System.Windows.Forms.Label lblSearchByArea;
         private MetroFramework.Controls.MetroTabPage mtpAgreements;
+        private MetroFramework.Controls.MetroTabControl mtcSystemDataUsertypes;
+        private MetroFramework.Controls.MetroTabPage mtpAdmin;
+        private System.Windows.Forms.Panel pnlSystemDataUsersAdmin;
+        private System.Windows.Forms.Button btnSystemDataUsersRemove;
+        private System.Windows.Forms.DataGridView dgvSystemDataUsersSystemData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateofbirth;
+        private System.Windows.Forms.Label lblSelectUser;
+        private System.Windows.Forms.Label lblSystemDataUsersSearchByID;
+        private System.Windows.Forms.Button btnSystemDataUsersSearch;
+        private System.Windows.Forms.ComboBox cmbSystemDataUsersUserType;
+        private System.Windows.Forms.TextBox txtSystemDataUsersSearch;
+        private MetroFramework.Controls.MetroTabPage mtpLandlord;
+        private System.Windows.Forms.Panel pnlSystemDataUsersLandlord;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private MetroFramework.Controls.MetroTabPage mtpTenant;
+        private System.Windows.Forms.Panel pnlSystemDataUsersTenant;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

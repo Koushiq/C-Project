@@ -15,3 +15,4 @@ C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\D
 C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Registration.resources
 C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Tenant.resources
 C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Landlord.resources
+C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Form1.resources
