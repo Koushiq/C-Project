@@ -177,7 +177,7 @@
             this.mtcNavigation.Controls.Add(this.mtpSystemData);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 1;
+            this.mtcNavigation.SelectedIndex = 3;
             this.mtcNavigation.Size = new System.Drawing.Size(977, 639);
             this.mtcNavigation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mtcNavigation.TabIndex = 0;
@@ -658,7 +658,7 @@
             // mbtnAddAdmin
             // 
             this.mbtnAddAdmin.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.mbtnAddAdmin.Location = new System.Drawing.Point(446, 484);
+            this.mbtnAddAdmin.Location = new System.Drawing.Point(442, 510);
             this.mbtnAddAdmin.Name = "mbtnAddAdmin";
             this.mbtnAddAdmin.Size = new System.Drawing.Size(127, 35);
             this.mbtnAddAdmin.TabIndex = 13;
@@ -670,8 +670,8 @@
             // 
             this.mdtDateOfBirth.CustomFormat = "yyyy-MM-dd";
             this.mdtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.mdtDateOfBirth.Location = new System.Drawing.Point(379, 404);
-            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(4, 29);
+            this.mdtDateOfBirth.Location = new System.Drawing.Point(379, 437);
+            this.mdtDateOfBirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.mdtDateOfBirth.Name = "mdtDateOfBirth";
             this.mdtDateOfBirth.Size = new System.Drawing.Size(338, 29);
             this.mdtDateOfBirth.TabIndex = 12;
@@ -681,7 +681,7 @@
             this.rbFemale.AutoSize = true;
             this.rbFemale.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbFemale.ForeColor = System.Drawing.Color.White;
-            this.rbFemale.Location = new System.Drawing.Point(531, 332);
+            this.rbFemale.Location = new System.Drawing.Point(531, 365);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(73, 22);
             this.rbFemale.TabIndex = 11;
@@ -694,7 +694,7 @@
             this.rbMale.AutoSize = true;
             this.rbMale.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbMale.ForeColor = System.Drawing.Color.White;
-            this.rbMale.Location = new System.Drawing.Point(379, 332);
+            this.rbMale.Location = new System.Drawing.Point(379, 365);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(56, 22);
             this.rbMale.TabIndex = 10;
@@ -705,7 +705,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(379, 259);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(379, 292);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(338, 26);
             this.txtPhoneNumber.TabIndex = 9;
@@ -713,7 +713,7 @@
             // txtRetypePassword
             // 
             this.txtRetypePassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRetypePassword.Location = new System.Drawing.Point(379, 183);
+            this.txtRetypePassword.Location = new System.Drawing.Point(379, 216);
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.Size = new System.Drawing.Size(338, 26);
             this.txtRetypePassword.TabIndex = 8;
@@ -722,7 +722,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(379, 109);
+            this.txtPassword.Location = new System.Drawing.Point(379, 142);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(338, 26);
             this.txtPassword.TabIndex = 7;
@@ -731,7 +731,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(379, 38);
+            this.txtName.Location = new System.Drawing.Point(379, 71);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(338, 26);
             this.txtName.TabIndex = 6;
@@ -741,7 +741,7 @@
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth.ForeColor = System.Drawing.Color.White;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(158, 413);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(158, 446);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(115, 20);
             this.lblDateOfBirth.TabIndex = 5;
@@ -752,7 +752,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.White;
-            this.lblGender.Location = new System.Drawing.Point(204, 333);
+            this.lblGender.Location = new System.Drawing.Point(204, 366);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(69, 20);
             this.lblGender.TabIndex = 4;
@@ -763,7 +763,7 @@
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(146, 261);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(146, 294);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(127, 20);
             this.lblPhoneNumber.TabIndex = 3;
@@ -774,7 +774,7 @@
             this.lblRetypePassword.AutoSize = true;
             this.lblRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetypePassword.ForeColor = System.Drawing.Color.White;
-            this.lblRetypePassword.Location = new System.Drawing.Point(125, 185);
+            this.lblRetypePassword.Location = new System.Drawing.Point(125, 218);
             this.lblRetypePassword.Name = "lblRetypePassword";
             this.lblRetypePassword.Size = new System.Drawing.Size(148, 20);
             this.lblRetypePassword.TabIndex = 2;
@@ -785,7 +785,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(187, 111);
+            this.lblPassword.Location = new System.Drawing.Point(187, 144);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(86, 20);
             this.lblPassword.TabIndex = 1;
@@ -796,7 +796,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(218, 40);
+            this.lblName.Location = new System.Drawing.Point(218, 73);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(55, 20);
             this.lblName.TabIndex = 0;
@@ -826,7 +826,7 @@
             this.mtcSystemDataTab.FontSize = MetroFramework.MetroTabControlSize.Small;
             this.mtcSystemDataTab.Location = new System.Drawing.Point(-4, 4);
             this.mtcSystemDataTab.Name = "mtcSystemDataTab";
-            this.mtcSystemDataTab.SelectedIndex = 0;
+            this.mtcSystemDataTab.SelectedIndex = 1;
             this.mtcSystemDataTab.Size = new System.Drawing.Size(977, 597);
             this.mtcSystemDataTab.TabIndex = 2;
             this.mtcSystemDataTab.UseSelectable = true;

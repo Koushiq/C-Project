@@ -19,6 +19,7 @@ namespace RentalHouseManagementSys
         private PictureBox[] pb = new PictureBox[4];
         public DataAccess Da { get; set; }
         public DataSet Ds { get; set; }
+        private Login LoginForm { get; set; }
         public Landlord()
         {
             InitializeComponent();
@@ -31,6 +32,16 @@ namespace RentalHouseManagementSys
             GetFeedData();
 
         }
+        public Landlord(Login login)
+        {
+            InitializeComponent();
+            this.LoginForm = login;
+            GetFeedData();
+
+        }
+
+
+
         public void GetFeedData()
         {
            string[] attributeNames = new string[10] { "AD-ID : ","Title : ", "Rent : " , "Location : ", "Block/Road :", "Apartment No : ", "Contact : " , "SquareFeet : " , "Floor : ", "Facilities : "};
@@ -161,7 +172,7 @@ namespace RentalHouseManagementSys
                     try
                     {
                         string src = pb[i].ImageLocation;
-                        des[i] = "./FeedData/img/ad-103-" + (i + 1) + ".jpg";
+                        des[i] = "./FeedData/img/ad-100-" + (i + 1) + ".jpg";
                         Console.WriteLine(des[i]);
                         File.Copy(src, des[i]);
                     }
@@ -174,7 +185,7 @@ namespace RentalHouseManagementSys
                 try
                 {
                     DataAccess ds = new DataAccess();
-                    ds.ExecuteUpdateQuery("insert into ad values('ad-103', '" + txtAdTitle.Text + "' , '" + txtRent.Text + "','" + cmbLocation.Text + "', '" + txtBlockAndRoadNo.Text + "', '" + txtApartmentNo.Text + "', '" + txtContact.Text + "','" + txtSquareFeet.Text + "','" + txtFloor.Text + "','" + txtFacilities.Text + "', '" + des[0] + "' , '" + des[1] + "', '" + des[2] + "', '" + des[3] + "' ); ");
+                    ds.ExecuteUpdateQuery("insert into ad values('ad-100', '" + txtAdTitle.Text + "' , '" + txtRent.Text + "','" + cmbLocation.Text + "', '" + txtBlockAndRoadNo.Text + "', '" + txtApartmentNo.Text + "', '" + txtContact.Text + "','" + txtSquareFeet.Text + "','" + txtFloor.Text + "','" + txtFacilities.Text + "', '" + des[0] + "' , '" + des[1] + "', '" + des[2] + "', '" + des[3] + "' ); ");
                     MessageBox.Show("Ad Posted ad id is ");
                 }
                 catch (SqlException sqe)
@@ -257,6 +268,10 @@ namespace RentalHouseManagementSys
             this.btnSearchById.Enabled = !this.btnSearchById.Enabled;
         }
 
-       
+        private void pbLogout_Click(object sender, EventArgs e)
+        {
+            this.LoginForm.Visible = true;
+            this.Dispose();
+        }
     }
 }

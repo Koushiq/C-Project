@@ -114,6 +114,7 @@
             this.lblRent = new System.Windows.Forms.Label();
             this.txtAdTitle = new System.Windows.Forms.TextBox();
             this.lblAdTitle = new System.Windows.Forms.Label();
+            this.pbLogout = new System.Windows.Forms.PictureBox();
             this.mtcNavigation.SuspendLayout();
             this.mtpProfile.SuspendLayout();
             this.pnlProfile.SuspendLayout();
@@ -132,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
             this.SuspendLayout();
             // 
             // mtcNavigation
@@ -144,7 +146,7 @@
             this.mtcNavigation.Controls.Add(this.mtcPostAd);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 1;
+            this.mtcNavigation.SelectedIndex = 0;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
             this.mtcNavigation.TabIndex = 1;
             this.mtcNavigation.UseSelectable = true;
@@ -1171,11 +1173,24 @@
             this.lblAdTitle.TabIndex = 44;
             this.lblAdTitle.Text = "Ad Title";
             // 
+            // pbLogout
+            // 
+            this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
+            this.pbLogout.Location = new System.Drawing.Point(908, 19);
+            this.pbLogout.Name = "pbLogout";
+            this.pbLogout.Size = new System.Drawing.Size(47, 47);
+            this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogout.TabIndex = 3;
+            this.pbLogout.TabStop = false;
+            this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
+            // 
             // Landlord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 702);
+            this.Controls.Add(this.pbLogout);
             this.Controls.Add(this.mtcNavigation);
             this.MaximizeBox = false;
             this.Name = "Landlord";
@@ -1202,6 +1217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlatPicture1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1294,5 +1310,6 @@
         private System.Windows.Forms.Label lblBalanceOutput;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.CheckBox cbEnableAutoSearch;
+        private System.Windows.Forms.PictureBox pbLogout;
     }
 }

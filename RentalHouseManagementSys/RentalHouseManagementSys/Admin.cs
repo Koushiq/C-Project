@@ -22,6 +22,13 @@ namespace RentalHouseManagementSys
             InitializeComponent();
             GetFeedData();
         }
+        public Admin(Login login)
+        {
+            InitializeComponent();
+            this.LoginForm = login;
+            GetFeedData();
+            PopulateGridView();
+        }
         public void GetFeedData()
         {
             string[] attributeNames = new string[10] { "AD-ID : ", "Title : ", "Rent : ", "Location : ", "Block/Road :", "Apartment No : ", "Contact : ", "SquareFeet : ", "Floor : ", "Facilities : " };
@@ -81,12 +88,7 @@ namespace RentalHouseManagementSys
                 Console.WriteLine(e);
             }
         }
-        public Admin(Login login)
-        {
-            InitializeComponent();
-            this.LoginForm = login;
-            PopulateGridView();
-        }
+       
 
         private void mbtnAddAdmin_Click(object sender, EventArgs e)
         {

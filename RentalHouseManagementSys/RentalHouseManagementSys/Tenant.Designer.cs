@@ -121,7 +121,7 @@
             this.mtcNavigation.Controls.Add(this.mtpRecharge);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 0;
+            this.mtcNavigation.SelectedIndex = 1;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
             this.mtcNavigation.TabIndex = 0;
             this.mtcNavigation.UseSelectable = true;
@@ -459,6 +459,7 @@
             // 
             // flpFeed
             // 
+            this.flpFeed.AutoScroll = true;
             this.flpFeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.flpFeed.Controls.Add(this.pnlSearch);
             this.flpFeed.Location = new System.Drawing.Point(0, 4);
@@ -900,6 +901,7 @@
             this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogout.TabIndex = 2;
             this.pbLogout.TabStop = false;
+            this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
             // 
             // Tenant
             // 
