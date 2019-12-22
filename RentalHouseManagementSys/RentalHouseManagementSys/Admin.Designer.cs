@@ -177,7 +177,7 @@
             this.mtcNavigation.Controls.Add(this.mtpSystemData);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 3;
+            this.mtcNavigation.SelectedIndex = 4;
             this.mtcNavigation.Size = new System.Drawing.Size(977, 639);
             this.mtcNavigation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mtcNavigation.TabIndex = 0;
@@ -654,6 +654,7 @@
             this.pnlAddAdmin.Name = "pnlAddAdmin";
             this.pnlAddAdmin.Size = new System.Drawing.Size(973, 598);
             this.pnlAddAdmin.TabIndex = 2;
+            this.pnlAddAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAddAdmin_Paint);
             // 
             // mbtnAddAdmin
             // 
@@ -826,7 +827,7 @@
             this.mtcSystemDataTab.FontSize = MetroFramework.MetroTabControlSize.Small;
             this.mtcSystemDataTab.Location = new System.Drawing.Point(-4, 4);
             this.mtcSystemDataTab.Name = "mtcSystemDataTab";
-            this.mtcSystemDataTab.SelectedIndex = 1;
+            this.mtcSystemDataTab.SelectedIndex = 0;
             this.mtcSystemDataTab.Size = new System.Drawing.Size(977, 597);
             this.mtcSystemDataTab.TabIndex = 2;
             this.mtcSystemDataTab.UseSelectable = true;
@@ -853,7 +854,7 @@
             this.mtcSystemDataUsertypes.Controls.Add(this.mtpTenant);
             this.mtcSystemDataUsertypes.Location = new System.Drawing.Point(-4, 3);
             this.mtcSystemDataUsertypes.Name = "mtcSystemDataUsertypes";
-            this.mtcSystemDataUsertypes.SelectedIndex = 2;
+            this.mtcSystemDataUsertypes.SelectedIndex = 0;
             this.mtcSystemDataUsertypes.Size = new System.Drawing.Size(977, 560);
             this.mtcSystemDataUsertypes.TabIndex = 2;
             this.mtcSystemDataUsertypes.UseSelectable = true;
@@ -900,6 +901,7 @@
             this.btnSystemDataUsersRemove.TabIndex = 7;
             this.btnSystemDataUsersRemove.Text = "Remove";
             this.btnSystemDataUsersRemove.UseVisualStyleBackColor = false;
+            this.btnSystemDataUsersRemove.Click += new System.EventHandler(this.btnSystemDataUsersRemove_Click);
             // 
             // dgvSystemDataUsersSystemData
             // 

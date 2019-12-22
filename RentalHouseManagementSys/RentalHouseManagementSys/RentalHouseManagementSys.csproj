@@ -71,6 +71,8 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="Entity\FilterSearchEntity.cs" />
+    <Compile Include="Entity\Notification.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +93,10 @@
     <Compile Include="Authentication\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="repository\AgreementRepository.cs" />
+    <Compile Include="repository\FilterSearchRepository.cs" />
+    <Compile Include="repository\NotificationRepository.cs" />
+    <Compile Include="repository\NotificationRepositoryTenant.cs" />
     <Compile Include="Tenant.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -64,12 +64,12 @@
             this.txtSquareFeetUpperLimit = new System.Windows.Forms.TextBox();
             this.txtSquareFeetLowerLimit = new System.Windows.Forms.TextBox();
             this.lblSqareFeet = new System.Windows.Forms.Label();
-            this.cmbSearchByArea = new System.Windows.Forms.ComboBox();
+            this.cmbSelectArea = new System.Windows.Forms.ComboBox();
             this.txtRentUpperLimit = new System.Windows.Forms.TextBox();
             this.txtRentLowerLimit = new System.Windows.Forms.TextBox();
             this.lblRentRange = new System.Windows.Forms.Label();
             this.cbEnableFilter = new System.Windows.Forms.CheckBox();
-            this.lblSearchByArea = new System.Windows.Forms.Label();
+            this.lblSelectArea = new System.Windows.Forms.Label();
             this.mtpNotification = new MetroFramework.Controls.MetroTabPage();
             this.flpNotification = new System.Windows.Forms.FlowLayoutPanel();
             this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
@@ -121,7 +121,7 @@
             this.mtcNavigation.Controls.Add(this.mtpRecharge);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 1;
+            this.mtcNavigation.SelectedIndex = 2;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
             this.mtcNavigation.TabIndex = 0;
             this.mtcNavigation.UseSelectable = true;
@@ -475,15 +475,15 @@
             this.pnlSearch.Controls.Add(this.txtSquareFeetUpperLimit);
             this.pnlSearch.Controls.Add(this.txtSquareFeetLowerLimit);
             this.pnlSearch.Controls.Add(this.lblSqareFeet);
-            this.pnlSearch.Controls.Add(this.cmbSearchByArea);
+            this.pnlSearch.Controls.Add(this.cmbSelectArea);
             this.pnlSearch.Controls.Add(this.txtRentUpperLimit);
             this.pnlSearch.Controls.Add(this.txtRentLowerLimit);
             this.pnlSearch.Controls.Add(this.lblRentRange);
             this.pnlSearch.Controls.Add(this.cbEnableFilter);
-            this.pnlSearch.Controls.Add(this.lblSearchByArea);
+            this.pnlSearch.Controls.Add(this.lblSelectArea);
             this.pnlSearch.Location = new System.Drawing.Point(3, 3);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(961, 29);
+            this.pnlSearch.Size = new System.Drawing.Size(961, 30);
             this.pnlSearch.TabIndex = 0;
             // 
             // btnSearch
@@ -555,12 +555,12 @@
             this.lblSqareFeet.Text = "Square Feet";
             this.lblSqareFeet.Visible = false;
             // 
-            // cmbSearchByArea
+            // cmbSelectArea
             // 
-            this.cmbSearchByArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSearchByArea.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSearchByArea.FormattingEnabled = true;
-            this.cmbSearchByArea.Items.AddRange(new object[] {
+            this.cmbSelectArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectArea.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectArea.FormattingEnabled = true;
+            this.cmbSelectArea.Items.AddRange(new object[] {
             "All",
             "Banani",
             "Baily Road",
@@ -570,11 +570,11 @@
             "Mirpur",
             "Gulshan",
             "Old-Dhaka"});
-            this.cmbSearchByArea.Location = new System.Drawing.Point(153, 30);
-            this.cmbSearchByArea.Name = "cmbSearchByArea";
-            this.cmbSearchByArea.Size = new System.Drawing.Size(202, 26);
-            this.cmbSearchByArea.TabIndex = 46;
-            this.cmbSearchByArea.Visible = false;
+            this.cmbSelectArea.Location = new System.Drawing.Point(153, 30);
+            this.cmbSelectArea.Name = "cmbSelectArea";
+            this.cmbSelectArea.Size = new System.Drawing.Size(202, 26);
+            this.cmbSelectArea.TabIndex = 46;
+            this.cmbSelectArea.Visible = false;
             // 
             // txtRentUpperLimit
             // 
@@ -618,17 +618,17 @@
             this.cbEnableFilter.UseVisualStyleBackColor = true;
             this.cbEnableFilter.CheckedChanged += new System.EventHandler(this.cbEnableFilter_CheckedChanged);
             // 
-            // lblSearchByArea
+            // lblSelectArea
             // 
-            this.lblSearchByArea.AutoSize = true;
-            this.lblSearchByArea.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchByArea.ForeColor = System.Drawing.Color.White;
-            this.lblSearchByArea.Location = new System.Drawing.Point(14, 31);
-            this.lblSearchByArea.Name = "lblSearchByArea";
-            this.lblSearchByArea.Size = new System.Drawing.Size(116, 19);
-            this.lblSearchByArea.TabIndex = 37;
-            this.lblSearchByArea.Text = "Search By Area";
-            this.lblSearchByArea.Visible = false;
+            this.lblSelectArea.AutoSize = true;
+            this.lblSelectArea.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectArea.ForeColor = System.Drawing.Color.White;
+            this.lblSelectArea.Location = new System.Drawing.Point(14, 31);
+            this.lblSelectArea.Name = "lblSelectArea";
+            this.lblSelectArea.Size = new System.Drawing.Size(88, 19);
+            this.lblSelectArea.TabIndex = 37;
+            this.lblSelectArea.Text = "Select Area";
+            this.lblSelectArea.Visible = false;
             // 
             // mtpNotification
             // 
@@ -989,8 +989,8 @@
         private System.Windows.Forms.Label lblRentedStatusOutput;
         private System.Windows.Forms.Label lblRentedStatus;
         private System.Windows.Forms.Panel pnlSearch;
-        private System.Windows.Forms.Label lblSearchByArea;
-        private System.Windows.Forms.ComboBox cmbSearchByArea;
+        private System.Windows.Forms.Label lblSelectArea;
+        private System.Windows.Forms.ComboBox cmbSelectArea;
         private System.Windows.Forms.TextBox txtRentUpperLimit;
         private System.Windows.Forms.TextBox txtRentLowerLimit;
         private System.Windows.Forms.Label lblRentRange;

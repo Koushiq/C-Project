@@ -15,82 +15,167 @@ namespace RentalHouseManagementSys
    
     public partial class Landlord : MetroFramework.Forms.MetroForm
     {
+        private List<Button> viewTenantProfileBtn;
+        private List<Button> approveRequestBtn;
+        private List<Panel> notificationPanels;
+        private List<Label> notificationLabels;
+        private List<Panel> adsPanel ;
+        private List<Label>[] adsAttribute;
+        private string[] attributeNames;
+        private List<PictureBox> adsPicture;
         private bool[] pictureSelected = new bool[] { false, false, false, false };
-        private PictureBox[] pb = new PictureBox[4];
-        public DataAccess Da { get; set; }
-        public DataSet Ds { get; set; }
+        private PictureBox[] pb;
+        private TextBox[] tb;
+        private string[] des;
+        private string CredentialId { get; set; }
+        private DataAccess Da { get; set; }
+        private DataSet Ds { get; set; }
+        
+        private DataAccess DaUsername { get; set; }
+        private DataSet DsUsername { get; set; }
+        private DataAccess DaNotification { get; set; }
+        private DataSet DsNotification { get; set; }
         private Login LoginForm { get; set; }
+       
         public Landlord()
         {
             InitializeComponent();
-            /*this.pb[0] = new PictureBox();
-            this.pb[0].ImageLocation = "./FeedData/img/ad-100-1.jpg";
-            this.pb[0].Size = new System.Drawing.Size(161, 163);
-            this.pb[0].SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.flpFeed.Controls.Add(pb[0]);
-            */
-            GetFeedData();
-
         }
-        public Landlord(Login login)
+        public Landlord(Login login,string credentialId)
         {
             InitializeComponent();
             this.LoginForm = login;
-            GetFeedData();
-
+            this.CredentialId = credentialId;
+            this.GetFeedData();
+            this.GetNotificationData();
+            this.GetAdID();
+            this.PopulateGridViewAgreements();
+        }
+        private void PopulateGridViewAgreements()
+        {
+            this.Da = new DataAccess();
+            this.Ds = this.Da.ExecuteQuery("select * from agreement where landlordid = '"+this.CredentialId+"'");
+            this.dgvAgreements.AutoGenerateColumns = false;
+            this.dgvAgreements.DataSource =this.Ds.Tables[0];
+            
         }
 
+        public void GetNotificationData()
+        {
+            this.notificationPanels = new List<Panel>();
+            this.notificationLabels = new List<Label>();
+            this.viewTenantProfileBtn = new List<Button>();
+            this.approveRequestBtn = new List<Button>();
+            try
+            {
+                this.Da = new DataAccess();
+               
+                this.Ds = this.Da.ExecuteQuery("select * from notification where receiver = '" + this.CredentialId + "' and status='pending' order by id");
+
+                this.DaUsername = new DataAccess();
+
+                Console.WriteLine("Row of notification is " + this.Ds.Tables[0].Rows.Count);
+
+                for (int i = 0; i < this.Ds.Tables[0].Rows.Count; i++)
+                {
+                    this.DsUsername = this.DaUsername.ExecuteQuery("select username from tenantinfo where userid = '" + this.Ds.Tables[0].Rows[i]["sender"].ToString() + "'");
+                    
+                    //runtime notification panel
+                    this.notificationPanels.Add(new Panel());
+                    this.notificationPanels.ElementAt(i).Size = new Size(958, 55);
+                    this.notificationPanels.ElementAt(i).BackColor = Color.FromArgb(200, 255, 255, 255);
+
+                    //runtime notification label per panel 
+                    this.notificationLabels.Add(new Label());
+                    this.notificationLabels.ElementAt(i).Size = new Size(919, 20);
+                    this.notificationLabels.ElementAt(i).Location = new Point(9, 20);
+                    //runtime label styling 
+                    this.notificationLabels.ElementAt(i).Text = this.DsUsername.Tables[0].Rows[0]["username"].ToString() + " wants to rent your home from " + this.Ds.Tables[0].Rows[i]["adid"];
+                    this.notificationLabels.ElementAt(i).ForeColor = Color.FromArgb(0, 0, 0);
+                    this.notificationLabels.ElementAt(i).Font = new Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+                    //runtime notification approve request buttons 
+                    this.approveRequestBtn.Add(new Button());
+                    this.approveRequestBtn.ElementAt(i).Text = "Approve Request";
+                    this.approveRequestBtn.ElementAt(i).Size = new Size(90, 40);
+                    this.approveRequestBtn.ElementAt(i).Location = new Point(750,10);
+                    this.approveRequestBtn.ElementAt(i).Click += new EventHandler(ApproveRequestBtn_Click);
 
 
+                    //runtime notification approve request buttons 
+                    this.viewTenantProfileBtn.Add(new Button());
+                    this.viewTenantProfileBtn.ElementAt(i).Text = "view profile";
+                    this.viewTenantProfileBtn.ElementAt(i).Size = new Size(90, 40);
+                    this.viewTenantProfileBtn.ElementAt(i).Location = new Point(850, 10);
+                    this.viewTenantProfileBtn.ElementAt(i).Click += new EventHandler(ViewTenantProfileBtn_Click);
+
+
+
+                    this.notificationPanels.ElementAt(i).Controls.Add(this.approveRequestBtn.ElementAt(i));
+                    this.notificationPanels.ElementAt(i).Controls.Add(this.viewTenantProfileBtn.ElementAt(i));
+                    this.notificationPanels.ElementAt(i).Controls.Add(this.notificationLabels.ElementAt(i));
+                    this.flpNotification.Controls.Add(notificationPanels.ElementAt(i));
+
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+         
         public void GetFeedData()
         {
-           string[] attributeNames = new string[10] { "AD-ID : ","Title : ", "Rent : " , "Location : ", "Block/Road :", "Apartment No : ", "Contact : " , "SquareFeet : " , "Floor : ", "Facilities : "};
-           List<Panel> adsPanel = new List<Panel>();
-           List<Label>[] adsAttribute = new List<Label>[10];
+           this.attributeNames = new string[12] { "AD-ID :","Title : ", "Rent : " , "Location : ", "Block/Road :", "Apartment No : ", "Contact : " , "SquareFeet : " , "Floor : ", "Facilities : ", "Owener ID : ","Flat available for : "};
+           this.adsPanel = new List<Panel>();
+           this.adsAttribute = new List<Label>[12];
           
 
-           for(int i=0;i<adsAttribute.Length;i++)
+           for(int i=0;i<this.adsAttribute.Length;i++)
            {
-                adsAttribute[i] = new List<Label>();
+                this.adsAttribute[i] = new List<Label>();
            }
             
             try
             {
-                Da = new DataAccess();
-                Ds = Da.ExecuteQuery("select * from ad");
+                this.Da = new DataAccess();
+                this.Ds = Da.ExecuteQuery("select * from ad order by adid");
                 for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
                 {
                     //runtime panel
-                    List<PictureBox> adsPicture = new List<PictureBox>();
-                    adsPanel.Add(new Panel());
-                    adsPanel.ElementAt(i).Size = new Size(930, 600);
-                    adsPanel.ElementAt(i).BackColor = Color.FromArgb(190, 255, 255, 255);
-                    
+                    this.adsPicture = new List<PictureBox>();
+                    this.adsPanel.Add(new Panel());
+                    this.adsPanel.ElementAt(i).Size = new Size(930, 600);
+                    this.adsPanel.ElementAt(i).BackColor = Color.FromArgb(190, 255, 255, 255);
+                   
                     //load Attributes to feed 
                     for (int j=0,k=0;j<adsAttribute.Length;j++,k+=40)
                     {
+
                         Console.WriteLine(Ds.Tables[0].Rows[i][j].ToString());
-                        adsAttribute[i].Add(new Label());
-                        adsAttribute[i].ElementAt(j).Size = new Size(300, 24);
-                        adsAttribute[i].ElementAt(j).Location = new Point( 59 , (18+k));
-                        adsAttribute[i].ElementAt(j).BackColor = Color.FromArgb(0, 255, 255, 255);
-                        adsAttribute[i].ElementAt(j).Font = new Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                        adsAttribute[i].ElementAt(j).Text += attributeNames[j] + Ds.Tables[0].Rows[i][j].ToString();
-                        adsPanel.ElementAt(i).Controls.Add(adsAttribute[i].ElementAt(j));
+                        this.adsAttribute[i].Add(new Label());
+                        this.adsAttribute[i].ElementAt(j).Size = new Size(300, 24);
+                        this.adsAttribute[i].ElementAt(j).Location = new Point( 59 , (18+k));
+                        this.adsAttribute[i].ElementAt(j).BackColor = Color.FromArgb(0, 255, 255, 255);
+                        this.adsAttribute[i].ElementAt(j).Font = new Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        this.adsAttribute[i].ElementAt(j).Text += attributeNames[j] + Ds.Tables[0].Rows[i][j].ToString();
+                        this.adsPanel.ElementAt(i).Controls.Add(adsAttribute[i].ElementAt(j));
                     }
                     for (int j = 0; j < 4; j++)
                     {
-                        adsPicture.Add(new PictureBox());
-                        adsPicture.ElementAt(j).Size = new Size(200, 200);
-                        adsPicture.ElementAt(j).SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                        adsPicture.ElementAt(j).ImageLocation = Ds.Tables[0].Rows[i][j + 10].ToString();
-                        adsPicture.ElementAt(j).Visible = true;
-                        adsPanel.ElementAt(i).Controls.Add(adsPicture.ElementAt(j));
+                        this.adsPicture.Add(new PictureBox());
+                        this.adsPicture.ElementAt(j).Size = new Size(200, 200);
+                        this.adsPicture.ElementAt(j).SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        this.adsPicture.ElementAt(j).ImageLocation = Ds.Tables[0].Rows[i][j + 12].ToString();
+                        this.adsPicture.ElementAt(j).Visible = true;
+                        this.adsPanel.ElementAt(i).Controls.Add(adsPicture.ElementAt(j));
                     }
-                    adsPicture.ElementAt(0).Location = new Point(500, 9);
-                    adsPicture.ElementAt(1).Location = new Point(720, 9);
-                    adsPicture.ElementAt(2).Location = new Point(500, 250);
-                    adsPicture.ElementAt(3).Location = new Point(720, 250);
+                    this.adsPicture.ElementAt(0).Location = new Point(500, 9);
+                    this.adsPicture.ElementAt(1).Location = new Point(720, 9);
+                    this.adsPicture.ElementAt(2).Location = new Point(500, 250);
+                    this.adsPicture.ElementAt(3).Location = new Point(720, 250);
 
                     this.flpFeed.Controls.Add(adsPanel.ElementAt(i));
                 }
@@ -148,10 +233,12 @@ namespace RentalHouseManagementSys
 
         private void btnPostAd_Click(object sender, EventArgs e)
         {
-            
-            PictureBox[] pb = new PictureBox[] { pbFlatPicture1, pbFlatPicture2, pbFlatPicture3, pbFlatPicture4 };
-            TextBox[] tb = new TextBox[] { txtAdTitle, txtRent, txtBlockAndRoadNo, txtApartmentNo, txtContact,txtSquareFeet,txtFloor,txtFacilities };
-            string [] des= new string[4];
+            string src;
+
+            //PictureBox[] 
+            this.pb = new PictureBox[] { pbFlatPicture1, pbFlatPicture2, pbFlatPicture3, pbFlatPicture4 };
+            this.tb = new TextBox[] { txtAdTitle, txtRent, txtBlockAndRoadNo, txtApartmentNo, txtContact,txtSquareFeet,txtFloor,txtFacilities };
+            this.des= new string[4];
 
             bool txtNotEmpty = true;
             
@@ -163,35 +250,33 @@ namespace RentalHouseManagementSys
                     break;
                 }
             }
-         
 
-            if (txtNotEmpty==true && pictureSelected[0] == true && pictureSelected[1] == true && pictureSelected[2] == true && pictureSelected[3] == true)
+            if (txtNotEmpty == true && pictureSelected[0] == true && pictureSelected[1] == true && pictureSelected[2] == true && pictureSelected[3] == true)
             {
                 for (int i = 0; i < pb.Length; i++)
                 {
-                    try
-                    {
-                        string src = pb[i].ImageLocation;
-                        des[i] = "./FeedData/img/ad-100-" + (i + 1) + ".jpg";
-                        Console.WriteLine(des[i]);
-                        File.Copy(src, des[i]);
-                    }
-                    catch(Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
+                    des[i] = "./FeedData/img/"+this.txtAdId.Text+"-" + (i + 1) + ".jpg";
+                    Console.WriteLine(des[i]);
                 }
                 //query
                 try
                 {
                     DataAccess ds = new DataAccess();
-                    ds.ExecuteUpdateQuery("insert into ad values('ad-100', '" + txtAdTitle.Text + "' , '" + txtRent.Text + "','" + cmbLocation.Text + "', '" + txtBlockAndRoadNo.Text + "', '" + txtApartmentNo.Text + "', '" + txtContact.Text + "','" + txtSquareFeet.Text + "','" + txtFloor.Text + "','" + txtFacilities.Text + "', '" + des[0] + "' , '" + des[1] + "', '" + des[2] + "', '" + des[3] + "' ); ");
-                    MessageBox.Show("Ad Posted ad id is ");
+                    ds.ExecuteUpdateQuery("insert into ad values('"+ this.txtAdId.Text + "', '" + this.txtAdTitle.Text + "' , '" + this.txtRent.Text + "','" + this.cmbLocation.Text + "', '" + this.txtBlockAndRoadNo.Text + "', '" + this.txtApartmentNo.Text + "', '" + this.txtContact.Text + "','" + this.txtSquareFeet.Text + "','" + this.txtFloor.Text + "','" + this.txtFacilities.Text + "',  '"+this.CredentialId+"','"+this.cmbTenantType.Text+ "','" + des[0] + "' , '" + des[1] + "', '" + des[2] + "', '" + des[3] + "'); ");
+                    MessageBox.Show("Ad Posted ad id is "+this.txtAdId.Text);
+
                 }
-                catch (SqlException sqe)
+                catch (Exception sqe)
                 {
                     Console.WriteLine("Service Unavailable reason " + sqe);
                 }
+
+                for (int i = 0; i < 4; i++)
+                {
+                    src = pb[i].ImageLocation;
+                    File.Copy(src, des[i]);
+                }
+
             }
             else
             {
@@ -212,7 +297,8 @@ namespace RentalHouseManagementSys
             cmbLocation.Text = "";
 
 
-            GetFeedData();
+            this.GetFeedData();
+            this.GetAdID();
         }
 
         private void btnUpload1_Click(object sender, EventArgs e)
@@ -272,6 +358,91 @@ namespace RentalHouseManagementSys
         {
             this.LoginForm.Visible = true;
             this.Dispose();
+        }
+
+        private void btnChangePasswordProfile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteProfile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void ApproveRequestBtn_Click(Object sender, EventArgs e)
+        {
+           
+            this.Da = new DataAccess();
+            this.Ds = this.Da.ExecuteQuery("select * from notification where receiver = '" + this.CredentialId + "' and status = 'pending' order by id");
+            Button button = sender as Button;
+           
+            for(int i=0;i<this.approveRequestBtn.Count;i++)
+            {
+                if (button==this.approveRequestBtn.ElementAt(i))
+                {
+                    Console.WriteLine("Notification id no "+this.Ds.Tables[0].Rows[i]["id"].ToString()+ " is to be removed");   
+                    try 
+                    {
+                        this.DaNotification = new DataAccess();
+                        this.DsNotification = this.DaNotification.ExecuteQuery("update notification set status = 'approved' where id = '" + this.Ds.Tables[0].Rows[i]["id"].ToString() + "'");
+                        this.DsNotification = this.DaNotification.ExecuteQuery("delete from notification where adid ='" +this.Ds.Tables[0].Rows[i]["adid"] +"' and status ='pending'  ");
+                        this.ClearNotification();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                    break;
+                }
+                
+            }
+        }
+        private void ClearNotification()
+        {
+            for(int i=0; i<this.notificationPanels.Count;i++)
+            {
+                this.notificationPanels.ElementAt(i).Dispose();
+            }
+            this.GetNotificationData();
+        }
+
+        public void ViewTenantProfileBtn_Click(Object sender, EventArgs e)
+        {
+           
+            Button button = sender as Button;
+            for (int i = 0; i < this.viewTenantProfileBtn.Count; i++)
+            {
+                if(button==this.approveRequestBtn.ElementAt(i))
+                {
+
+                }
+            }
+        }
+
+       
+        private void GetAdID()
+        {
+            int numeric;
+            string[] adidNumeric;
+            this.Da = new DataAccess();
+            this.Ds = this.Da.ExecuteQuery("select * from ad order by adid desc; ");
+            if (this.Ds.Tables[0].Rows.Count == 0)
+            {
+                numeric = 100;
+            }
+            else
+            {
+                adidNumeric = this.Ds.Tables[0].Rows[0]["adid"].ToString().Split('-');
+                numeric = Convert.ToInt32(adidNumeric[1]);
+                numeric++;
+            }
+            this.txtAdId.Text = "ad-" + numeric.ToString();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

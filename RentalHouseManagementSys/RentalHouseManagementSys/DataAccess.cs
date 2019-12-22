@@ -43,7 +43,7 @@ namespace RentalHouseManagementSys
         public DataAccess()
         {
             Console.WriteLine("Trying connection!");
-            this.Sqlcon = new SqlConnection(@"Data Source = DESKTOP-8UPNDRG\SQLEXPRESS;Initial Catalog = rentalhousemanagementsystem; User ID = sa; Password = 1234");
+            this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-C0LBE21\SQLEXPRESS;Initial Catalog=rentalhousemanagementsystem;Persist Security Info=True;User ID=sa;Password=1234");
             Sqlcon.Open();
             Console.WriteLine("Connection Success");
         }

@@ -73,7 +73,9 @@
             this.mtpNotification = new MetroFramework.Controls.MetroTabPage();
             this.flpNotification = new System.Windows.Forms.FlowLayoutPanel();
             this.mtpAgreements = new MetroFramework.Controls.MetroTabPage();
-            this.pnlAgreements = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvAgreements = new System.Windows.Forms.DataGridView();
             this.mtpPayment = new MetroFramework.Controls.MetroTabPage();
             this.pnlPayment = new System.Windows.Forms.Panel();
             this.cbEnableAutoSearch = new System.Windows.Forms.CheckBox();
@@ -85,6 +87,10 @@
             this.dgvPayment = new System.Windows.Forms.DataGridView();
             this.mtcPostAd = new MetroFramework.Controls.MetroTabPage();
             this.pnlPostAd = new System.Windows.Forms.Panel();
+            this.cmbTenantType = new System.Windows.Forms.ComboBox();
+            this.lblTenantType = new System.Windows.Forms.Label();
+            this.txtAdId = new System.Windows.Forms.TextBox();
+            this.adID = new System.Windows.Forms.Label();
             this.txtFacilities = new System.Windows.Forms.TextBox();
             this.lblFacilities = new System.Windows.Forms.Label();
             this.txtFloor = new System.Windows.Forms.TextBox();
@@ -114,7 +120,13 @@
             this.lblRent = new System.Windows.Forms.Label();
             this.txtAdTitle = new System.Windows.Forms.TextBox();
             this.lblAdTitle = new System.Windows.Forms.Label();
+            this.mtpRemoveAd = new MetroFramework.Controls.MetroTabPage();
             this.pbLogout = new System.Windows.Forms.PictureBox();
+            this.dgvAdid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLandlordId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mtcNavigation.SuspendLayout();
             this.mtpProfile.SuspendLayout();
             this.pnlProfile.SuspendLayout();
@@ -124,6 +136,7 @@
             this.pnlSearch.SuspendLayout();
             this.mtpNotification.SuspendLayout();
             this.mtpAgreements.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgreements)).BeginInit();
             this.mtpPayment.SuspendLayout();
             this.pnlPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).BeginInit();
@@ -144,9 +157,10 @@
             this.mtcNavigation.Controls.Add(this.mtpAgreements);
             this.mtcNavigation.Controls.Add(this.mtpPayment);
             this.mtcNavigation.Controls.Add(this.mtcPostAd);
+            this.mtcNavigation.Controls.Add(this.mtpRemoveAd);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 0;
+            this.mtcNavigation.SelectedIndex = 3;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
             this.mtcNavigation.TabIndex = 1;
             this.mtcNavigation.UseSelectable = true;
@@ -386,6 +400,7 @@
             this.btnDeleteProfile.TabIndex = 22;
             this.btnDeleteProfile.Text = "Delete Profile";
             this.btnDeleteProfile.UseVisualStyleBackColor = false;
+            this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
             // 
             // btnUpdateProfile
             // 
@@ -410,6 +425,7 @@
             this.btnChangePasswordProfile.TabIndex = 20;
             this.btnChangePasswordProfile.Text = "Change Password";
             this.btnChangePasswordProfile.UseVisualStyleBackColor = false;
+            this.btnChangePasswordProfile.Click += new System.EventHandler(this.btnChangePasswordProfile_Click);
             // 
             // lblDateOfBirthProfile
             // 
@@ -670,6 +686,7 @@
             // 
             // flpNotification
             // 
+            this.flpNotification.AutoScroll = true;
             this.flpNotification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.flpNotification.Location = new System.Drawing.Point(0, 3);
             this.flpNotification.Name = "flpNotification";
@@ -678,7 +695,9 @@
             // 
             // mtpAgreements
             // 
-            this.mtpAgreements.Controls.Add(this.pnlAgreements);
+            this.mtpAgreements.Controls.Add(this.label1);
+            this.mtpAgreements.Controls.Add(this.button1);
+            this.mtpAgreements.Controls.Add(this.dgvAgreements);
             this.mtpAgreements.HorizontalScrollbarBarColor = true;
             this.mtpAgreements.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpAgreements.HorizontalScrollbarSize = 10;
@@ -691,13 +710,47 @@
             this.mtpAgreements.VerticalScrollbarHighlightOnWheel = false;
             this.mtpAgreements.VerticalScrollbarSize = 10;
             // 
-            // pnlAgreements
+            // label1
             // 
-            this.pnlAgreements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlAgreements.Location = new System.Drawing.Point(0, 3);
-            this.pnlAgreements.Name = "pnlAgreements";
-            this.pnlAgreements.Size = new System.Drawing.Size(969, 594);
-            this.pnlAgreements.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(718, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 19);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Search By";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(596, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 33);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // dgvAgreements
+            // 
+            this.dgvAgreements.AllowUserToAddRows = false;
+            this.dgvAgreements.AllowUserToDeleteRows = false;
+            this.dgvAgreements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAgreements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAdid,
+            this.dgvLandlordId,
+            this.dgvTenantId,
+            this.dgvRent,
+            this.dgvPaymentDate});
+            this.dgvAgreements.Location = new System.Drawing.Point(0, 109);
+            this.dgvAgreements.Name = "dgvAgreements";
+            this.dgvAgreements.ReadOnly = true;
+            this.dgvAgreements.Size = new System.Drawing.Size(967, 488);
+            this.dgvAgreements.TabIndex = 2;
+            this.dgvAgreements.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // mtpPayment
             // 
@@ -826,6 +879,10 @@
             // pnlPostAd
             // 
             this.pnlPostAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlPostAd.Controls.Add(this.cmbTenantType);
+            this.pnlPostAd.Controls.Add(this.lblTenantType);
+            this.pnlPostAd.Controls.Add(this.txtAdId);
+            this.pnlPostAd.Controls.Add(this.adID);
             this.pnlPostAd.Controls.Add(this.txtFacilities);
             this.pnlPostAd.Controls.Add(this.lblFacilities);
             this.pnlPostAd.Controls.Add(this.txtFloor);
@@ -860,10 +917,55 @@
             this.pnlPostAd.Size = new System.Drawing.Size(964, 594);
             this.pnlPostAd.TabIndex = 2;
             // 
+            // cmbTenantType
+            // 
+            this.cmbTenantType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTenantType.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTenantType.FormattingEnabled = true;
+            this.cmbTenantType.Items.AddRange(new object[] {
+            "All",
+            "Family",
+            "Bachelor"});
+            this.cmbTenantType.Location = new System.Drawing.Point(134, 459);
+            this.cmbTenantType.Name = "cmbTenantType";
+            this.cmbTenantType.Size = new System.Drawing.Size(211, 26);
+            this.cmbTenantType.TabIndex = 79;
+            // 
+            // lblTenantType
+            // 
+            this.lblTenantType.AutoSize = true;
+            this.lblTenantType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenantType.ForeColor = System.Drawing.Color.White;
+            this.lblTenantType.Location = new System.Drawing.Point(23, 466);
+            this.lblTenantType.Name = "lblTenantType";
+            this.lblTenantType.Size = new System.Drawing.Size(98, 19);
+            this.lblTenantType.TabIndex = 78;
+            this.lblTenantType.Text = "Tenant Type";
+            // 
+            // txtAdId
+            // 
+            this.txtAdId.Enabled = false;
+            this.txtAdId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdId.Location = new System.Drawing.Point(134, 51);
+            this.txtAdId.Name = "txtAdId";
+            this.txtAdId.Size = new System.Drawing.Size(211, 24);
+            this.txtAdId.TabIndex = 75;
+            // 
+            // adID
+            // 
+            this.adID.AutoSize = true;
+            this.adID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adID.ForeColor = System.Drawing.Color.White;
+            this.adID.Location = new System.Drawing.Point(62, 53);
+            this.adID.Name = "adID";
+            this.adID.Size = new System.Drawing.Size(59, 19);
+            this.adID.TabIndex = 76;
+            this.adID.Text = "AD- ID";
+            // 
             // txtFacilities
             // 
             this.txtFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFacilities.Location = new System.Drawing.Point(136, 448);
+            this.txtFacilities.Location = new System.Drawing.Point(134, 420);
             this.txtFacilities.Name = "txtFacilities";
             this.txtFacilities.Size = new System.Drawing.Size(211, 24);
             this.txtFacilities.TabIndex = 73;
@@ -873,7 +975,7 @@
             this.lblFacilities.AutoSize = true;
             this.lblFacilities.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFacilities.ForeColor = System.Drawing.Color.White;
-            this.lblFacilities.Location = new System.Drawing.Point(55, 450);
+            this.lblFacilities.Location = new System.Drawing.Point(53, 422);
             this.lblFacilities.Name = "lblFacilities";
             this.lblFacilities.Size = new System.Drawing.Size(68, 19);
             this.lblFacilities.TabIndex = 74;
@@ -882,7 +984,7 @@
             // txtFloor
             // 
             this.txtFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFloor.Location = new System.Drawing.Point(136, 400);
+            this.txtFloor.Location = new System.Drawing.Point(134, 380);
             this.txtFloor.Name = "txtFloor";
             this.txtFloor.Size = new System.Drawing.Size(211, 24);
             this.txtFloor.TabIndex = 71;
@@ -892,7 +994,7 @@
             this.lblFloor.AutoSize = true;
             this.lblFloor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFloor.ForeColor = System.Drawing.Color.White;
-            this.lblFloor.Location = new System.Drawing.Point(75, 402);
+            this.lblFloor.Location = new System.Drawing.Point(73, 382);
             this.lblFloor.Name = "lblFloor";
             this.lblFloor.Size = new System.Drawing.Size(45, 19);
             this.lblFloor.TabIndex = 72;
@@ -901,7 +1003,7 @@
             // txtApartmentNo
             // 
             this.txtApartmentNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApartmentNo.Location = new System.Drawing.Point(136, 251);
+            this.txtApartmentNo.Location = new System.Drawing.Point(134, 258);
             this.txtApartmentNo.Name = "txtApartmentNo";
             this.txtApartmentNo.Size = new System.Drawing.Size(211, 24);
             this.txtApartmentNo.TabIndex = 69;
@@ -911,7 +1013,7 @@
             this.lblApartmentNo.AutoSize = true;
             this.lblApartmentNo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApartmentNo.ForeColor = System.Drawing.Color.White;
-            this.lblApartmentNo.Location = new System.Drawing.Point(11, 256);
+            this.lblApartmentNo.Location = new System.Drawing.Point(9, 263);
             this.lblApartmentNo.Name = "lblApartmentNo";
             this.lblApartmentNo.Size = new System.Drawing.Size(109, 19);
             this.lblApartmentNo.TabIndex = 70;
@@ -1051,7 +1153,7 @@
             // txtSquareFeet
             // 
             this.txtSquareFeet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSquareFeet.Location = new System.Drawing.Point(136, 349);
+            this.txtSquareFeet.Location = new System.Drawing.Point(134, 340);
             this.txtSquareFeet.Name = "txtSquareFeet";
             this.txtSquareFeet.Size = new System.Drawing.Size(211, 24);
             this.txtSquareFeet.TabIndex = 57;
@@ -1061,7 +1163,7 @@
             this.lblSquareFeet.AutoSize = true;
             this.lblSquareFeet.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSquareFeet.ForeColor = System.Drawing.Color.White;
-            this.lblSquareFeet.Location = new System.Drawing.Point(28, 351);
+            this.lblSquareFeet.Location = new System.Drawing.Point(26, 342);
             this.lblSquareFeet.Name = "lblSquareFeet";
             this.lblSquareFeet.Size = new System.Drawing.Size(92, 19);
             this.lblSquareFeet.TabIndex = 58;
@@ -1070,7 +1172,7 @@
             // txtBlockAndRoadNo
             // 
             this.txtBlockAndRoadNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBlockAndRoadNo.Location = new System.Drawing.Point(136, 202);
+            this.txtBlockAndRoadNo.Location = new System.Drawing.Point(134, 217);
             this.txtBlockAndRoadNo.Name = "txtBlockAndRoadNo";
             this.txtBlockAndRoadNo.Size = new System.Drawing.Size(211, 24);
             this.txtBlockAndRoadNo.TabIndex = 55;
@@ -1080,7 +1182,7 @@
             this.lblBlockAndRoadNo.AutoSize = true;
             this.lblBlockAndRoadNo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlockAndRoadNo.ForeColor = System.Drawing.Color.White;
-            this.lblBlockAndRoadNo.Location = new System.Drawing.Point(7, 204);
+            this.lblBlockAndRoadNo.Location = new System.Drawing.Point(5, 219);
             this.lblBlockAndRoadNo.Name = "lblBlockAndRoadNo";
             this.lblBlockAndRoadNo.Size = new System.Drawing.Size(113, 19);
             this.lblBlockAndRoadNo.TabIndex = 56;
@@ -1091,7 +1193,7 @@
             this.lblLocation.AutoSize = true;
             this.lblLocation.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocation.ForeColor = System.Drawing.Color.White;
-            this.lblLocation.Location = new System.Drawing.Point(55, 154);
+            this.lblLocation.Location = new System.Drawing.Point(53, 175);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(68, 19);
             this.lblLocation.TabIndex = 54;
@@ -1111,7 +1213,7 @@
             "Mirpur",
             "Gulshan",
             "Old-Dhaka"});
-            this.cmbLocation.Location = new System.Drawing.Point(136, 152);
+            this.cmbLocation.Location = new System.Drawing.Point(134, 173);
             this.cmbLocation.Name = "cmbLocation";
             this.cmbLocation.Size = new System.Drawing.Size(211, 26);
             this.cmbLocation.TabIndex = 53;
@@ -1119,7 +1221,7 @@
             // txtContact
             // 
             this.txtContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(136, 300);
+            this.txtContact.Location = new System.Drawing.Point(134, 299);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(211, 24);
             this.txtContact.TabIndex = 49;
@@ -1129,7 +1231,7 @@
             this.lblContact.AutoSize = true;
             this.lblContact.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.ForeColor = System.Drawing.Color.White;
-            this.lblContact.Location = new System.Drawing.Point(58, 300);
+            this.lblContact.Location = new System.Drawing.Point(56, 299);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(62, 19);
             this.lblContact.TabIndex = 50;
@@ -1138,7 +1240,7 @@
             // txtRent
             // 
             this.txtRent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRent.Location = new System.Drawing.Point(136, 105);
+            this.txtRent.Location = new System.Drawing.Point(134, 132);
             this.txtRent.Name = "txtRent";
             this.txtRent.Size = new System.Drawing.Size(211, 24);
             this.txtRent.TabIndex = 45;
@@ -1148,7 +1250,7 @@
             this.lblRent.AutoSize = true;
             this.lblRent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRent.ForeColor = System.Drawing.Color.White;
-            this.lblRent.Location = new System.Drawing.Point(82, 107);
+            this.lblRent.Location = new System.Drawing.Point(80, 134);
             this.lblRent.Name = "lblRent";
             this.lblRent.Size = new System.Drawing.Size(41, 19);
             this.lblRent.TabIndex = 46;
@@ -1157,7 +1259,7 @@
             // txtAdTitle
             // 
             this.txtAdTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdTitle.Location = new System.Drawing.Point(136, 61);
+            this.txtAdTitle.Location = new System.Drawing.Point(134, 91);
             this.txtAdTitle.Name = "txtAdTitle";
             this.txtAdTitle.Size = new System.Drawing.Size(211, 24);
             this.txtAdTitle.TabIndex = 44;
@@ -1167,23 +1269,77 @@
             this.lblAdTitle.AutoSize = true;
             this.lblAdTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdTitle.ForeColor = System.Drawing.Color.White;
-            this.lblAdTitle.Location = new System.Drawing.Point(55, 63);
+            this.lblAdTitle.Location = new System.Drawing.Point(53, 93);
             this.lblAdTitle.Name = "lblAdTitle";
             this.lblAdTitle.Size = new System.Drawing.Size(65, 19);
             this.lblAdTitle.TabIndex = 44;
             this.lblAdTitle.Text = "Ad Title";
             // 
+            // mtpRemoveAd
+            // 
+            this.mtpRemoveAd.HorizontalScrollbarBarColor = true;
+            this.mtpRemoveAd.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtpRemoveAd.HorizontalScrollbarSize = 10;
+            this.mtpRemoveAd.Location = new System.Drawing.Point(4, 38);
+            this.mtpRemoveAd.Name = "mtpRemoveAd";
+            this.mtpRemoveAd.Size = new System.Drawing.Size(967, 597);
+            this.mtpRemoveAd.TabIndex = 6;
+            this.mtpRemoveAd.Text = "RemoveAd    ";
+            this.mtpRemoveAd.VerticalScrollbarBarColor = true;
+            this.mtpRemoveAd.VerticalScrollbarHighlightOnWheel = false;
+            this.mtpRemoveAd.VerticalScrollbarSize = 10;
+            // 
             // pbLogout
             // 
             this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLogout.Image = global::RentalHouseManagementSys.Properties.Resources.logout;
-            this.pbLogout.Location = new System.Drawing.Point(908, 19);
+            this.pbLogout.Location = new System.Drawing.Point(908, 24);
             this.pbLogout.Name = "pbLogout";
             this.pbLogout.Size = new System.Drawing.Size(47, 47);
             this.pbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogout.TabIndex = 3;
             this.pbLogout.TabStop = false;
             this.pbLogout.Click += new System.EventHandler(this.pbLogout_Click);
+            // 
+            // dgvAdid
+            // 
+            this.dgvAdid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvAdid.DataPropertyName = "adid";
+            this.dgvAdid.HeaderText = "Ad-ID";
+            this.dgvAdid.Name = "dgvAdid";
+            this.dgvAdid.ReadOnly = true;
+            // 
+            // dgvLandlordId
+            // 
+            this.dgvLandlordId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvLandlordId.DataPropertyName = "landlordid";
+            this.dgvLandlordId.HeaderText = "Landlord-ID";
+            this.dgvLandlordId.Name = "dgvLandlordId";
+            this.dgvLandlordId.ReadOnly = true;
+            // 
+            // dgvTenantId
+            // 
+            this.dgvTenantId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvTenantId.DataPropertyName = "tenantid";
+            this.dgvTenantId.HeaderText = "Tenant-ID";
+            this.dgvTenantId.Name = "dgvTenantId";
+            this.dgvTenantId.ReadOnly = true;
+            // 
+            // dgvRent
+            // 
+            this.dgvRent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvRent.DataPropertyName = "rent";
+            this.dgvRent.HeaderText = "Rent";
+            this.dgvRent.Name = "dgvRent";
+            this.dgvRent.ReadOnly = true;
+            // 
+            // dgvPaymentDate
+            // 
+            this.dgvPaymentDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvPaymentDate.DataPropertyName = "paymentdate";
+            this.dgvPaymentDate.HeaderText = "PaymentDate";
+            this.dgvPaymentDate.Name = "dgvPaymentDate";
+            this.dgvPaymentDate.ReadOnly = true;
             // 
             // Landlord
             // 
@@ -1206,6 +1362,8 @@
             this.pnlSearch.PerformLayout();
             this.mtpNotification.ResumeLayout(false);
             this.mtpAgreements.ResumeLayout(false);
+            this.mtpAgreements.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgreements)).EndInit();
             this.mtpPayment.ResumeLayout(false);
             this.pnlPayment.ResumeLayout(false);
             this.pnlPayment.PerformLayout();
@@ -1265,7 +1423,6 @@
         private MetroFramework.Controls.MetroTabPage mtpNotification;
         private System.Windows.Forms.FlowLayoutPanel flpNotification;
         private MetroFramework.Controls.MetroTabPage mtpAgreements;
-        private System.Windows.Forms.Panel pnlAgreements;
         private MetroFramework.Controls.MetroTabPage mtpPayment;
         private System.Windows.Forms.Panel pnlPayment;
         private System.Windows.Forms.Button btnSearchById;
@@ -1311,5 +1468,18 @@
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.CheckBox cbEnableAutoSearch;
         private System.Windows.Forms.PictureBox pbLogout;
+        private System.Windows.Forms.TextBox txtAdId;
+        private System.Windows.Forms.Label adID;
+        private MetroFramework.Controls.MetroTabPage mtpRemoveAd;
+        private System.Windows.Forms.ComboBox cmbTenantType;
+        private System.Windows.Forms.Label lblTenantType;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvAgreements;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAdid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLandlordId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenantId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPaymentDate;
     }
 }

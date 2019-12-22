@@ -20,20 +20,20 @@ namespace RentalHouseManagementSys
         public Admin()
         {
             InitializeComponent();
-            GetFeedData();
+            
         }
         public Admin(Login login)
         {
             InitializeComponent();
             this.LoginForm = login;
-            GetFeedData();
+            this.GetFeedData();
             PopulateGridView();
         }
         public void GetFeedData()
         {
-            string[] attributeNames = new string[10] { "AD-ID : ", "Title : ", "Rent : ", "Location : ", "Block/Road :", "Apartment No : ", "Contact : ", "SquareFeet : ", "Floor : ", "Facilities : " };
+            string[] attributeNames = new string[12] { "AD-ID :", "Title : ", "Rent : ", "Location : ", "Block/Road :", "Apartment No : ", "Contact : ", "SquareFeet : ", "Floor : ", "Facilities : ", "Owener ID : ", "Flat available for : " };
             List<Panel> adsPanel = new List<Panel>();
-            List<Label>[] adsAttribute = new List<Label>[10];
+            List<Label>[] adsAttribute = new List<Label>[12];
 
 
             for (int i = 0; i < adsAttribute.Length; i++)
@@ -70,7 +70,7 @@ namespace RentalHouseManagementSys
                         adsPicture.Add(new PictureBox());
                         adsPicture.ElementAt(j).Size = new Size(200, 200);
                         adsPicture.ElementAt(j).SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                        adsPicture.ElementAt(j).ImageLocation = Ds.Tables[0].Rows[i][j + 10].ToString();
+                        adsPicture.ElementAt(j).ImageLocation = Ds.Tables[0].Rows[i][j + 12].ToString();
                         adsPicture.ElementAt(j).Visible = true;
                         adsPanel.ElementAt(i).Controls.Add(adsPicture.ElementAt(j));
                     }
@@ -89,7 +89,6 @@ namespace RentalHouseManagementSys
             }
         }
        
-
         private void mbtnAddAdmin_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32(this.GetID());
@@ -235,6 +234,16 @@ namespace RentalHouseManagementSys
                 pnlSearch.Size = new Size(961, 156);
 
             }
+        }
+
+        private void pnlAddAdmin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSystemDataUsersRemove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

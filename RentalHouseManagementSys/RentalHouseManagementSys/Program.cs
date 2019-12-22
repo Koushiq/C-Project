@@ -20,6 +20,7 @@ namespace RentalHouseManagementSys
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
             
+           
         }
     }
 }
