@@ -19,7 +19,6 @@ C:\Users\Koushiq\Desktop\RentalHouseManagementSys\RentalHouseManagementSys\obj\D
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.csprojAssemblyReference.cache
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Admin.resources
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Login.resources
-C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Form1.resources
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Landlord.resources
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Properties.Resources.resources
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.Registration.resources
@@ -34,3 +33,4 @@ C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagement
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\MetroFramework.dll
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.csproj.CopyComplete
+C:\Users\Koushiq\Desktop\C-Project-master\C-Project-master\RentalHouseManagementSys\RentalHouseManagementSys\obj\Debug\RentalHouseManagementSys.ChangePassword.resources

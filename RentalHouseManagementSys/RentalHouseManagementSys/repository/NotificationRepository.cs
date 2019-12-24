@@ -8,24 +8,17 @@ using System.Threading.Tasks;
 
 namespace RentalHouseManagementSys.repository
 {
-    public abstract class NotificationRepository
+    public class NotificationRepository : Repository
     {
-        private string CredentialsId { get; set; }
         private List <Notification> notificationList;
-
-       
-        protected DataAccess Da { get; set; }
-        protected DataSet Ds { get; set; }
-
-        public NotificationRepository(string credentailsId)
+        public NotificationRepository(string credentailsId):base(credentailsId)
         {
-            this.CredentialsId = credentailsId;
-            this.notificationList = new List<Notification>();
-            
+            this.notificationList = new List<Notification>();   
         }
-        private void ConvertToEntityList()
+        protected override void ConvertToEntityList(string sql)
         {
-            for(int i =0; i<this.Ds.Tables[0].Rows.Count;i++)
+            base.ConvertToEntityList(sql);
+            for(int i =0; i<base.Ds.Tables[0].Rows.Count;i++)
             {
                 this.notificationList.Add(new Notification());
                 this.notificationList.ElementAt(i).Id = this.Ds.Tables[0].Rows[i]["id"].ToString();
@@ -36,34 +29,12 @@ namespace RentalHouseManagementSys.repository
             }
         }
 
-        public virtual List<Notification> GenerateNotificationQuery(string sql)
+        public List<Notification> GenerateNotificationQuery(string sql)
         {
             Console.WriteLine(sql);
-            this.Da = new DataAccess();
-            this.Ds = this.Da.ExecuteQuery(sql);
-            Console.WriteLine("rows count " +this.Ds.Tables[0].Rows.Count);
-            this.ConvertToEntityList();
+            this.ConvertToEntityList(sql);
             return this.notificationList;
-        }
-
-        public void UpdateNotification(string sql)
-        {
-            Console.WriteLine(sql);
-            try
-            {
-                this.Da = new DataAccess();
-                this.Da.ExecuteUpdateQuery(sql);
-
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            
-
-
-        }
-       
+        }       
         
     }
 }

@@ -38,7 +38,7 @@ namespace RentalHouseManagementSys
                     {
                         MessageBox.Show("Access Granted");
                         this.Visible = false;
-                        this.admin = new Admin(this);
+                        this.admin = new Admin(this,this.txtUserID.Text);
                         this.admin.Visible = true;
                     }
                     else

@@ -58,10 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="UserInterface\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
+    <Compile Include="UserInterface\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Authentication\Login.cs">
@@ -70,19 +70,21 @@
     <Compile Include="Authentication\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess.cs" />
+    <Compile Include="DBConnect\DataAccess.cs" />
+    <Compile Include="Entity\AgreementEntity.cs" />
     <Compile Include="Entity\FilterSearchEntity.cs" />
     <Compile Include="Entity\Notification.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Entity\PaymentEntity.cs" />
+    <Compile Include="UserInterface\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UserInterface\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Landlord.cs">
+    <Compile Include="UserInterface\Landlord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Landlord.Designer.cs">
+    <Compile Include="UserInterface\Landlord.Designer.cs">
       <DependentUpon>Landlord.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -94,25 +96,25 @@
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="repository\AgreementRepository.cs" />
-    <Compile Include="repository\FilterSearchRepository.cs" />
     <Compile Include="repository\NotificationRepository.cs" />
-    <Compile Include="repository\NotificationRepositoryTenant.cs" />
-    <Compile Include="Tenant.cs">
+    <Compile Include="repository\PaymentRepository.cs" />
+    <Compile Include="repository\Repository.cs" />
+    <Compile Include="UserInterface\Tenant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant.Designer.cs">
+    <Compile Include="UserInterface\Tenant.Designer.cs">
       <DependentUpon>Tenant.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin.resx">
+    <EmbeddedResource Include="UserInterface\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UserInterface\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Landlord.resx">
+    <EmbeddedResource Include="UserInterface\Landlord.resx">
       <DependentUpon>Landlord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -128,7 +130,7 @@
     <EmbeddedResource Include="Authentication\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant.resx">
+    <EmbeddedResource Include="UserInterface\Tenant.resx">
       <DependentUpon>Tenant.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
