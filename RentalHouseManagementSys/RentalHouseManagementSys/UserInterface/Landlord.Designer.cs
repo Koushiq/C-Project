@@ -152,7 +152,7 @@
             this.mtcNavigation.Controls.Add(this.mtpRemoveAd);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 0;
+            this.mtcNavigation.SelectedIndex = 1;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
             this.mtcNavigation.TabIndex = 1;
             this.mtcNavigation.UseSelectable = true;
@@ -345,6 +345,7 @@
             this.btnUpdateProfile.TabIndex = 21;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = false;
+            this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
             // 
             // btnChangePasswordProfile
             // 
@@ -455,7 +456,7 @@
             this.pnlSearch.Controls.Add(this.lblSearchByArea);
             this.pnlSearch.Location = new System.Drawing.Point(3, 3);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(961, 29);
+            this.pnlSearch.Size = new System.Drawing.Size(961, 27);
             this.pnlSearch.TabIndex = 0;
             // 
             // btnSearch
@@ -468,6 +469,7 @@
             this.btnSearch.TabIndex = 52;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblFlatType
             // 

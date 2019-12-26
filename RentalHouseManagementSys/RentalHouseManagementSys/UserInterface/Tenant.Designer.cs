@@ -123,7 +123,7 @@
             this.mtcNavigation.Controls.Add(this.mtpRecharge);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 0;
+            this.mtcNavigation.SelectedIndex = 1;
             this.mtcNavigation.Size = new System.Drawing.Size(975, 639);
             this.mtcNavigation.TabIndex = 0;
             this.mtcNavigation.UseSelectable = true;

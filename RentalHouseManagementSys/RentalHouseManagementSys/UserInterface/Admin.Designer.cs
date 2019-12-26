@@ -37,8 +37,6 @@
             this.lblUserIDProfileOutput = new System.Windows.Forms.Label();
             this.lblNameProfileOutput = new System.Windows.Forms.Label();
             this.btnDeleteProfile = new System.Windows.Forms.Button();
-            this.btnUpdateProfile = new System.Windows.Forms.Button();
-            this.btnChangePasswordProfile = new System.Windows.Forms.Button();
             this.lblDateOfBirthProfile = new System.Windows.Forms.Label();
             this.lblPhoneNumberProfile = new System.Windows.Forms.Label();
             this.lblGenderProfile = new System.Windows.Forms.Label();
@@ -173,7 +171,7 @@
             this.mtcNavigation.Controls.Add(this.mtpSystemData);
             this.mtcNavigation.Location = new System.Drawing.Point(0, 63);
             this.mtcNavigation.Name = "mtcNavigation";
-            this.mtcNavigation.SelectedIndex = 0;
+            this.mtcNavigation.SelectedIndex = 1;
             this.mtcNavigation.Size = new System.Drawing.Size(977, 639);
             this.mtcNavigation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mtcNavigation.TabIndex = 0;
@@ -204,8 +202,6 @@
             this.pnlProfile.Controls.Add(this.lblUserIDProfileOutput);
             this.pnlProfile.Controls.Add(this.lblNameProfileOutput);
             this.pnlProfile.Controls.Add(this.btnDeleteProfile);
-            this.pnlProfile.Controls.Add(this.btnUpdateProfile);
-            this.pnlProfile.Controls.Add(this.btnChangePasswordProfile);
             this.pnlProfile.Controls.Add(this.lblDateOfBirthProfile);
             this.pnlProfile.Controls.Add(this.lblPhoneNumberProfile);
             this.pnlProfile.Controls.Add(this.lblGenderProfile);
@@ -215,6 +211,7 @@
             this.pnlProfile.Name = "pnlProfile";
             this.pnlProfile.Size = new System.Drawing.Size(969, 594);
             this.pnlProfile.TabIndex = 2;
+            this.pnlProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlProfile_Paint);
             // 
             // lblDateOfBirthProfileOutput
             // 
@@ -276,39 +273,13 @@
             this.btnDeleteProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDeleteProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteProfile.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteProfile.Location = new System.Drawing.Point(599, 373);
+            this.btnDeleteProfile.Location = new System.Drawing.Point(414, 381);
             this.btnDeleteProfile.Name = "btnDeleteProfile";
             this.btnDeleteProfile.Size = new System.Drawing.Size(140, 47);
             this.btnDeleteProfile.TabIndex = 9;
             this.btnDeleteProfile.Text = "Delete Profile";
             this.btnDeleteProfile.UseVisualStyleBackColor = false;
             this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
-            // 
-            // btnUpdateProfile
-            // 
-            this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdateProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateProfile.Location = new System.Drawing.Point(429, 373);
-            this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(140, 47);
-            this.btnUpdateProfile.TabIndex = 8;
-            this.btnUpdateProfile.Text = "Update Profile";
-            this.btnUpdateProfile.UseVisualStyleBackColor = false;
-            this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
-            // 
-            // btnChangePasswordProfile
-            // 
-            this.btnChangePasswordProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnChangePasswordProfile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePasswordProfile.ForeColor = System.Drawing.Color.White;
-            this.btnChangePasswordProfile.Location = new System.Drawing.Point(260, 373);
-            this.btnChangePasswordProfile.Name = "btnChangePasswordProfile";
-            this.btnChangePasswordProfile.Size = new System.Drawing.Size(140, 47);
-            this.btnChangePasswordProfile.TabIndex = 7;
-            this.btnChangePasswordProfile.Text = "Change Password";
-            this.btnChangePasswordProfile.UseVisualStyleBackColor = false;
-            this.btnChangePasswordProfile.Click += new System.EventHandler(this.btnChangePasswordProfile_Click);
             // 
             // lblDateOfBirthProfile
             // 
@@ -406,7 +377,7 @@
             this.pnlSearch.Controls.Add(this.lblSearchByArea);
             this.pnlSearch.Location = new System.Drawing.Point(3, 3);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(961, 28);
+            this.pnlSearch.Size = new System.Drawing.Size(961, 26);
             this.pnlSearch.TabIndex = 0;
             // 
             // btnSearch
@@ -419,6 +390,7 @@
             this.btnSearch.TabIndex = 52;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // lblFlatType
             // 
@@ -612,7 +584,6 @@
             this.pnlAddAdmin.Name = "pnlAddAdmin";
             this.pnlAddAdmin.Size = new System.Drawing.Size(973, 598);
             this.pnlAddAdmin.TabIndex = 2;
-            this.pnlAddAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAddAdmin_Paint);
             // 
             // mbtnAddAdmin
             // 
@@ -859,7 +830,6 @@
             this.btnSystemDataUsersRemove.TabIndex = 7;
             this.btnSystemDataUsersRemove.Text = "Remove";
             this.btnSystemDataUsersRemove.UseVisualStyleBackColor = false;
-            this.btnSystemDataUsersRemove.Click += new System.EventHandler(this.btnSystemDataUsersRemove_Click);
             // 
             // dgvSystemDataUsersSystemData
             // 
@@ -1530,8 +1500,6 @@
         private System.Windows.Forms.Label lblUserIDProfile;
         private System.Windows.Forms.Label lblNameProfile;
         private System.Windows.Forms.Button btnDeleteProfile;
-        private System.Windows.Forms.Button btnUpdateProfile;
-        private System.Windows.Forms.Button btnChangePasswordProfile;
         private System.Windows.Forms.Label lblDateOfBirthProfileOutput;
         private System.Windows.Forms.Label lblPhoneNumberProfileOutput;
         private System.Windows.Forms.Label lblGenderProfileOutput;

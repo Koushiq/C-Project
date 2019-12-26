@@ -22,7 +22,7 @@ namespace RentalHouseManagementSys
         private List<Label>[] adsAttribute;
         private List<PictureBox> adsPicture;
         private Login LoginForm { get; set; }
-        private string CredentailId { get; set; }
+        private string CredentialsId { get; set; }
         public Admin()
         {
             InitializeComponent();
@@ -32,11 +32,11 @@ namespace RentalHouseManagementSys
         {
             InitializeComponent();
             this.LoginForm = login;
-            this.GetFeedData();
+            this.GetFeedData("select * from ad order by adid");
             this.PopulateGridView();
-            this.CredentailId = credentailId;
+            this.CredentialsId = credentailId;
         }
-        public void GetFeedData()
+        public void GetFeedData(string sql)
         {
             this.attributeNames = new string[12] { "AD-ID :", "Title : ", "Rent : ", "Location : ", "Block/Road :", "Apartment No : ", "Contact : ", "SquareFeet : ", "Floor : ", "Facilities : ", "Owener ID : ", "Flat available for : " };
             this.adsPanel = new List<Panel>();
@@ -51,7 +51,7 @@ namespace RentalHouseManagementSys
             try
             {
                 this.Da = new DataAccess();
-                this.Ds = Da.ExecuteQuery("select * from ad order by adid");
+                this.Ds = Da.ExecuteQuery(sql);
                 for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
                 {
                     //runtime panel
@@ -154,18 +154,14 @@ namespace RentalHouseManagementSys
         }
         private void btnChangePasswordProfile_Click(object sender, EventArgs e)
         {
-            ChangePassword changePassword = new ChangePassword(this.CredentailId,"admin");
+            ChangePassword changePassword = new ChangePassword(this.CredentialsId, "admin");
             changePassword.Visible = true;
-        }
-
-        private void btnUpdateProfile_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
         {
-
+            this.Da = new DataAccess();
+            this.Da.ExecuteUpdateQuery("delete from admin where id = '"+CredentialsId+"'");
         }
 
         private void pbLogout_Click(object sender, EventArgs e)
@@ -179,10 +175,7 @@ namespace RentalHouseManagementSys
             Application.Exit();
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
         public void PopulateGridView(string sql="select * from admin")
         {
             this.Da = new DataAccess();
@@ -244,14 +237,57 @@ namespace RentalHouseManagementSys
             }
         }
 
-        private void pnlAddAdmin_Paint(object sender, PaintEventArgs e)
-        {
+       
 
+        private void pnlProfile_Paint(object sender, PaintEventArgs e)
+        {
+            this.Da = new DataAccess();
+            this.Ds = this.Da.ExecuteQuery(" select * from admin where id = '" + this.CredentialsId + "'");
+            this.lblUserIDProfileOutput.Text = this.Ds.Tables[0].Rows[0]["id"].ToString();
+            this.lblNameProfileOutput.Text = this.Ds.Tables[0].Rows[0]["name"].ToString();
+            this.lblGenderProfileOutput.Text = this.Ds.Tables[0].Rows[0]["gender"].ToString();
+            this.lblPhoneNumberProfileOutput.Text = this.Ds.Tables[0].Rows[0]["phone"].ToString();
+            this.lblDateOfBirthProfileOutput.Text = this.Ds.Tables[0].Rows[0]["dateofbirth"].ToString();
         }
 
-        private void btnSystemDataUsersRemove_Click(object sender, EventArgs e)
+        private void btnSearch_Click_1(object sender, EventArgs e)
         {
+            for (int i = 0; i < this.adsPanel.Count; i++)
+            {
+                this.adsPanel.ElementAt(i).Dispose();
+            }
+            if (cbEnableFilter.Checked)
+            {
+                Console.WriteLine("select * from ad where location = '" + this.cmbSearchByArea.Text + "' and rent>= " + this.txtRentLowerLimit.Text + " and rent<= " + this.txtRentUpperLimit.Text + " and squarefeet >= " + this.txtSquareFeetLowerLimit.Text + "  and squarefeet <= " + this.txtSquareFeetUpperLimit.Text + " and flattype = '" + this.cmbFlatType.Text + "' order by adid;");
+                try
+                {
+                    if (!this.cmbSearchByArea.Text.Equals("") && !this.txtRentLowerLimit.Text.Equals("") && !this.txtRentUpperLimit.Text.Equals("") && !this.txtSquareFeetLowerLimit.Text.Equals("") && !this.txtSquareFeetUpperLimit.Text.Equals("") && !this.cmbFlatType.Text.Equals(""))
+                    {
+                        this.GetFeedData("select * from ad where location = '" + this.cmbSearchByArea.Text + "' and rent>= " + this.txtRentLowerLimit.Text + " and rent<= " + this.txtRentUpperLimit.Text + " and squarefeet >= " + this.txtSquareFeetLowerLimit.Text + "  and squarefeet <= " + this.txtSquareFeetUpperLimit.Text + " and flattype = '" + this.cmbFlatType.Text + "'; ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Parameters can't be empty ");
+                    }
 
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    this.GetFeedData("select * from ad ");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using RentalHouseManagementSys.Entity;
+﻿using RentalHouseManagementSys.Authentication;
+using RentalHouseManagementSys.Entity;
 using RentalHouseManagementSys.repository;
 using System;
 using System.Collections.Generic;
@@ -285,15 +286,6 @@ namespace RentalHouseManagementSys
                 this.cmbFlatType.Visible = false;
                 pnlSearch.Size = new Size(961, 30);
 
-                try
-                {
-
-                }
-                catch(SqlException ex)
-                {
-
-                }
-
             }
             else
             {
@@ -314,28 +306,42 @@ namespace RentalHouseManagementSys
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //
-            /*this.FilterSearchEn=this.FilterSearchRepo.ConvertToEntity(this.cmbFlatType, this.txtRentLowerLimit, this.txtRentUpperLimit,this.txtSquareFeetLowerLimit,this.txtSquareFeetUpperLimit,this.cmbFlatType);
-            
-            if (this.FilterSearchRepo.ValidateEntity(this.FilterSearchEn) == 1)
+            for (int i = 0; i < this.adsPanel.Count; i++)
             {
-              this.Sql = this.FilterSearchRepo.GenerateQuery(this.FilterSearchEn);
-              
-
-                for(int i=0;i<this.Ds.Tables[0].Rows.Count; i++)
-                {
-                    this.adsPanel.ElementAt(i).Dispose();
-                }
-              
+                this.adsPanel.ElementAt(i).Dispose();
             }
-            else if (this.FilterSearchRepo.ValidateEntity(this.FilterSearchEn) == 0)
+            if (cbEnableFilter.Checked)
             {
-                MessageBox.Show("No Fields can't be empty ");
+                Console.WriteLine("select * from ad where location = '" + this.cmbSelectArea.Text + "' and rent>= " + this.txtRentLowerLimit.Text + " and rent<= " + this.txtRentUpperLimit.Text + " and squarefeet >= " + this.txtSquareFeetLowerLimit.Text + "  and squarefeet <= " + this.txtSquareFeetUpperLimit.Text + " and flattype = '" + this.cmbFlatType.Text + "';");
+                try
+                {
+                    if (!this.cmbSelectArea.Text.Equals("") && !this.txtRentLowerLimit.Text.Equals("") && !this.txtRentUpperLimit.Text.Equals("") && !this.txtSquareFeetLowerLimit.Text.Equals("") && !this.txtSquareFeetUpperLimit.Text.Equals("") && !this.cmbFlatType.Text.Equals(""))
+                    {
+                        this.GetFeedData("select * from ad where location = '" + this.cmbSelectArea.Text + "' and rent>= " + this.txtRentLowerLimit.Text + " and rent<= " + this.txtRentUpperLimit.Text + " and squarefeet >= " + this.txtSquareFeetLowerLimit.Text + "  and squarefeet <= " + this.txtSquareFeetUpperLimit.Text + " and flattype = '" + this.cmbFlatType.Text + "'; ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Parameters can't be empty ");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
             }
             else
             {
-                MessageBox.Show("Incorrect Parameters!");
-            }*/
+                try
+                {
+                    this.GetFeedData("select * from ad ");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
 
         }
 
@@ -458,7 +464,7 @@ namespace RentalHouseManagementSys
             this.Da = new DataAccess();
             try
             {
-              
+                this.Da.ExecuteUpdateQuery("delete from tenantinfo where ");
             }
             catch
             {
@@ -468,7 +474,8 @@ namespace RentalHouseManagementSys
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-
+            UpdateUser updatUser = new UpdateUser(this.CredentialId, "tenantinfo");
+            updatUser.Visible = true;
         }
     }
 }

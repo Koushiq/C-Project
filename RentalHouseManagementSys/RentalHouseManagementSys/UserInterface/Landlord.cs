@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentalHouseManagementSys.Authentication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,8 @@ namespace RentalHouseManagementSys
         private TextBox[] tb;
         private string[] des;
         private string CredentialId { get; set; }
+        private DataAccess DaTenant { get; set; }
+        private DataSet DsTenant { get; set; }
         private DataAccess Da { get; set; }
         private DataSet Ds { get; set; }
         
@@ -46,7 +49,7 @@ namespace RentalHouseManagementSys
             InitializeComponent();
             this.LoginForm = login;
             this.CredentialId = credentialId;
-            this.GetFeedData();
+            this.GetFeedData("select * from ad ");
             this.GetNotificationData();
             this.GetAdID();
             this.PopulateGridViewAgreements();
@@ -126,7 +129,7 @@ namespace RentalHouseManagementSys
             }
         }
          
-        public void GetFeedData()
+        public void GetFeedData(string sql)
         {
            this.attributeNames = new string[12] { "AD-ID :","Title : ", "Rent : " , "Location : ", "Block/Road :", "Apartment No : ", "Contact : " , "SquareFeet : " , "Floor : ", "Facilities : ", "Owener ID : ","Flat available for : "};
            this.adsPanel = new List<Panel>();
@@ -143,7 +146,8 @@ namespace RentalHouseManagementSys
                 this.Da = new DataAccess();
                 try
                 {
-                    this.Ds = Da.ExecuteQuery("select * from ad order by adid");
+                    Console.WriteLine(sql);
+                    this.Ds = Da.ExecuteQuery(sql);
                 }
                 catch(Exception ex)
                 {
@@ -210,16 +214,6 @@ namespace RentalHouseManagementSys
                 this.txtSquareFeetUpperLimit.Visible = false;
                 this.cmbFlatType.Visible = false;
                 pnlSearch.Size = new Size(961, 30);
-
-                try
-                {
-
-                }
-                catch (SqlException ex)
-                {
-
-                }
-
             }
             else
             {
@@ -235,6 +229,7 @@ namespace RentalHouseManagementSys
                 this.cmbFlatType.Visible = true;
                 pnlSearch.Size = new Size(961, 156);
 
+               
             }
         }
 
@@ -339,7 +334,7 @@ namespace RentalHouseManagementSys
             this.cmbLocation.Text = "";
 
 
-            this.GetFeedData();
+            this.GetFeedData("select * from ad");
             this.GetAdID();
         }
 
@@ -410,6 +405,27 @@ namespace RentalHouseManagementSys
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
         {
+            this.Da = new DataAccess();
+            this.DaTenant = new DataAccess();
+            this.DsTenant = this.Da.ExecuteQuery("select tenantid from agreement where landlordid = '"+this.CredentialId+"' ");
+            try
+            {
+                this.Da.ExecuteUpdateQuery("delete from landlordinfo where userid = '" + this.CredentialId + "' ");
+                this.Da.ExecuteUpdateQuery("delete from ad where owenerid = '" + this.CredentialId + "' ");
+                this.Da.ExecuteUpdateQuery("delete from notification where receiver = '"+this.CredentialId+"' ");
+                this.Da.ExecuteUpdateQuery("delete from agreement where landlordid = '" + this.CredentialId + "' ");
+                if (this.DsTenant.Tables[0].Rows.Count>0)
+                {
+                    this.Da.ExecuteUpdateQuery("update tenantinfo set rentedstatus = 'false' where userid = '"+this.Ds.Tables[0].Rows[0][0].ToString()+"' ");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            this.Dispose();
+            this.LoginForm.Visible = true;
+            
 
         }
 
@@ -504,6 +520,53 @@ namespace RentalHouseManagementSys
             this.lblDateOfBirthProfileOutput.Text = this.Ds.Tables[0].Rows[0]["dateofbirth"].ToString();
             this.lblFlatsRegisteredOutput.Text = this.Ds.Tables[0].Rows[0]["flatcount"].ToString();
             this.lblBankAccountOutput.Text = this.Ds.Tables[0].Rows[0]["bankaccountid"].ToString();
+            this.lblUsertypeOutput.Text = "Landlord";
+        }
+
+        private void btnUpdateProfile_Click(object sender, EventArgs e)
+        {
+            UpdateUser updatUser = new UpdateUser(this.CredentialId,"landlordinfo");
+            updatUser.Visible=true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            for(int i=0;i<this.adsPanel.Count;i++)
+            {
+                this.adsPanel.ElementAt(i).Dispose();
+            }
+            if(cbEnableFilter.Checked)
+            {
+                Console.WriteLine("select * from ad where location = '" + this.cmbSearchByArea.Text + "' and rent>= " + this.txtRentLowerLimit.Text + " and rent<= " + this.txtRentUpperLimit.Text + " and squarefeet >= " + this.txtSquareFeetLowerLimit.Text + "  and squarefeet <= " + this.txtSquareFeetUpperLimit.Text + " and flattype = '" + this.cmbFlatType.Text + "'  order by adid ;"); 
+                try
+                {
+                    if (!this.cmbSearchByArea.Text.Equals("") && !this.txtRentLowerLimit.Text.Equals("") && !this.txtRentUpperLimit.Text.Equals("") && !this.txtSquareFeetLowerLimit.Text.Equals("") && !this.txtSquareFeetUpperLimit.Text.Equals("") && !this.cmbFlatType.Text.Equals(""))
+                    {
+                        this.GetFeedData("select * from ad where location = '" + this.cmbSearchByArea.Text + "' and rent>= " + this.txtRentLowerLimit.Text + " and rent<= " + this.txtRentUpperLimit.Text + " and squarefeet >= " + this.txtSquareFeetLowerLimit.Text + "  and squarefeet <= " + this.txtSquareFeetUpperLimit.Text + " and flattype = '" + this.cmbFlatType.Text + "'; ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Parameters can't be empty ");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    this.GetFeedData("select * from ad ");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
         }
     }
 }
